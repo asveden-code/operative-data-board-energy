@@ -634,6 +634,22 @@ def s_peak():
     und = [[hdr[j], round(float(row[j]), 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= dt.date.today().year + 4]
     return {"rows": hist, "underlying": und, "src": "DESNZ, DUKES table 5.10: simultaneous maximum load met, Great Britain (winter of the year shown); NESO electricity demand summary: total underlying (ACS) peak", "edition": meta}
 
+
+@series("ebitact", name="Actual domestic supply EBIT, all suppliers", unit="£bn", cad="A")
+def s_ebitact():
+    """Ofgem's annual supplier financial resilience report (PDF, around June). The figures are transcribed by hand from
+    the report's 'Domestic market EBIT' table; the daily job only checks that the report page still exists and flags
+    a new edition in its report for the owner to transcribe."""
+    page = "https://www.ofgem.gov.uk/publications/supplier-financial-resilience-report-2026"
+    rows = [["2022", -1.66], ["2023", 2.57], ["2024", 0.88], ["2025", 0.19]]
+    try:
+        h = get("https://www.ofgem.gov.uk/search?keys=supplier+financial+resilience+report", timeout=40)
+        yrs = sorted(set(re.findall(r"supplier-financial-resilience-report-(\d{4})", h)))
+        newer = [y for y in yrs if int(y) > 2026]
+    except Exception:
+        newer = []
+    return {"rows": rows, "newer_edition": newer or None, "src": "Ofgem, Supplier financial resilience report 2026 (domestic market EBIT, calendar years; 2025 is Ofgem's estimate)", "edition": {"title": "Supplier financial resilience report 2026", "page": page, "published": "2026-06-30"}}
+
 # ---------------------------------------------------------------- main -----
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default="data/series.json"); ap.add_argument("--only", default="")

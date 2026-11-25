@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T13:26Z",
+ "generated_at": "2026-11-25T13:31Z",
  "series": {
   "crude": {
    "rows": [
@@ -4481,6 +4481,38 @@
    "unit": "GW",
    "cad": "A",
    "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "ebitact": {
+   "rows": [
+    [
+     "2022",
+     -1.66
+    ],
+    [
+     "2023",
+     2.57
+    ],
+    [
+     "2024",
+     0.88
+    ],
+    [
+     "2025",
+     0.19
+    ]
+   ],
+   "newer_edition": null,
+   "src": "Ofgem, Supplier financial resilience report 2026 (domestic market EBIT, calendar years; 2025 is Ofgem's estimate)",
+   "edition": {
+    "title": "Supplier financial resilience report 2026",
+    "page": "https://www.ofgem.gov.uk/publications/supplier-financial-resilience-report-2026",
+    "published": "2026-06-30"
+   },
+   "name": "Actual domestic supply EBIT, all suppliers",
+   "unit": "£bn",
+   "cad": "A",
+   "fetched": "2026-11-25T13:31Z",
    "stale": false
   }
  }
