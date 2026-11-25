@@ -51,7 +51,8 @@ const BOX = {
   hp:      {series:"hp",       note:"MCS-certified retrofit installations of air-, ground- and water-source heat pumps up to 45 kW, UK, by installation quarter; recent quarters are revised up as late certificates arrive", dec:1},
   brent:   {series:"brent", live:"brent", note:"Monthly average spot price, IMF Primary Commodity Price System", dec:1},
   nbp:     {series:"nbp",   live:"nbp",   note:"Day-ahead contracts, monthly volume-weighted average, Ofgem analysis of broker data (published with a lag of about two months)", dec:1},
-  power:   {series:"power", live:"power", note:"Day-ahead baseload contracts, monthly volume-weighted average, Great Britain, Ofgem analysis of broker data", dec:1},
+  power:   {series:"power", live:"power", note:"Day-ahead baseload contracts, monthly volume-weighted average, Great Britain, Ofgem analysis of broker data (published with a lag of about two months)", dec:1},
+  mid:     {series:"mid", live:"mid", note:"Most recent prices: the daily volume-weighted average of exchange trades in Elexon's APX market index data, the reference price for GB imbalance settlement. A different product from Ofgem's day-ahead baseload series (it includes within-day and peak trades), so the two are not directly comparable", dec:1},
   uka:     {series:"uka",   live:"uka",   note:"Average monthly secondary-market price of UK Allowances as published in the UK ETS cost containment mechanism tables; the CCM trigger price for the coming month is shown below", dec:2},
   ttf:     {series:"ttf",   live:"ttf",   note:"Netherlands TTF, monthly average, IMF Primary Commodity Price System", dec:1},
   cap:     {series:"cap",   live:"cap",   note:"Typical dual-fuel household paying by direct debit, GB average, including VAT, as charted by Ofgem (past periods restated at the current typical consumption values); the wholesale, debt-related and EBIT lines of the cap are shown below", dec:0},
@@ -112,6 +113,12 @@ const LIVE = {
            const rows=Object.entries(ser).sort().map(([p,v])=>[p,v]).slice(-24); const tr=Object.entries(trig).sort().slice(-3);
            return {rows, trigger:tr, asof:(d.public_updated_at||"").slice(0,10)}; },
   brent: async()=>imf("POILBRE","USD"), ttf: async()=>imf("PNGASEU","USD"),
+  mid:   async()=>{ // last 8 days of Elexon APX market index data, merged onto the daily file
+           const end=new Date(Date.now()+864e5).toISOString().slice(0,10), start=new Date(Date.now()-8*864e5).toISOString().slice(0,10);
+           const d=await getJSON(`https://data.elexon.co.uk/bmrs/api/v1/balancing/pricing/market-index?from=${start}T00:00Z&to=${end}T00:00Z&dataProviders=APXMIDP`, 30000);
+           const acc={}; for(const r of d.data||[]){ if(r.price==null||!(r.volume>0)) continue; const a=acc[r.settlementDate]||(acc[r.settlementDate]=[0,0,0]); a[0]+=r.price*r.volume; a[1]+=r.volume; a[2]++; }
+           const today=new Date().toISOString().slice(0,10); const fresh=Object.entries(acc).filter(([k,a])=>a[2]>=40&&k!==today).map(([k,a])=>[k,+(a[0]/a[1]).toFixed(2)]);
+           const base=((seriesOf("mid")||{}).rows||[]).filter(r=>!acc[r[0]]); const rows=[...base,...fresh].sort(); if(!fresh.length) throw new Error("no data"); return {rows:rows.slice(-740)}; },
 };
 async function shares(id){ const e=await everviz(id); const rows=[]; for(const r of e.rows){ const p=pQ(r[0]); if(!p) continue; const d={}; e.header.forEach((h,j)=>{ if(j&&n(r[j])) d[h]=+n(r[j]).toFixed(2); }); rows.push([p,d]); } return {rows:rows.slice(-9), asof:e.asof}; }
 async function imf(indicator, transform){
@@ -142,7 +149,7 @@ const IND = {
           contracts:[{pm:"crude-oil-all-time-high-by"},{mc:{id:43038,title:"What will be the closing price of Crude Oil WTI (USD per barrel) on December 31, 2026?",fc:"$96.9",sub:"community median",n:20,closes:"2026-12-31"}},{mf:"GuyCohen/will-brent-crude-close-above-100bar"},{mf:"cash/will-the-price-of-oil-reach-150-bef"},{mf:"copiumarc/what-will-be-the-highest-price-of-c-udInI98znU"}]},
   nbp:   {name:"Natural gas price (NBP)", k:"Energy prices", boxes:["nbp"],
           contracts:[{mc:{id:44153,title:"Will QatarEnergy restore full LNG production capacity before 2027?",fc:"2%",n:15,closes:"2026-12-31"}},{pm:"russia-x-ukraine-energy-ceasefire-agreement-by"},{mf:"RastyAbdulrahman/will-germany-have-a-shortage-of-nat"}]},
-  power: {name:"Wholesale electricity price", k:"Energy prices", boxes:["power"],
+  power: {name:"Wholesale electricity price", k:"Energy prices", boxes:["mid","power"],
           contracts:[{mf:"MT98/dec-1-2023-to-nov-30-2026-will-a-uk"},{mf:"MikhailTal/will-nord-pool-2027-system-price-an"},{mf:"MikhailTal/will-nord-pool-2028-system-price-an"}]},
   carbon:{name:"UK carbon price", k:"Energy prices", boxes:["uka"], contracts:[]},
   pricecap:{name:"Ofgem energy price cap", k:"Regulation", boxes:["cap"], contracts:[{pm:"uk-annual-inflation-in-2026"}]},
@@ -213,7 +220,7 @@ function factBox(key, hue){
   const rows = live?live.rows:s.rows; const col=b.col||1;
   if(cad==="shares") return sharesBox(b, s, rows, live, hue, name);
   const last=rows[rows.length-1], prev=rows[rows.length-2];
-  const yearAgo = cad==="M" ? rows[rows.length-13] : cad==="Q" ? rows[rows.length-5] : cad==="A" ? prev : null;
+  const yearAgo = cad==="M" ? rows[rows.length-13] : cad==="Q" ? rows[rows.length-5] : cad==="A" ? prev : cad==="D" ? (()=>{ const t=(+last[0].slice(0,4)-1)+last[0].slice(4); let best=null; for(const r of rows){ if(r[0]<=t) best=r; } return best; })() : null;
   let delta="";
   if(cad==="S"){ delta = prev ? `previously <b>${fmtN(prev[col],dec)}${unit==="%"?"%":""}</b> from ${esc(fmtPeriod(prev[0]))}` : ""; }
   else if(cad==="L"){ delta = prev ? `<b class="${last[col]-prev[col]>=0?"up":"down"}">${last[col]-prev[col]>=0?"+":""}${fmtN(last[col]-prev[col],dec)}</b> vs ${esc(fmtPeriod(prev[0]))}` : ""; }

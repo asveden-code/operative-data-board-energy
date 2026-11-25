@@ -685,6 +685,30 @@ def s_peak():
     und = [[hdr[j], round(float(row[j]), 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= today.year + 1]
     return {"rows": rows, "cols": ["Transmission system demand", "National demand"], "underlying": und, "src": "NESO historic demand data: monthly maximum half-hourly transmission system demand and national demand, Great Britain", "edition": {"title": "NESO historic demand data", "page": "https://www.neso.energy/data-portal/historic-demand-data", "published": today.isoformat()}}
 
+@series("mid", name="Wholesale electricity price, daily (APX market index)", unit="£/MWh", cad="D")
+def s_mid():
+    """Daily volume-weighted average of Elexon's APX Market Index Data (the exchange price used for imbalance pricing),
+    cached in data/elexon_mid_daily.json; only the last 10 days are re-read each run."""
+    cache_p = ROOT / "data/elexon_mid_daily.json"; cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
+    today = dt.date.today(); start = today - dt.timedelta(days=740)
+    d0 = max(start, today - dt.timedelta(days=10)) if cache else start
+    d0 = min(d0, min((dt.date.fromisoformat(k) for k in cache), default=today)) if cache and dt.date.fromisoformat(min(cache)) > start else d0
+    while d0 <= today:
+        d1 = min(d0 + dt.timedelta(days=6), today)
+        data = json.loads(get(f"{ELEXON}/balancing/pricing/market-index?from={d0}T00:00Z&to={d1 + dt.timedelta(days=1)}T00:00Z&dataProviders=APXMIDP", timeout=120)).get("data", [])
+        acc = {}
+        for r in data:
+            k = r["settlementDate"]; v = r.get("volume") or 0; pr = r.get("price")
+            if pr is None or v <= 0: continue
+            a = acc.setdefault(k, [0.0, 0.0, 0]); a[0] += pr * v; a[1] += v; a[2] += 1
+        for k, (pv, v, n) in acc.items():
+            if v > 0 and (k != today.isoformat()): cache[k] = {"vwap": round(pv / v, 2), "volume_mwh": round(v), "periods": n}
+        d0 = d1 + dt.timedelta(days=1)
+    cache = {k: cache[k] for k in sorted(cache) if dt.date.fromisoformat(k) >= start}
+    cache_p.write_text(json.dumps(cache, separators=(",", ":")))
+    rows = [[k, v["vwap"]] for k, v in cache.items() if v["periods"] >= 40]
+    return {"rows": rows, "src": "Elexon Insights, APX market index data (MID): daily volume-weighted average price of exchange trades, GB", "edition": {"title": "Elexon MID, APXMIDP", "page": "https://bmrs.elexon.co.uk/market-index-price", "published": today.isoformat()}}
+
 # ---------------------------------------------------------------- main -----
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default="data/series.json"); ap.add_argument("--only", default="")
