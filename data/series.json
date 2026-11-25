@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T13:21Z",
+ "generated_at": "2026-11-25T13:26Z",
  "series": {
   "crude": {
    "rows": [
@@ -71,7 +71,7 @@
    "name": "Crude oil production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "ngl": {
@@ -144,7 +144,7 @@
    "name": "NGLs production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasprod": {
@@ -217,7 +217,7 @@
    "name": "Natural gas production",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "oilimp": {
@@ -272,7 +272,7 @@
    "name": "Net imports of oil",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasimp": {
@@ -327,7 +327,7 @@
    "name": "Net imports of natural gas",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "opex": {
@@ -383,7 +383,7 @@
    "name": "Average unit operating cost, UKCS",
    "unit": "£/boe",
    "cad": "A",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasdem": {
@@ -554,7 +554,7 @@
    "name": "Natural gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasdom": {
@@ -725,7 +725,7 @@
    "name": "Domestic gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasgen": {
@@ -896,7 +896,7 @@
    "name": "Gas for electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gascom": {
@@ -1067,7 +1067,7 @@
    "name": "Commercial and services gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasind": {
@@ -1238,7 +1238,7 @@
    "name": "Industrial gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "gasnet": {
@@ -1409,7 +1409,7 @@
    "name": "Net imports of natural gas (ET 4.2)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   },
   "hp": {
@@ -1482,7 +1482,3005 @@
    "name": "Heat pump installations",
    "unit": "thousand",
    "cad": "Q",
-   "fetched": "2026-11-25T13:21Z",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "power": {
+   "rows": [
+    [
+     "2024-10",
+     88.96
+    ],
+    [
+     "2024-11",
+     104.58
+    ],
+    [
+     "2024-12",
+     100.74
+    ],
+    [
+     "2025-01",
+     125.54
+    ],
+    [
+     "2025-02",
+     104.76
+    ],
+    [
+     "2025-03",
+     89.62
+    ],
+    [
+     "2025-04",
+     81.13
+    ],
+    [
+     "2025-05",
+     79.46
+    ],
+    [
+     "2025-06",
+     71.7
+    ],
+    [
+     "2025-07",
+     81.15
+    ],
+    [
+     "2025-08",
+     71.33
+    ],
+    [
+     "2025-09",
+     72.14
+    ],
+    [
+     "2025-10",
+     74.54
+    ],
+    [
+     "2025-11",
+     81.12
+    ],
+    [
+     "2025-12",
+     74.71
+    ],
+    [
+     "2026-01",
+     97.3
+    ],
+    [
+     "2026-02",
+     79.28
+    ],
+    [
+     "2026-03",
+     94.66
+    ],
+    [
+     "2026-04",
+     89.67
+    ],
+    [
+     "2026-05",
+     104.18
+    ],
+    [
+     "2026-06",
+     107.48
+    ],
+    [
+     "2026-07",
+     116.61
+    ],
+    [
+     "2026-08",
+     133.7
+    ],
+    [
+     "2026-09",
+     146.72
+    ]
+   ],
+   "src": "Ofgem wholesale market indicators: day-ahead baseload contracts, monthly average",
+   "edition": {
+    "title": "Ofgem chart n9WSDfgxc",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/wholesale-market-indicators",
+    "asof": "November 2026"
+   },
+   "name": "Wholesale electricity price (GB)",
+   "unit": "£/MWh",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "nbp": {
+   "rows": [
+    [
+     "2024-10",
+     96.79
+    ],
+    [
+     "2024-11",
+     111.56
+    ],
+    [
+     "2024-12",
+     111.47
+    ],
+    [
+     "2025-01",
+     123.02
+    ],
+    [
+     "2025-02",
+     125.43
+    ],
+    [
+     "2025-03",
+     102.31
+    ],
+    [
+     "2025-04",
+     86.29
+    ],
+    [
+     "2025-05",
+     82.54
+    ],
+    [
+     "2025-06",
+     86.28
+    ],
+    [
+     "2025-07",
+     81.16
+    ],
+    [
+     "2025-08",
+     79.28
+    ],
+    [
+     "2025-09",
+     79.35
+    ],
+    [
+     "2025-10",
+     78.03
+    ],
+    [
+     "2025-11",
+     76.15
+    ],
+    [
+     "2025-12",
+     70.94
+    ],
+    [
+     "2026-01",
+     90.55
+    ],
+    [
+     "2026-02",
+     79.39
+    ],
+    [
+     "2026-03",
+     132.42
+    ],
+    [
+     "2026-04",
+     111.79
+    ],
+    [
+     "2026-05",
+     118.06
+    ],
+    [
+     "2026-06",
+     110.14
+    ],
+    [
+     "2026-07",
+     128.39
+    ],
+    [
+     "2026-08",
+     148.63
+    ],
+    [
+     "2026-09",
+     187.22
+    ]
+   ],
+   "src": "Ofgem wholesale market indicators: day-ahead contracts, monthly average",
+   "edition": {
+    "title": "Ofgem chart YFsS4g98P",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/wholesale-market-indicators",
+    "asof": "November 2026"
+   },
+   "name": "NBP gas price (GB)",
+   "unit": "p/therm",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "cap": {
+   "rows": [
+    [
+     "2024 Q4",
+     1543,
+     640,
+     0,
+     38
+    ],
+    [
+     "2025 Q1",
+     1561,
+     656,
+     0,
+     39
+    ],
+    [
+     "2025 Q2",
+     1655,
+     731,
+     0,
+     40
+    ],
+    [
+     "2025 Q3",
+     1541,
+     639,
+     45,
+     38
+    ],
+    [
+     "2025 Q4",
+     1576,
+     627,
+     47,
+     38
+    ],
+    [
+     "2026 Q1",
+     1584,
+     604,
+     47,
+     39
+    ],
+    [
+     "2026 Q2",
+     1477,
+     573,
+     44,
+     38
+    ],
+    [
+     "2026 Q3",
+     1663,
+     729,
+     49,
+     43
+    ],
+    [
+     "2026 Q4",
+     1723,
+     812,
+     52,
+     46
+    ],
+    [
+     "2027 Q1",
+     2166,
+     1216,
+     65,
+     52
+    ]
+   ],
+   "cols": [
+    "Total",
+    "Wholesale costs",
+    "Debt-related costs",
+    "EBIT allowance"
+   ],
+   "src": "Ofgem retail market indicators: costs included in the price cap level (direct debit, typical consumption, GB average, incl. VAT)",
+   "edition": {
+    "title": "Ofgem chart lVeuoASKI",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/retail-market-indicators",
+    "asof": "November 2026"
+   },
+   "name": "Ofgem price cap, typical dual-fuel direct debit",
+   "unit": "£/year",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capparams": {
+   "rows": [
+    [
+     "October 2026 - October 2027",
+     22.4611
+    ]
+   ],
+   "fixed": [
+    [
+     "October 2025 - October 2026",
+     21.3967
+    ],
+    [
+     "October 2025 - October 2026",
+     21.3967
+    ],
+    [
+     "October 2026 - October 2027",
+     22.4611
+    ],
+    [
+     "October 2026 - October 2027",
+     22.4611
+    ]
+   ],
+   "variable": [
+    [
+     "October 2025 - October 2026",
+     0.014
+    ],
+    [
+     "October 2025 - October 2026",
+     0.014
+    ],
+    [
+     "October 2026 - October 2027",
+     0.0144
+    ],
+    [
+     "October 2026 - October 2027",
+     0.0144
+    ]
+   ],
+   "src": "Ofgem default tariff cap model, sheet 3k EBIT",
+   "edition": {
+    "title": "default-tariff-cap-level.xlsx",
+    "page": "https://www.ofgem.gov.uk/energy-regulation/domestic-and-non-domestic/energy-pricing-rules/energy-price-cap/energy-price-cap-default-tariff-levels"
+   },
+   "name": "Price cap EBIT allowance parameters",
+   "unit": "",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "debt": {
+   "rows": [
+    [
+     "2024 Q1",
+     3.31,
+     0.88,
+     2.43
+    ],
+    [
+     "2024 Q2",
+     3.69,
+     0.94,
+     2.75
+    ],
+    [
+     "2024 Q3",
+     3.82,
+     0.97,
+     2.86
+    ],
+    [
+     "2024 Q4",
+     3.85,
+     0.97,
+     2.88
+    ],
+    [
+     "2025 Q1",
+     4.15,
+     1.05,
+     3.1
+    ],
+    [
+     "2025 Q2",
+     4.43,
+     1.1,
+     3.32
+    ],
+    [
+     "2025 Q3",
+     4.48,
+     1.12,
+     3.36
+    ],
+    [
+     "2025 Q4",
+     4.55,
+     1.1,
+     3.44
+    ],
+    [
+     "2026 Q1",
+     4.79,
+     1.19,
+     3.6
+    ],
+    [
+     "2026 Q2",
+     5.02,
+     1.26,
+     3.76
+    ]
+   ],
+   "cols": [
+    "Total",
+    "Debt (repayment arrangement)",
+    "Arrears (no arrangement)"
+   ],
+   "src": "Ofgem debt and arrears indicators: domestic debt and arrears older than 91 days, gas and electricity",
+   "edition": {
+    "title": "Ofgem chart 0IwJatYrR",
+    "page": "https://www.ofgem.gov.uk/data/debt-and-arrears-indicators",
+    "asof": "September 2026"
+   },
+   "name": "Domestic customer debt and arrears",
+   "unit": "£bn",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "suppliers": {
+   "rows": [
+    [
+     "2024 Q1",
+     21
+    ],
+    [
+     "2024 Q2",
+     21
+    ],
+    [
+     "2024 Q3",
+     21
+    ],
+    [
+     "2024 Q4",
+     21
+    ],
+    [
+     "2025 Q1",
+     21
+    ],
+    [
+     "2025 Q2",
+     18
+    ],
+    [
+     "2025 Q3",
+     18
+    ],
+    [
+     "2025 Q4",
+     17
+    ],
+    [
+     "2026 Q1",
+     17
+    ],
+    [
+     "2026 Q2",
+     17
+    ]
+   ],
+   "src": "Ofgem retail market indicators: number of active domestic suppliers by fuel type",
+   "edition": {
+    "title": "Ofgem chart -7wWeiqwF",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/retail-market-indicators",
+    "asof": "October 2026"
+   },
+   "name": "Active domestic suppliers (GB)",
+   "unit": "suppliers",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "shares_e": {
+   "rows": [
+    [
+     "2024 Q2",
+     {
+      "British Gas": 20.1,
+      "EDF": 10.8,
+      "E.ON": 16.5,
+      "Scottish Power": 8.4,
+      "OVO": 12.8,
+      "Utilita": 2.8,
+      "Utility Warehouse": 3.0,
+      "Octopus Energy": 22.7,
+      "So Energy": 1.1,
+      "Small Suppliers": 1.8
+     }
+    ],
+    [
+     "2024 Q3",
+     {
+      "British Gas": 20.0,
+      "EDF": 10.6,
+      "E.ON": 16.2,
+      "Scottish Power": 8.3,
+      "OVO": 12.7,
+      "Utilita": 2.7,
+      "Utility Warehouse": 3.0,
+      "Octopus Energy": 23.4,
+      "So Energy": 1.0,
+      "Small Suppliers": 1.9
+     }
+    ],
+    [
+     "2024 Q4",
+     {
+      "British Gas": 20.0,
+      "EDF": 10.5,
+      "E.ON": 16.0,
+      "Scottish Power": 8.2,
+      "OVO": 12.6,
+      "Utilita": 2.7,
+      "Utility Warehouse": 3.1,
+      "Octopus Energy": 24.0,
+      "So Energy": 1.0,
+      "Small Suppliers": 2.0
+     }
+    ],
+    [
+     "2025 Q1",
+     {
+      "British Gas": 20.0,
+      "EDF": 10.4,
+      "E.ON": 15.9,
+      "Scottish Power": 8.0,
+      "OVO": 12.4,
+      "Utilita": 2.6,
+      "Utility Warehouse": 3.1,
+      "Octopus Energy": 24.5,
+      "So Energy": 1.0,
+      "Small Suppliers": 2.1
+     }
+    ],
+    [
+     "2025 Q2",
+     {
+      "British Gas": 20.9,
+      "EDF": 10.2,
+      "E.ON": 15.7,
+      "Scottish Power": 8.0,
+      "OVO": 12.2,
+      "Utilita": 2.5,
+      "Utility Warehouse": 3.0,
+      "Octopus Energy": 24.6,
+      "So Energy": 1.0,
+      "Small Suppliers": 1.98
+     }
+    ],
+    [
+     "2025 Q3",
+     {
+      "British Gas": 20.8,
+      "EDF": 10.0,
+      "E.ON": 15.5,
+      "Scottish Power": 8.0,
+      "OVO": 12.0,
+      "Utilita": 2.5,
+      "Utility Warehouse": 3.0,
+      "Octopus Energy": 24.9,
+      "So Energy": 0.9,
+      "Small Suppliers": 2.4
+     }
+    ],
+    [
+     "2025 Q4",
+     {
+      "British Gas": 20.5,
+      "EDF": 9.9,
+      "E.ON": 15.4,
+      "Scottish Power": 7.9,
+      "OVO": 11.7,
+      "Utilita": 2.3,
+      "Utility Warehouse": 3.0,
+      "Octopus Energy": 25.3,
+      "So Energy": 0.9,
+      "Small Suppliers": 2.8
+     }
+    ],
+    [
+     "2026 Q1",
+     {
+      "British Gas": 20.4,
+      "EDF": 9.7,
+      "E.ON": 15.3,
+      "Scottish Power": 7.9,
+      "OVO": 11.7,
+      "Utilita": 2.3,
+      "Utility Warehouse": 3.1,
+      "Octopus Energy": 25.7,
+      "So Energy": 0.9,
+      "Small Suppliers": 3.0
+     }
+    ],
+    [
+     "2026 Q2",
+     {
+      "British Gas": 20.5,
+      "EDF": 9.7,
+      "E.ON": 15.2,
+      "Scottish Power": 7.8,
+      "OVO": 11.4,
+      "Utilita": 2.2,
+      "Utility Warehouse": 3.1,
+      "Octopus Energy": 25.9,
+      "Fuse Energy": 1.1,
+      "Small Suppliers": 3.12
+     }
+    ]
+   ],
+   "src": "Ofgem retail market indicators: electricity supply market shares by company, domestic (GB)",
+   "edition": {
+    "title": "Ofgem chart _o5LqZ5Dk",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/retail-market-indicators",
+    "asof": null
+   },
+   "name": "Domestic electricity supply market shares",
+   "unit": "%",
+   "cad": "Q",
+   "kind": "shares",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "shares_g": {
+   "rows": [
+    [
+     "2024 Q2",
+     {
+      "British Gas": 27.4,
+      "EDF": 8.9,
+      "EON": 13.9,
+      "Scottish Power": 7.3,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.7,
+      "Utilita": 2.8,
+      "Octopus Energy": 22.9,
+      "So Energy": 1.2,
+      "Small Suppliers": 1.66
+     }
+    ],
+    [
+     "2024 Q3",
+     {
+      "British Gas": 27.3,
+      "EDF": 8.8,
+      "EON": 13.6,
+      "Scottish Power": 7.3,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.7,
+      "Utilita": 2.8,
+      "Octopus Energy": 23.5,
+      "So Energy": 1.1,
+      "Small Suppliers": 1.7
+     }
+    ],
+    [
+     "2024 Q4",
+     {
+      "British Gas": 27.2,
+      "EDF": 8.7,
+      "EON": 13.4,
+      "Scottish Power": 7.2,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.6,
+      "Utilita": 2.7,
+      "Octopus Energy": 24.1,
+      "So Energy": 1.0,
+      "Small Suppliers": 1.76
+     }
+    ],
+    [
+     "2025 Q1",
+     {
+      "British Gas": 27.1,
+      "EDF": 8.6,
+      "EON": 13.4,
+      "Scottish Power": 7.0,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.5,
+      "Utilita": 2.7,
+      "Octopus Energy": 24.6,
+      "So Energy": 1.0,
+      "Small Suppliers": 1.82
+     }
+    ],
+    [
+     "2025 Q2",
+     {
+      "British Gas": 27.2,
+      "EDF": 8.6,
+      "EON": 13.3,
+      "Scottish Power": 7.0,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.4,
+      "Utilita": 2.7,
+      "Octopus Energy": 25.0,
+      "So Energy": 1.0,
+      "Small Suppliers": 1.62
+     }
+    ],
+    [
+     "2025 Q3",
+     {
+      "British Gas": 27.1,
+      "EDF": 8.4,
+      "EON": 13.1,
+      "Scottish Power": 7.0,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.3,
+      "Utilita": 2.6,
+      "Octopus Energy": 25.4,
+      "So Energy": 1.0,
+      "Small Suppliers": 1.74
+     }
+    ],
+    [
+     "2025 Q4",
+     {
+      "British Gas": 26.9,
+      "EDF": 8.4,
+      "EON": 13.1,
+      "Scottish Power": 7.0,
+      "Utility Warehouse": 3.2,
+      "OVO": 10.0,
+      "Utilita": 2.4,
+      "Octopus Energy": 25.6,
+      "So Energy": 1.0,
+      "Small Suppliers": 2.43
+     }
+    ],
+    [
+     "2026 Q1",
+     {
+      "British Gas": 26.7,
+      "EDF": 8.2,
+      "EON": 13.0,
+      "Scottish Power": 7.0,
+      "Utility Warehouse": 3.3,
+      "OVO": 9.8,
+      "Utilita": 2.4,
+      "Octopus Energy": 25.9,
+      "So Energy": 1.0,
+      "Small Suppliers": 2.67
+     }
+    ],
+    [
+     "2026 Q2",
+     {
+      "British Gas": 26.6,
+      "EDF": 8.1,
+      "EON": 13.0,
+      "Scottish Power": 7.0,
+      "Utility Warehouse": 3.3,
+      "OVO": 9.6,
+      "Utilita": 2.4,
+      "Octopus Energy": 26.0,
+      "Fuse Energy": 1.1,
+      "Small Suppliers": 2.9
+     }
+    ]
+   ],
+   "src": "Ofgem retail market indicators: gas supply market shares by company, domestic (GB)",
+   "edition": {
+    "title": "Ofgem chart 4GHD8gVq8",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/retail-market-indicators",
+    "asof": "October 2026"
+   },
+   "name": "Domestic gas supply market shares",
+   "unit": "%",
+   "cad": "Q",
+   "kind": "shares",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "switch": {
+   "rows": [
+    [
+     "2024-09",
+     287.8,
+     227.0
+    ],
+    [
+     "2024-10",
+     349.2,
+     276.3
+    ],
+    [
+     "2024-11",
+     230.8,
+     178.5
+    ],
+    [
+     "2024-12",
+     202.9,
+     155.9
+    ],
+    [
+     "2025-01",
+     218.2,
+     165.6
+    ],
+    [
+     "2025-02",
+     239.5,
+     182.5
+    ],
+    [
+     "2025-03",
+     324.9,
+     254.4
+    ],
+    [
+     "2025-04",
+     269.7,
+     260.7
+    ],
+    [
+     "2025-05",
+     208.9,
+     161.0
+    ],
+    [
+     "2025-06",
+     197.6,
+     144.8
+    ],
+    [
+     "2025-07",
+     239.2,
+     183.7
+    ],
+    [
+     "2025-08",
+     281.0,
+     217.1
+    ],
+    [
+     "2025-09",
+     322.4,
+     252.1
+    ],
+    [
+     "2025-10",
+     316.0,
+     249.7
+    ],
+    [
+     "2025-11",
+     287.5,
+     222.9
+    ],
+    [
+     "2025-12",
+     230.2,
+     179.8
+    ],
+    [
+     "2026-01",
+     229.5,
+     178.5
+    ],
+    [
+     "2026-02",
+     240.8,
+     186.6
+    ],
+    [
+     "2026-03",
+     253.4,
+     193.7
+    ],
+    [
+     "2026-04",
+     243.8,
+     183.2
+    ],
+    [
+     "2026-05",
+     238.0,
+     181.7
+    ],
+    [
+     "2026-06",
+     307.4,
+     243.8
+    ],
+    [
+     "2026-07",
+     306.8,
+     240.6
+    ],
+    [
+     "2026-08",
+     302.1,
+     234.0
+    ]
+   ],
+   "cols": [
+    "Electricity",
+    "Gas"
+   ],
+   "src": "Ofgem retail market indicators: domestic customers switching supplier by fuel type (Electralink and Xoserve data)",
+   "edition": {
+    "title": "Ofgem chart eGQWqcSLx",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/retail-market-indicators",
+    "asof": null
+   },
+   "name": "Domestic customers switching supplier",
+   "unit": "thousand",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "switchrate": {
+   "rows": [
+    [
+     "2024-07",
+     0.75,
+     0.7,
+     29.7
+    ],
+    [
+     "2024-08",
+     0.87,
+     0.83,
+     29.72
+    ],
+    [
+     "2024-09",
+     0.97,
+     0.93,
+     29.74
+    ],
+    [
+     "2024-10",
+     1.17,
+     1.13,
+     29.76
+    ],
+    [
+     "2024-11",
+     0.78,
+     0.73,
+     29.78
+    ],
+    [
+     "2024-12",
+     0.68,
+     0.64,
+     29.79
+    ],
+    [
+     "2025-01",
+     0.73,
+     0.68,
+     29.8
+    ],
+    [
+     "2025-02",
+     0.8,
+     0.74,
+     29.82
+    ],
+    [
+     "2025-03",
+     1.09,
+     1.04,
+     29.83
+    ],
+    [
+     "2025-04",
+     0.86,
+     1.04,
+     30.34
+    ],
+    [
+     "2025-05",
+     0.79,
+     0.75,
+     30.36
+    ],
+    [
+     "2025-06",
+     0.6,
+     0.54,
+     30.38
+    ],
+    [
+     "2025-07",
+     0.9,
+     0.86,
+     30.4
+    ],
+    [
+     "2025-08",
+     0.84,
+     0.8,
+     30.41
+    ],
+    [
+     "2025-09",
+     0.96,
+     0.93,
+     30.41
+    ],
+    [
+     "2025-10",
+     1.2,
+     1.18,
+     30.42
+    ],
+    [
+     "2025-11",
+     0.88,
+     0.85,
+     30.43
+    ],
+    [
+     "2025-12",
+     0.74,
+     0.67,
+     30.38
+    ],
+    [
+     "2026-01",
+     0.84,
+     0.81,
+     30.43
+    ],
+    [
+     "2026-02",
+     0.79,
+     0.76,
+     30.45
+    ],
+    [
+     "2026-03",
+     0.75,
+     0.71,
+     30.48
+    ],
+    [
+     "2026-04",
+     0.8,
+     0.74,
+     30.5
+    ],
+    [
+     "2026-05",
+     0.78,
+     0.74,
+     30.55
+    ],
+    [
+     "2026-06",
+     1.0,
+     0.99,
+     30.63
+    ]
+   ],
+   "cols": [
+    "Electricity",
+    "Gas",
+    "Electricity customers (m)"
+   ],
+   "src": "DESNZ quarterly domestic energy switching statistics, table 2.7.1 (transfers as a share of customer accounts)",
+   "edition": {
+    "title": "Quarterly domestic energy switching statistics (QEP 2.7.1)",
+    "page": "https://www.gov.uk/government/statistical-data-sets/quarterly-domestic-energy-switching-statistics",
+    "published": "2026-09-29"
+   },
+   "name": "Switching rate, domestic electricity",
+   "unit": "% per month",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "uka": {
+   "rows": [
+    [
+     "2024-11",
+     37.67
+    ],
+    [
+     "2024-12",
+     35.84
+    ],
+    [
+     "2025-01",
+     35.84
+    ],
+    [
+     "2025-02",
+     44.31
+    ],
+    [
+     "2025-03",
+     43.27
+    ],
+    [
+     "2025-04",
+     45.78
+    ],
+    [
+     "2025-05",
+     51.34
+    ],
+    [
+     "2025-06",
+     51.12
+    ],
+    [
+     "2025-07",
+     49.17
+    ],
+    [
+     "2025-08",
+     51.43
+    ],
+    [
+     "2025-09",
+     56.19
+    ],
+    [
+     "2025-10",
+     55.54
+    ],
+    [
+     "2025-11",
+     57.41
+    ],
+    [
+     "2025-12",
+     62.13
+    ],
+    [
+     "2026-01",
+     68.26
+    ],
+    [
+     "2026-02",
+     50.83
+    ],
+    [
+     "2026-03",
+     39.46
+    ],
+    [
+     "2026-04",
+     46.82
+    ],
+    [
+     "2026-05",
+     52.41
+    ],
+    [
+     "2026-06",
+     57.02
+    ],
+    [
+     "2026-07",
+     58.68
+    ],
+    [
+     "2026-08",
+     59.34
+    ],
+    [
+     "2026-09",
+     60.17
+    ],
+    [
+     "2026-10",
+     63.94
+    ]
+   ],
+   "trigger": [
+    [
+     "2027-03",
+     148.59
+    ],
+    [
+     "2027-04",
+     151.05
+    ],
+    [
+     "2027-05",
+     154.45
+    ]
+   ],
+   "src": "UK ETS Authority: cost containment mechanism tables, average monthly UKA price",
+   "edition": {
+    "title": "Cost Containment Mechanism (CCM) trigger prices and average monthly prices: full tables",
+    "page": "https://www.gov.uk/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets/cost-containment-mechanism-ccm-trigger-prices-and-average-monthly-prices-full-table",
+    "published": "2026-11-20"
+   },
+   "name": "UK ETS allowance price (UKA)",
+   "unit": "£/tCO2",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "cps": {
+   "rows": [
+    [
+     "2016-04-01",
+     18.0
+    ]
+   ],
+   "ends": "31 March 2028",
+   "statement": "Carbon Price Support £18.00/tCO2 (gas 0.00331 £/kWh) from 1 April 2016 to 31 March 2028",
+   "src": "HMRC climate change levy rates; environmental taxes bulletin",
+   "edition": {
+    "title": "Climate Change Levy rates",
+    "page": "https://www.gov.uk/guidance/climate-change-levy-rates",
+    "published": "2026-11-17"
+   },
+   "name": "Carbon Price Support rate",
+   "unit": "£/tCO2",
+   "cad": "S",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "epl": {
+   "rows": [
+    [
+     "2022-05-26",
+     25
+    ],
+    [
+     "2023-01-01",
+     35
+    ],
+    [
+     "2024-11-01",
+     38
+    ]
+   ],
+   "ends": "31 March 2030",
+   "statement": "Energy Profits Levy 38% from 1 November 2024 to 31 March 2030 (or earlier if the Energy Security Investment Mechanism is triggered); 25% from 26 May 2022, 35% from 1 January 2023",
+   "src": "HM Treasury / HMRC policy paper, Energy Profits Levy reforms 2024",
+   "edition": {
+    "title": "Energy Profits Levy — reforms 2024",
+    "page": "https://www.gov.uk/government/publications/energy-profits-levy-reforms-2024/energy-profits-levy-reforms-2024",
+    "published": "2024-10-30"
+   },
+   "name": "Energy Profits Levy rate",
+   "unit": "%",
+   "cad": "S",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "egl": {
+   "rows": [
+    [
+     "2023-01-01",
+     45
+    ],
+    [
+     "2026-07-01",
+     55
+    ]
+   ],
+   "benchmark": 82.61,
+   "statement": "Electricity Generator Levy 55% from 1 July 2026 (45% from 1 January 2023); charged on receipts above a benchmark price of £82.61/MWh",
+   "src": "HMRC policy paper, amended rate of the Electricity Generator Levy",
+   "edition": {
+    "title": "Amended rate of the Electricity Generator Levy — 2026 to 2027",
+    "page": "https://www.gov.uk/government/publications/increase-in-the-rate-of-the-electricity-generator-levy",
+    "published": "2026-06-17"
+   },
+   "name": "Electricity Generator Levy rate",
+   "unit": "%",
+   "cad": "S",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "upstream": {
+   "rows": [
+    [
+     "2022-05-26",
+     65
+    ],
+    [
+     "2023-01-01",
+     75
+    ],
+    [
+     "2024-11-01",
+     78
+    ]
+   ],
+   "statement": "Ring Fence Corporation Tax 30% + Supplementary Charge 10% + Energy Profits Levy 38% = 78%",
+   "src": "HM Treasury policy papers (Oil and Gas Revenue Levy; Energy Profits Levy reforms 2024)",
+   "edition": {
+    "title": "Oil and Gas Revenue Levy (OGRL)",
+    "page": "https://www.gov.uk/government/publications/oil-and-gas-taxation-oil-and-gas-revenue-levy/oil-and-gas-revenue-levy-ogrl",
+    "published": "2026-10-28"
+   },
+   "name": "Headline tax rate on upstream oil and gas profits",
+   "unit": "%",
+   "cad": "S",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "brent": {
+   "rows": [
+    [
+     "2024-11",
+     73.51
+    ],
+    [
+     "2024-12",
+     73.23
+    ],
+    [
+     "2025-01",
+     78.19
+    ],
+    [
+     "2025-02",
+     75.19
+    ],
+    [
+     "2025-03",
+     71.74
+    ],
+    [
+     "2025-04",
+     66.93
+    ],
+    [
+     "2025-05",
+     64.09
+    ],
+    [
+     "2025-06",
+     69.85
+    ],
+    [
+     "2025-07",
+     69.56
+    ],
+    [
+     "2025-08",
+     67.24
+    ],
+    [
+     "2025-09",
+     67.61
+    ],
+    [
+     "2025-10",
+     63.98
+    ],
+    [
+     "2025-11",
+     63.69
+    ],
+    [
+     "2025-12",
+     61.81
+    ],
+    [
+     "2026-01",
+     64.59
+    ],
+    [
+     "2026-02",
+     69.41
+    ],
+    [
+     "2026-03",
+     99.41
+    ],
+    [
+     "2026-04",
+     102.81
+    ],
+    [
+     "2026-05",
+     103.84
+    ],
+    [
+     "2026-06",
+     84.49
+    ],
+    [
+     "2026-07",
+     83.73
+    ],
+    [
+     "2026-08",
+     88.07
+    ],
+    [
+     "2026-09",
+     102.09
+    ],
+    [
+     "2026-10",
+     108.41
+    ]
+   ],
+   "src": "IMF Primary Commodity Price System, POILBRE (monthly average)",
+   "edition": {
+    "title": "IMF PCPS",
+    "page": "https://data.imf.org/en/datasets/IMF.RES:PCPS"
+   },
+   "name": "Brent crude",
+   "unit": "$/bbl",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "ttf": {
+   "rows": [
+    [
+     "2024-11",
+     13.81
+    ],
+    [
+     "2024-12",
+     13.76
+    ],
+    [
+     "2025-01",
+     14.76
+    ],
+    [
+     "2025-02",
+     15.38
+    ],
+    [
+     "2025-03",
+     13.16
+    ],
+    [
+     "2025-04",
+     11.57
+    ],
+    [
+     "2025-05",
+     11.62
+    ],
+    [
+     "2025-06",
+     12.3
+    ],
+    [
+     "2025-07",
+     11.47
+    ],
+    [
+     "2025-08",
+     10.98
+    ],
+    [
+     "2025-09",
+     11.0
+    ],
+    [
+     "2025-10",
+     10.9
+    ],
+    [
+     "2025-11",
+     10.36
+    ],
+    [
+     "2025-12",
+     9.46
+    ],
+    [
+     "2026-01",
+     11.99
+    ],
+    [
+     "2026-02",
+     11.19
+    ],
+    [
+     "2026-03",
+     17.67
+    ],
+    [
+     "2026-04",
+     15.39
+    ],
+    [
+     "2026-05",
+     16.15
+    ],
+    [
+     "2026-06",
+     15.09
+    ],
+    [
+     "2026-07",
+     17.93
+    ],
+    [
+     "2026-08",
+     20.92
+    ],
+    [
+     "2026-09",
+     25.49
+    ],
+    [
+     "2026-10",
+     28.63
+    ]
+   ],
+   "src": "IMF Primary Commodity Price System, PNGASEU (monthly average)",
+   "edition": {
+    "title": "IMF PCPS",
+    "page": "https://data.imf.org/en/datasets/IMF.RES:PCPS"
+   },
+   "name": "TTF gas (EU)",
+   "unit": "$/MMBtu",
+   "cad": "M",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "captotal": {
+   "rows": [
+    [
+     "2022",
+     106.5
+    ],
+    [
+     "2023",
+     109.6
+    ],
+    [
+     "2024",
+     113.1
+    ],
+    [
+     "2025",
+     118.6
+    ]
+   ],
+   "src": "DESNZ, DUKES table 5.12 (installed capacity by connection, UK) plus grid-scale batteries from DUKES 5.16",
+   "edition": {
+    "title": "Plant installed capacity, by connection - United Kingdom (DUKES 5.12)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Total installed capacity",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capbase": {
+   "rows": [
+    [
+     "2022",
+     12.5
+    ],
+    [
+     "2023",
+     12.6
+    ],
+    [
+     "2024",
+     12.6
+    ],
+    [
+     "2025",
+     12.6
+    ]
+   ],
+   "src": "DESNZ, DUKES table 5.12: nuclear plus bioenergy plant",
+   "edition": {
+    "title": "Plant installed capacity, by connection - United Kingdom (DUKES 5.12)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Baseload capacity (nuclear and bioenergy)",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capnuc": {
+   "rows": [
+    [
+     "2022",
+     5.88
+    ],
+    [
+     "2023",
+     5.88
+    ],
+    [
+     "2024",
+     5.88
+    ],
+    [
+     "2025",
+     5.88
+    ]
+   ],
+   "src": "DESNZ, DUKES table 5.12",
+   "edition": {
+    "title": "Plant installed capacity, by connection - United Kingdom (DUKES 5.12)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Nuclear capacity",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capdisp": {
+   "rows": [
+    [
+     "2022",
+     63.0
+    ],
+    [
+     "2023",
+     61.8
+    ],
+    [
+     "2024",
+     61.3
+    ],
+    [
+     "2025",
+     63.6
+    ]
+   ],
+   "src": "DESNZ, DUKES tables 5.12 and 5.16: gas, oil, coal, nuclear, bioenergy, hydro, other fuels, pumped storage and grid batteries",
+   "edition": {
+    "title": "Plant installed capacity, by connection - United Kingdom (DUKES 5.12)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Dispatchable capacity",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capgas": {
+   "rows": [
+    [
+     "2022",
+     35.3
+    ],
+    [
+     "2023",
+     36.4
+    ],
+    [
+     "2024",
+     36.6
+    ],
+    [
+     "2025",
+     36.6
+    ]
+   ],
+   "src": "DESNZ, DUKES table 5.12: CCGT plus OCGT and conventional thermal gas",
+   "edition": {
+    "title": "Plant installed capacity, by connection - United Kingdom (DUKES 5.12)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Gas-fired capacity",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capstor": {
+   "rows": [
+    [
+     "2022",
+     5.06
+    ],
+    [
+     "2023",
+     6.56
+    ],
+    [
+     "2024",
+     7.95
+    ],
+    [
+     "2025",
+     10.26
+    ]
+   ],
+   "cols": null,
+   "parts": {
+    "Pumped storage": [
+     [
+      "2022",
+      2.74
+     ],
+     [
+      "2023",
+      2.74
+     ],
+     [
+      "2024",
+      2.74
+     ],
+     [
+      "2025",
+      2.74
+     ]
+    ],
+    "Grid-scale batteries": [
+     [
+      "2022",
+      2.32
+     ],
+     [
+      "2023",
+      3.82
+     ],
+     [
+      "2024",
+      5.21
+     ],
+     [
+      "2025",
+      7.51
+     ]
+    ]
+   },
+   "src": "DESNZ, DUKES table 5.16.C: power capacity of storage facilities (pumped hydro, grid-scale batteries, other)",
+   "edition": {
+    "title": "Energy storage overview (DUKES 5.16)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Electricity storage capacity",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "capren": {
+   "rows": [
+    [
+     "2024 Q1",
+     58.58
+    ],
+    [
+     "2024 Q2",
+     60.01
+    ],
+    [
+     "2024 Q3",
+     60.81
+    ],
+    [
+     "2024 Q4",
+     62.03
+    ],
+    [
+     "2025 Q1",
+     62.64
+    ],
+    [
+     "2025 Q2",
+     63.6
+    ],
+    [
+     "2025 Q3",
+     64.57
+    ],
+    [
+     "2025 Q4",
+     65.31
+    ],
+    [
+     "2026 Q1",
+     65.85
+    ],
+    [
+     "2026 Q2",
+     66.29
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     53.62
+    ],
+    [
+     "2023",
+     58.08
+    ],
+    [
+     "2024",
+     62.03
+    ],
+    [
+     "2025",
+     65.31
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 6.1 (quarterly, cumulative) and DUKES table 6.2 (annual)",
+   "edition": {
+    "title": "Renewable electricity capacity and generation (ET 6.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
+    "published": "2026-11-12"
+   },
+   "name": "Renewable capacity",
+   "unit": "GW",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "gentotal": {
+   "rows": [
+    [
+     "2024 Q1",
+     78.41
+    ],
+    [
+     "2024 Q2",
+     65.02
+    ],
+    [
+     "2024 Q3",
+     65.04
+    ],
+    [
+     "2024 Q4",
+     77.56
+    ],
+    [
+     "2025 Q1",
+     81.2
+    ],
+    [
+     "2025 Q2",
+     66.6
+    ],
+    [
+     "2025 Q3",
+     65.75
+    ],
+    [
+     "2025 Q4",
+     80.01
+    ],
+    [
+     "2026 Q1",
+     82.71
+    ],
+    [
+     "2026 Q2",
+     68.56
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     324.8
+    ],
+    [
+     "2023",
+     294.2
+    ],
+    [
+     "2024",
+     286.0
+    ],
+    [
+     "2025",
+     293.6
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.1 (quarterly) and DUKES table 5.6 (annual), all generating companies",
+   "edition": {
+    "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Total electricity generation",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "genbase": {
+   "rows": [
+    [
+     "2024 Q1",
+     18.29
+    ],
+    [
+     "2024 Q2",
+     21.06
+    ],
+    [
+     "2024 Q3",
+     21.18
+    ],
+    [
+     "2024 Q4",
+     20.19
+    ],
+    [
+     "2025 Q1",
+     19.72
+    ],
+    [
+     "2025 Q2",
+     19.64
+    ],
+    [
+     "2025 Q3",
+     18.41
+    ],
+    [
+     "2025 Q4",
+     19.11
+    ],
+    [
+     "2026 Q1",
+     19.2
+    ],
+    [
+     "2026 Q2",
+     18.2
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     83.4
+    ],
+    [
+     "2023",
+     74.7
+    ],
+    [
+     "2024",
+     80.7
+    ],
+    [
+     "2025",
+     76.9
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: nuclear plus bioenergy (thermal renewables)",
+   "edition": {
+    "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Baseload generation (nuclear and bioenergy)",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "gennuc": {
+   "rows": [
+    [
+     "2024 Q1",
+     8.27
+    ],
+    [
+     "2024 Q2",
+     11.36
+    ],
+    [
+     "2024 Q3",
+     11.32
+    ],
+    [
+     "2024 Q4",
+     9.63
+    ],
+    [
+     "2025 Q1",
+     9.51
+    ],
+    [
+     "2025 Q2",
+     9.86
+    ],
+    [
+     "2025 Q3",
+     8.15
+    ],
+    [
+     "2025 Q4",
+     8.34
+    ],
+    [
+     "2026 Q1",
+     8.83
+    ],
+    [
+     "2026 Q2",
+     8.74
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     47.4
+    ],
+    [
+     "2023",
+     40.6
+    ],
+    [
+     "2024",
+     40.6
+    ],
+    [
+     "2025",
+     35.9
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6",
+   "edition": {
+    "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Nuclear generation",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "gendisp": {
+   "rows": [
+    [
+     "2024 Q1",
+     50.54
+    ],
+    [
+     "2024 Q2",
+     41.95
+    ],
+    [
+     "2024 Q3",
+     42.71
+    ],
+    [
+     "2024 Q4",
+     52.2
+    ],
+    [
+     "2025 Q1",
+     56.03
+    ],
+    [
+     "2025 Q2",
+     40.67
+    ],
+    [
+     "2025 Q3",
+     41.01
+    ],
+    [
+     "2025 Q4",
+     49.27
+    ],
+    [
+     "2026 Q1",
+     50.67
+    ],
+    [
+     "2026 Q2",
+     40.97
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     230.6
+    ],
+    [
+     "2023",
+     196.5
+    ],
+    [
+     "2024",
+     187.4
+    ],
+    [
+     "2025",
+     187.0
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: gas, oil, coal, nuclear, hydro, bioenergy, other fuels and storage",
+   "edition": {
+    "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Dispatchable generation",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "gengas": {
+   "rows": [
+    [
+     "2024 Q1",
+     25.89
+    ],
+    [
+     "2024 Q2",
+     16.56
+    ],
+    [
+     "2024 Q3",
+     17.34
+    ],
+    [
+     "2024 Q4",
+     27.62
+    ],
+    [
+     "2025 Q1",
+     31.65
+    ],
+    [
+     "2025 Q2",
+     17.6
+    ],
+    [
+     "2025 Q3",
+     18.86
+    ],
+    [
+     "2025 Q4",
+     25.08
+    ],
+    [
+     "2026 Q1",
+     26.57
+    ],
+    [
+     "2026 Q2",
+     18.37
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     125.8
+    ],
+    [
+     "2023",
+     101.7
+    ],
+    [
+     "2024",
+     87.4
+    ],
+    [
+     "2025",
+     93.2
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6",
+   "edition": {
+    "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Gas-fired generation",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "genren": {
+   "rows": [
+    [
+     "2024 Q1",
+     39.93
+    ],
+    [
+     "2024 Q2",
+     33.84
+    ],
+    [
+     "2024 Q3",
+     33.3
+    ],
+    [
+     "2024 Q4",
+     37.41
+    ],
+    [
+     "2025 Q1",
+     37.04
+    ],
+    [
+     "2025 Q2",
+     36.42
+    ],
+    [
+     "2025 Q3",
+     36.05
+    ],
+    [
+     "2025 Q4",
+     43.48
+    ],
+    [
+     "2026 Q1",
+     44.05
+    ],
+    [
+     "2026 Q2",
+     38.26
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     135.2
+    ],
+    [
+     "2023",
+     137.4
+    ],
+    [
+     "2024",
+     144.5
+    ],
+    [
+     "2025",
+     153.0
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 6.1 (quarterly) and DUKES table 5.6 (annual)",
+   "edition": {
+    "title": "Renewable electricity capacity and generation (ET 6.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
+    "published": "2026-11-12"
+   },
+   "name": "Renewable generation",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "genstor": {
+   "rows": [
+    [
+     "2024 Q1",
+     0.97
+    ],
+    [
+     "2024 Q2",
+     0.82
+    ],
+    [
+     "2024 Q3",
+     0.81
+    ],
+    [
+     "2024 Q4",
+     0.92
+    ],
+    [
+     "2025 Q1",
+     1.05
+    ],
+    [
+     "2025 Q2",
+     0.76
+    ],
+    [
+     "2025 Q3",
+     0.76
+    ],
+    [
+     "2025 Q4",
+     1.15
+    ],
+    [
+     "2026 Q1",
+     1.26
+    ],
+    [
+     "2026 Q2",
+     1.37
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     2.2
+    ],
+    [
+     "2023",
+     2.6
+    ],
+    [
+     "2024",
+     3.5
+    ],
+    [
+     "2025",
+     3.7
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: pumped storage and grid batteries",
+   "edition": {
+    "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Electricity storage output",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "imports": {
+   "rows": [
+    [
+     "2024 Q1",
+     11.19
+    ],
+    [
+     "2024 Q2",
+     12.14
+    ],
+    [
+     "2024 Q3",
+     11.05
+    ],
+    [
+     "2024 Q4",
+     9.35
+    ],
+    [
+     "2025 Q1",
+     10.75
+    ],
+    [
+     "2025 Q2",
+     10.88
+    ],
+    [
+     "2025 Q3",
+     11.8
+    ],
+    [
+     "2025 Q4",
+     10.51
+    ],
+    [
+     "2026 Q1",
+     10.4
+    ],
+    [
+     "2026 Q2",
+     11.24
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     15.5
+    ],
+    [
+     "2023",
+     33.3
+    ],
+    [
+     "2024",
+     43.7
+    ],
+    [
+     "2025",
+     43.9
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.6 (quarterly) and DUKES table 5.13 (annual)",
+   "edition": {
+    "title": "Imports, exports and transfers of electricity (ET 5.6 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Electricity imports",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "exports": {
+   "rows": [
+    [
+     "2024 Q1",
+     2.17
+    ],
+    [
+     "2024 Q2",
+     2.92
+    ],
+    [
+     "2024 Q3",
+     2.91
+    ],
+    [
+     "2024 Q4",
+     2.32
+    ],
+    [
+     "2025 Q1",
+     2.91
+    ],
+    [
+     "2025 Q2",
+     3.5
+    ],
+    [
+     "2025 Q3",
+     3.7
+    ],
+    [
+     "2025 Q4",
+     4.09
+    ],
+    [
+     "2026 Q1",
+     4.22
+    ],
+    [
+     "2026 Q2",
+     3.63
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     20.8
+    ],
+    [
+     "2023",
+     9.5
+    ],
+    [
+     "2024",
+     10.3
+    ],
+    [
+     "2025",
+     14.2
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.6 (quarterly) and DUKES table 5.13 (annual)",
+   "edition": {
+    "title": "Imports, exports and transfers of electricity (ET 5.6 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Electricity exports",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "demtotal": {
+   "rows": [
+    [
+     "2024 Q1",
+     87.43
+    ],
+    [
+     "2024 Q2",
+     74.18
+    ],
+    [
+     "2024 Q3",
+     73.11
+    ],
+    [
+     "2024 Q4",
+     84.48
+    ],
+    [
+     "2025 Q1",
+     89.01
+    ],
+    [
+     "2025 Q2",
+     73.8
+    ],
+    [
+     "2025 Q3",
+     73.77
+    ],
+    [
+     "2025 Q4",
+     86.45
+    ],
+    [
+     "2026 Q1",
+     89.09
+    ],
+    [
+     "2026 Q2",
+     76.33
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     319.14
+    ],
+    [
+     "2023",
+     317.8
+    ],
+    [
+     "2024",
+     319.2
+    ],
+    [
+     "2025",
+     323.03
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.2: total demand (final consumption plus energy-industry use and losses)",
+   "edition": {
+    "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Total electricity demand",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "demdom": {
+   "rows": [
+    [
+     "2024 Q1",
+     25.95
+    ],
+    [
+     "2024 Q2",
+     20.98
+    ],
+    [
+     "2024 Q3",
+     20.28
+    ],
+    [
+     "2024 Q4",
+     26.51
+    ],
+    [
+     "2025 Q1",
+     27.6
+    ],
+    [
+     "2025 Q2",
+     21.46
+    ],
+    [
+     "2025 Q3",
+     20.5
+    ],
+    [
+     "2025 Q4",
+     26.63
+    ],
+    [
+     "2026 Q1",
+     27.16
+    ],
+    [
+     "2026 Q2",
+     21.43
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     95.76
+    ],
+    [
+     "2023",
+     92.26
+    ],
+    [
+     "2024",
+     93.72
+    ],
+    [
+     "2025",
+     96.19
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.2 (domestic, excluding home charging of electric vehicles)",
+   "edition": {
+    "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Domestic electricity consumption",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "demind": {
+   "rows": [
+    [
+     "2024 Q1",
+     21.11
+    ],
+    [
+     "2024 Q2",
+     18.89
+    ],
+    [
+     "2024 Q3",
+     18.77
+    ],
+    [
+     "2024 Q4",
+     19.5
+    ],
+    [
+     "2025 Q1",
+     19.93
+    ],
+    [
+     "2025 Q2",
+     18.47
+    ],
+    [
+     "2025 Q3",
+     18.8
+    ],
+    [
+     "2025 Q4",
+     19.47
+    ],
+    [
+     "2026 Q1",
+     19.8
+    ],
+    [
+     "2026 Q2",
+     18.32
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     81.71
+    ],
+    [
+     "2023",
+     80.74
+    ],
+    [
+     "2024",
+     78.27
+    ],
+    [
+     "2025",
+     76.67
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.2: iron and steel plus other industries",
+   "edition": {
+    "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Industrial electricity consumption",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "demcom": {
+   "rows": [
+    [
+     "2024 Q1",
+     23.65
+    ],
+    [
+     "2024 Q2",
+     20.23
+    ],
+    [
+     "2024 Q3",
+     20.06
+    ],
+    [
+     "2024 Q4",
+     22.07
+    ],
+    [
+     "2025 Q1",
+     24.02
+    ],
+    [
+     "2025 Q2",
+     20.2
+    ],
+    [
+     "2025 Q3",
+     20.29
+    ],
+    [
+     "2025 Q4",
+     22.53
+    ],
+    [
+     "2026 Q1",
+     23.73
+    ],
+    [
+     "2026 Q2",
+     20.62
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     85.27
+    ],
+    [
+     "2023",
+     86.28
+    ],
+    [
+     "2024",
+     86.02
+    ],
+    [
+     "2025",
+     87.04
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.2: other final users (commercial, public administration, agriculture; excluding electric vehicles and transport)",
+   "edition": {
+    "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Commercial and other final users",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "losses": {
+   "rows": [
+    [
+     "2024 Q1",
+     8.23
+    ],
+    [
+     "2024 Q2",
+     5.98
+    ],
+    [
+     "2024 Q3",
+     5.79
+    ],
+    [
+     "2024 Q4",
+     8.11
+    ],
+    [
+     "2025 Q1",
+     8.55
+    ],
+    [
+     "2025 Q2",
+     5.28
+    ],
+    [
+     "2025 Q3",
+     5.75
+    ],
+    [
+     "2025 Q4",
+     8.87
+    ],
+    [
+     "2026 Q1",
+     8.71
+    ],
+    [
+     "2026 Q2",
+     6.1
+    ]
+   ],
+   "annual": [
+    [
+     "2022",
+     27.81
+    ],
+    [
+     "2023",
+     28.32
+    ],
+    [
+     "2024",
+     28.11
+    ],
+    [
+     "2025",
+     28.46
+    ]
+   ],
+   "src": "DESNZ, Energy Trends table 5.2",
+   "edition": {
+    "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
+    "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
+    "published": "2026-10-29"
+   },
+   "name": "Transmission and distribution losses",
+   "unit": "TWh",
+   "cad": "Q",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "dc": {
+   "rows": [
+    [
+     "2020",
+     3.16
+    ],
+    [
+     "2021",
+     3.44
+    ],
+    [
+     "2022",
+     3.84
+    ],
+    [
+     "2023",
+     4.13
+    ],
+    [
+     "2024",
+     4.46
+    ]
+   ],
+   "projection": [
+    [
+     "2025",
+     4.6
+    ],
+    [
+     "2026",
+     5.43
+    ],
+    [
+     "2027",
+     6.68
+    ],
+    [
+     "2028",
+     8.39
+    ],
+    [
+     "2029",
+     10.43
+    ],
+    [
+     "2030",
+     12.58
+    ],
+    [
+     "2031",
+     14.64
+    ]
+   ],
+   "projection_src": "NESO Electricity Demand Summary (ED1) 2026",
+   "src": "DESNZ, Energy Trends special feature: data-centre electricity consumption in Great Britain (metered colocation, hosting and hyperscale sites); projection from NESO's electricity demand summary",
+   "edition": {
+    "title": "Energy Trends: June 2026, special feature article - Data centre electricity consumption in Great Britain, 2020 to 2024",
+    "page": "https://www.gov.uk/government/publications/energy-trends-june-2026-special-feature-article-data-centre-electricity-consumption-in-great-britain-2020-to-2024",
+    "published": "2026-06-30"
+   },
+   "name": "Data-centre electricity consumption (GB)",
+   "unit": "TWh",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
+   "stale": false
+  },
+  "peak": {
+   "rows": [
+    [
+     "2022/23",
+     47.12
+    ],
+    [
+     "2023/24",
+     46.85
+    ],
+    [
+     "2024/25",
+     46.05
+    ],
+    [
+     "2025/26",
+     50.1
+    ]
+   ],
+   "underlying": [
+    [
+     "2025",
+     60.25
+    ],
+    [
+     "2026",
+     60.48
+    ],
+    [
+     "2027",
+     61.0
+    ],
+    [
+     "2028",
+     61.82
+    ],
+    [
+     "2029",
+     62.91
+    ],
+    [
+     "2030",
+     64.24
+    ]
+   ],
+   "src": "DESNZ, DUKES table 5.10: simultaneous maximum load met, Great Britain (winter of the year shown); NESO electricity demand summary: total underlying (ACS) peak",
+   "edition": {
+    "title": "Plant loads, demand and efficiency (DUKES 5.10)",
+    "page": "https://www.gov.uk/government/statistics/electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes",
+    "published": "2026-07-30"
+   },
+   "name": "Peak demand met (GB)",
+   "unit": "GW",
+   "cad": "A",
+   "fetched": "2026-11-25T13:26Z",
    "stale": false
   }
  }

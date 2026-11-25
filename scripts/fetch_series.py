@@ -215,6 +215,425 @@ def s_hp():
     annual = [[y, round(sum(v) / 1000, 3)] for y, v in byyear.items() if len(v) == 4]
     return {"rows": q[-10:], "annual": annual[-4:], "src": "DESNZ, heat pump deployment statistics (MCS installation database, retrofit, up to 45 kW)", "edition": meta}
 
+
+# --- V–VII. Ofgem everviz charts, gov.uk content API, IMF ---
+import csv as _csv
+def everviz(cid):
+    """Header, rows and freshness stamp of the CSV behind an Ofgem chart hosted on everviz."""
+    js = get(f"https://app.everviz.com/inject/{cid}")
+    m = re.search(r'"data":\{"csv":"((?:[^"\\]|\\.)*)"', js, re.S)
+    if not m: raise RuntimeError("no csv in everviz " + cid)
+    text = json.loads('"' + m[1] + '"'); first = text.split("\n", 1)[0]
+    rows = list(_csv.reader(io.StringIO(text), delimiter=";" if first.count(";") > first.count(",") else ","))
+    asof = re.search(r"correct as of:?\s*([A-Za-z]+ \d{4})", js)
+    return [h.strip() for h in rows[0]], [r for r in rows[1:] if r and r[0].strip()], {"title": "Ofgem chart " + cid, "page": None, "asof": asof[1] if asof else None}
+
+MON3 = {m: i for i, m in enumerate(["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], 1)}
+def p_mdy(s):  # "09/01/2026" -> "2026-09"
+    mm, dd, yy = s.strip().strip('"').split("/"); return f"{yy}-{mm}"
+def p_monyy(s):  # "Jun-26" -> "2026 Q2"
+    mm, yy = s.strip().split("-"); return f"20{yy} Q{(MON3[mm]+2)//3}"
+def p_qlabel(s):  # "Q2 2026" or "2026 Q2" -> "2026 Q2"
+    m = re.match(r"^Q(\d) (\d{4})$", s.strip()) or re.match(r"^(\d{4}) Q(\d)$", s.strip())
+    if not m: return None
+    return f"{m[2]} Q{m[1]}" if s.strip().startswith("Q") else f"{m[1]} Q{m[2]}"
+def p_caplabel(s):  # "Oct - Dec 2026" / "Apr - Sep 2017" -> "2026 Q4" (start month decides the quarter)
+    m = re.match(r"^([A-Z][a-z]{2})[a-z]*\s*-\s*[A-Z][a-z]+\s+(\d{2}|\d{4})$", s.strip())
+    if not m: return None
+    y = m[2] if len(m[2]) == 4 else "20" + m[2]
+    return f"{y} Q{(MON3[m[1]]+2)//3}"
+
+OFGEM_WMI = "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/wholesale-market-indicators"
+OFGEM_RMI = "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/retail-market-indicators"
+OFGEM_DEBT = "https://www.ofgem.gov.uk/data/debt-and-arrears-indicators"
+
+@series("power", name="Wholesale electricity price (GB)", unit="£/MWh", cad="M")
+def s_power():
+    h, rows, meta = everviz("n9WSDfgxc"); meta["page"] = OFGEM_WMI
+    return {"rows": [[p_mdy(r[0]), round(float(r[1]), 2)] for r in rows if num(r[1]) is not None][-24:], "src": "Ofgem wholesale market indicators: day-ahead baseload contracts, monthly average", "edition": meta}
+
+@series("nbp", name="NBP gas price (GB)", unit="p/therm", cad="M")
+def s_nbp():
+    h, rows, meta = everviz("YFsS4g98P"); meta["page"] = OFGEM_WMI
+    return {"rows": [[p_mdy(r[0]), round(float(r[1]), 2)] for r in rows if num(r[1]) is not None][-24:], "src": "Ofgem wholesale market indicators: day-ahead contracts, monthly average", "edition": meta}
+
+@series("cap", name="Ofgem price cap, typical dual-fuel direct debit", unit="£/year", cad="Q")
+def s_cap():
+    h, rows, meta = everviz("lVeuoASKI"); meta["page"] = OFGEM_RMI
+    H = [x.lower() for x in h]
+    jt = H.index("total"); jw = next(i for i, x in enumerate(H) if x.startswith("wholesale")); jd = next(i for i, x in enumerate(H) if x.startswith("debt related")); je = next(i for i, x in enumerate(H) if x.startswith("earnings before"))
+    out = []
+    for r in rows:
+        p = p_caplabel(r[0])
+        if p and num(r[jt]) is not None: out.append([p, round(num(r[jt])), round(num(r[jw]) or 0), round(num(r[jd]) or 0), round(num(r[je]) or 0)])
+    return {"rows": out[-10:], "cols": ["Total", "Wholesale costs", "Debt-related costs", "EBIT allowance"], "src": "Ofgem retail market indicators: costs included in the price cap level (direct debit, typical consumption, GB average, incl. VAT)", "edition": meta}
+
+@series("capparams", name="Price cap EBIT allowance parameters", unit="", cad="A")
+def s_capparams():
+    idx = get("https://www.ofgem.gov.uk/energy-regulation/domestic-and-non-domestic/energy-pricing-rules/energy-price-cap/energy-price-cap-default-tariff-levels")
+    m = re.search(r'href="([^"]*[Dd]efault-tariff-cap-level[^"]*\.xlsx)"', idx)
+    if not m: raise RuntimeError("Default tariff cap level xlsx link not found")
+    url = m[1] if m[1].startswith("http") else "https://www.ofgem.gov.uk" + m[1]
+    rows = sheet_rows(workbook(url), "3k EBIT")
+    hdr = next(i for i, r in enumerate(rows) if r and any(isinstance(c, str) and re.search(r"Oct(ober)? 20\d\d", c) for c in r if c))
+    def rowv(label):
+        r = rows[next(i for i, r in enumerate(rows) if r and any(isinstance(c, str) and label.lower() in c.lower() for c in r[:3]))]
+        return [[norm(rows[hdr][j]), round(num(r[j]), 4)] for j in range(len(r)) if num(r[j]) is not None and rows[hdr][j]]
+    fx, var = rowv("EBIT Fixed"), rowv("EBIT Variable")
+    return {"rows": [[fx[-1][0], fx[-1][1]]], "fixed": fx[-4:], "variable": var[-4:], "src": "Ofgem default tariff cap model, sheet 3k EBIT", "edition": {"title": url.rsplit("/", 1)[1], "page": "https://www.ofgem.gov.uk/energy-regulation/domestic-and-non-domestic/energy-pricing-rules/energy-price-cap/energy-price-cap-default-tariff-levels"}}
+
+@series("debt", name="Domestic customer debt and arrears", unit="£bn", cad="Q")
+def s_debt():
+    h, rows, meta = everviz("0IwJatYrR"); meta["page"] = OFGEM_DEBT
+    out = [[p_qlabel(r[0]), round(float(r[3]), 2), round(float(r[1]), 2), round(float(r[2]), 2)] for r in rows if p_qlabel(r[0]) and num(r[3]) is not None]
+    return {"rows": out[-10:], "cols": ["Total", "Debt (repayment arrangement)", "Arrears (no arrangement)"], "src": "Ofgem debt and arrears indicators: domestic debt and arrears older than 91 days, gas and electricity", "edition": meta}
+
+@series("suppliers", name="Active domestic suppliers (GB)", unit="suppliers", cad="Q")
+def s_suppliers():
+    h, rows, meta = everviz("-7wWeiqwF"); meta["page"] = OFGEM_RMI
+    jt = [x.lower() for x in h].index("total")
+    return {"rows": [[p_monyy(r[0]), int(float(r[jt]))] for r in rows if num(r[jt]) is not None][-10:], "src": "Ofgem retail market indicators: number of active domestic suppliers by fuel type", "edition": meta}
+
+def _shares(cid):
+    h, rows, meta = everviz(cid); meta["page"] = OFGEM_RMI
+    out = []
+    for r in rows:
+        p = p_qlabel(r[0])
+        if not p: continue
+        d = {h[j]: round(float(r[j]), 2) for j in range(1, len(h)) if j < len(r) and num(r[j]) not in (None, 0.0)}
+        out.append([p, d])
+    return out[-9:], meta
+
+@series("shares_e", name="Domestic electricity supply market shares", unit="%", cad="Q", kind="shares")
+def s_shares_e():
+    rows, meta = _shares("_o5LqZ5Dk"); return {"rows": rows, "src": "Ofgem retail market indicators: electricity supply market shares by company, domestic (GB)", "edition": meta}
+
+@series("shares_g", name="Domestic gas supply market shares", unit="%", cad="Q", kind="shares")
+def s_shares_g():
+    rows, meta = _shares("4GHD8gVq8"); return {"rows": rows, "src": "Ofgem retail market indicators: gas supply market shares by company, domestic (GB)", "edition": meta}
+
+@series("switch", name="Domestic customers switching supplier", unit="thousand", cad="M")
+def s_switch():
+    h, rows, meta = everviz("eGQWqcSLx"); meta["page"] = OFGEM_RMI
+    out = [[p_mdy(r[0]), round(float(r[1]) / 1000, 1), round(float(r[2]) / 1000, 1)] for r in rows if num(r[1]) is not None]
+    return {"rows": out[-24:], "cols": ["Electricity", "Gas"], "src": "Ofgem retail market indicators: domestic customers switching supplier by fuel type (Electralink and Xoserve data)", "edition": meta}
+
+@series("switchrate", name="Switching rate, domestic electricity", unit="% per month", cad="M")
+def s_switchrate():
+    d = json.loads(get("https://www.gov.uk/api/content/government/statistical-data-sets/quarterly-domestic-energy-switching-statistics"))
+    att = next(a for a in d["details"]["attachments"] if a.get("url", "").endswith(".xlsx"))
+    rows = sheet_rows(workbook(att["url"]), "2.7.1 (Monthly)")
+    hdr = next(i for i, r in enumerate(rows) if r and norm(r[0]).lower() == "year")
+    H = [norm(x).lower() for x in rows[hdr]]
+    je, jg = H.index("electricity transfers"), H.index("gas transfers"); jce, jcg = H.index("total electricity customers"), H.index("total gas customers")
+    out = []
+    for r in rows[hdr+1:]:
+        if not r or num(r[0]) is None or num(r[je]) is None or num(r[jce]) is None: continue
+        y = int(float(r[0])); mo = r[1]
+        m = mo.month if hasattr(mo, "month") else MON3.get(str(mo).strip()[:3].title())
+        if not m: continue
+        out.append([f"{y}-{m:02d}", round(100 * num(r[je]) / num(r[jce]), 2), round(100 * num(r[jg]) / num(r[jcg]), 2) if num(r[jcg]) else None, round(num(r[jce]) / 1e6, 2)])
+    return {"rows": out[-24:], "cols": ["Electricity", "Gas", "Electricity customers (m)"], "src": "DESNZ quarterly domestic energy switching statistics, table 2.7.1 (transfers as a share of customer accounts)", "edition": {"title": att.get("title"), "page": "https://www.gov.uk/government/statistical-data-sets/quarterly-domestic-energy-switching-statistics", "published": d.get("public_updated_at", "")[:10]}}
+
+def govuk_tables(path):
+    d = json.loads(get("https://www.gov.uk/api/content" + path)); body = d["details"]["body"]
+    tabs = []
+    for t in re.findall(r"<table.*?</table>", body, re.S):
+        tabs.append([[html.unescape(re.sub(r"<[^>]+>", "", c)).strip() for c in re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", r, re.S)] for r in re.findall(r"<tr.*?</tr>", t, re.S)])
+    return tabs, d
+
+@series("uka", name="UK ETS allowance price (UKA)", unit="£/tCO2", cad="M")
+def s_uka():
+    path = "/government/publications/taking-part-in-the-uk-emissions-trading-scheme-markets/cost-containment-mechanism-ccm-trigger-prices-and-average-monthly-prices-full-table"
+    tabs, d = govuk_tables(path); ser = {}; trig = {}
+    for t in tabs:
+        for cells in t:
+            if not cells or not re.match(r"^[A-Z][a-z]{2}-\d\d$", cells[0]): continue
+            mm, yy = cells[0].split("-"); y = 2000 + int(yy); m = MON3[mm]
+            n = len(cells) - 5   # columns: Month, reference period, trigger, monitoring period, n monthly averages, triggered?
+            if cells[2].startswith("£"): trig[f"{y}-{m:02d}"] = float(cells[2][1:].replace(",", ""))
+            for k, p in enumerate(cells[4:4+n]):
+                ym = y * 12 + m - 1 - (n - k); yy2, mm2 = divmod(ym, 12)
+                if p.startswith("£"): ser[f"{yy2}-{mm2+1:02d}"] = float(p[1:].replace(",", ""))
+    rows = sorted(ser.items()); tr = sorted(trig.items())
+    return {"rows": [list(r) for r in rows[-24:]], "trigger": [list(r) for r in tr[-3:]], "src": "UK ETS Authority: cost containment mechanism tables, average monthly UKA price", "edition": {"title": d.get("title"), "page": "https://www.gov.uk" + path, "published": d.get("public_updated_at", "")[:10]}}
+
+def page_text(path):
+    d = json.loads(get("https://www.gov.uk/api/content" + path)); body = d["details"].get("body") or json.dumps(d["details"])
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body))), d
+
+@series("cps", name="Carbon Price Support rate", unit="£/tCO2", cad="S")
+def s_cps():
+    txt, d = page_text("/government/statistics/environmental-taxes-bulletin/environmental-taxes-bulletin-historical-rates")
+    m = re.search(r"1 April 2016\s+£(\d+\.\d\d)\s+£0\.00331", txt)
+    if not m: raise RuntimeError("CPS £/tCO2 row not found in the environmental taxes bulletin")
+    ccl, d2 = page_text("/guidance/climate-change-levy-rates")
+    end = re.search(r"1 April 2016 to (\d{1,2} [A-Z][a-z]+ \d{4})\s+0\.00331", ccl)
+    return {"rows": [["2016-04-01", float(m[1])]], "ends": end[1] if end else None, "statement": f"Carbon Price Support £{m[1]}/tCO2 (gas 0.00331 £/kWh) from 1 April 2016" + (f" to {end[1]}" if end else ""), "src": "HMRC climate change levy rates; environmental taxes bulletin", "edition": {"title": d2.get("title"), "page": "https://www.gov.uk/guidance/climate-change-levy-rates", "published": d2.get("public_updated_at", "")[:10]}}
+
+@series("epl", name="Energy Profits Levy rate", unit="%", cad="S")
+def s_epl():
+    txt, d = page_text("/government/publications/energy-profits-levy-reforms-2024/energy-profits-levy-reforms-2024")
+    m = re.search(r"increases the rate of Energy Profits Levy by \d+ percentage points to (\d+)%, extends the end date of the Energy Profits Levy to (\d{1,2} [A-Z][a-z]+ \d{4})", txt)
+    if not m: raise RuntimeError("EPL rate sentence not found")
+    return {"rows": [["2022-05-26", 25], ["2023-01-01", 35], ["2024-11-01", int(m[1])]], "ends": m[2], "statement": f"Energy Profits Levy {m[1]}% from 1 November 2024 to {m[2]} (or earlier if the Energy Security Investment Mechanism is triggered); 25% from 26 May 2022, 35% from 1 January 2023", "src": "HM Treasury / HMRC policy paper, Energy Profits Levy reforms 2024", "edition": {"title": d.get("title"), "page": "https://www.gov.uk/government/publications/energy-profits-levy-reforms-2024/energy-profits-levy-reforms-2024", "published": d.get("public_updated_at", "")[:10]}}
+
+@series("egl", name="Electricity Generator Levy rate", unit="%", cad="S")
+def s_egl():
+    txt, d = page_text("/government/publications/increase-in-the-rate-of-the-electricity-generator-levy/amended-rate-of-the-electricity-generator-levy-2026-to-2027")
+    m = re.search(r"increases the rate at which the Electricity Generator Levy \(\s*EGL\s*\) is charged from (\d+)% to (\d+)% from (\d{1,2} [A-Z][a-z]+ \d{4})", txt)
+    if not m: raise RuntimeError("EGL rate sentence not found")
+    bm = re.search(r"benchmark price[^.]*?set at £(\d+(?:\.\d\d)?)", txt)
+    return {"rows": [["2023-01-01", int(m[1])], ["2026-07-01", int(m[2])]], "benchmark": float(bm[1]) if bm else None, "statement": f"Electricity Generator Levy {m[2]}% from {m[3]} ({m[1]}% from 1 January 2023); charged on receipts above a benchmark price" + (f" of £{bm[1]}/MWh" if bm else ""), "src": "HMRC policy paper, amended rate of the Electricity Generator Levy", "edition": {"title": d.get("title"), "page": "https://www.gov.uk/government/publications/increase-in-the-rate-of-the-electricity-generator-levy", "published": d.get("public_updated_at", "")[:10]}}
+
+@series("upstream", name="Headline tax rate on upstream oil and gas profits", unit="%", cad="S")
+def s_upstream():
+    txt, d = page_text("/government/publications/oil-and-gas-taxation-oil-and-gas-revenue-levy/oil-and-gas-revenue-levy-ogrl")
+    m = re.search(r"Ring Fence Corporation Tax \(RFCT\) which is charged at (\d+)% and the Supplementary Charge \(SC\) which is charged at (\d+)%", txt)
+    if not m: raise RuntimeError("RFCT/SC sentence not found")
+    epl = s_epl(); rate = int(m[1]) + int(m[2]) + epl["rows"][-1][1]
+    return {"rows": [["2022-05-26", int(m[1]) + int(m[2]) + 25], ["2023-01-01", int(m[1]) + int(m[2]) + 35], ["2024-11-01", rate]], "statement": f"Ring Fence Corporation Tax {m[1]}% + Supplementary Charge {m[2]}% + Energy Profits Levy {epl['rows'][-1][1]}% = {rate}%", "src": "HM Treasury policy papers (Oil and Gas Revenue Levy; Energy Profits Levy reforms 2024)", "edition": {"title": d.get("title"), "page": "https://www.gov.uk/government/publications/oil-and-gas-taxation-oil-and-gas-revenue-levy/oil-and-gas-revenue-levy-ogrl", "published": d.get("public_updated_at", "")[:10]}}
+
+def imf(indicator, transform):
+    start = (dt.date.today() - dt.timedelta(days=760)).strftime("%Y-%m")
+    req = urllib.request.Request(f"https://api.imf.org/external/sdmx/2.1/data/IMF.RES,PCPS/G001.{indicator}.{transform}.M?startPeriod={start}", headers={**UA, "Accept": "application/vnd.sdmx.data+csv"})
+    with urllib.request.urlopen(req, timeout=60) as r: text = r.read().decode()
+    rows = list(_csv.DictReader(io.StringIO(text)))
+    return sorted([[r["TIME_PERIOD"].replace("-M", "-"), round(float(r["OBS_VALUE"]), 2)] for r in rows if r.get("OBS_VALUE")])
+
+@series("brent", name="Brent crude", unit="$/bbl", cad="M")
+def s_brent(): return {"rows": imf("POILBRE", "USD")[-24:], "src": "IMF Primary Commodity Price System, POILBRE (monthly average)", "edition": {"title": "IMF PCPS", "page": "https://data.imf.org/en/datasets/IMF.RES:PCPS"}}
+@series("ttf", name="TTF gas (EU)", unit="$/MMBtu", cad="M")
+def s_ttf(): return {"rows": imf("PNGASEU", "USD")[-24:], "src": "IMF Primary Commodity Price System, PNGASEU (monthly average)", "edition": {"title": "IMF PCPS", "page": "https://data.imf.org/en/datasets/IMF.RES:PCPS"}}
+
+
+# --- I–II. Electricity (DUKES chapter 5/6 annual; Energy Trends 5.1, 5.2, 5.6, 6.1 quarterly; NESO) ---
+DUKES5 = "electricity-chapter-5-digest-of-united-kingdom-energy-statistics-dukes"
+DUKES6 = "renewable-sources-of-energy-chapter-6-digest-of-united-kingdom-energy-statistics-dukes"
+ET5 = "electricity-section-5-energy-trends"; ET6 = "energy-trends-section-6-renewables"
+
+def year_cols(hdr):
+    out = {}
+    for i, h in enumerate(hdr):
+        if isinstance(h, (int, float)) and 1900 < h < 2100: out[str(int(h))] = i
+        elif isinstance(h, str) and re.fullmatch(r"\s*(\d{4})\s*(\[.*\])?\s*", h): out[re.match(r"\s*(\d{4})", h)[1]] = i
+    return out
+
+def block(rows, title_frag):
+    """index of the row whose first cell contains title_frag (a DUKES sub-table title)"""
+    return next(i for i, r in enumerate(rows) if r and r[0] and title_frag in str(r[0]))
+
+def _d512():
+    url, meta = govuk_attachment(DUKES5, r"DUKES_5\.12\.xlsx$"); rows = sheet_rows(workbook(url), "5.12")
+    ci = block(rows, "5.12.C"); yc = year_cols(rows[ci + 1]); years = sorted(yc)[-4:]
+    def row(label):
+        r = next(r for r in rows[ci+2:] if r and norm(r[0]) == "All" and norm(r[1]).lower() == label.lower())
+        return {y: num(r[yc[y]]) or 0 for y in years}
+    labels = {"total": "Total", "ccgt": "CCGT gas", "ocgt": "OCGT and conventional thermal gas", "oil": "Oil", "coal": "Coal", "pwr": "Nuclear - PWR", "agr": "Nuclear - AGR", "magnox": "Nuclear - Magnox", "hydro": "Hydro (natural flow)", "bio": "Bioenergy", "other": "Other fuels", "pumped": "Pumped storage"}
+    d = {k: row(v) for k, v in labels.items()}
+    return d, years, meta
+
+def _d516():
+    url, meta = govuk_attachment(DUKES5, r"DUKES_5\.16\.xlsx$"); rows = sheet_rows(workbook(url), "5.16")
+    out = {}
+    for frag in ("5.16.A", "5.16.C"):
+        i = block(rows, frag); yc = year_cols(rows[i + 1]); t = {}
+        for r in rows[i+2:]:
+            if not r or r[0] is None: break
+            t[norm(r[0])] = {y: num(r[yc[y]]) for y in yc}
+        out[frag] = t
+    return out, meta
+
+def annual_rows(d, years, keys, scale=1/1000, dec=2):
+    return [[y, round(sum(d[k][y] or 0 for k in keys) * scale, dec)] for y in years]
+
+@series("captotal", name="Total installed capacity", unit="GW", cad="A")
+def s_captotal():
+    d, years, meta = _d512(); st, _ = _d516(); bat = st["5.16.C"].get("Battery storage - grid scale", {})
+    rows = [[y, round((d["total"][y] + (bat.get(y) or 0)) / 1000, 1)] for y in years]
+    return {"rows": rows, "src": "DESNZ, DUKES table 5.12 (installed capacity by connection, UK) plus grid-scale batteries from DUKES 5.16", "edition": meta}
+
+@series("capbase", name="Baseload capacity (nuclear and bioenergy)", unit="GW", cad="A")
+def s_capbase():
+    d, years, meta = _d512(); return {"rows": annual_rows(d, years, ["pwr", "agr", "magnox", "bio"], dec=1), "src": "DESNZ, DUKES table 5.12: nuclear plus bioenergy plant", "edition": meta}
+
+@series("capnuc", name="Nuclear capacity", unit="GW", cad="A")
+def s_capnuc():
+    d, years, meta = _d512(); return {"rows": annual_rows(d, years, ["pwr", "agr", "magnox"], dec=2), "src": "DESNZ, DUKES table 5.12", "edition": meta}
+
+@series("capdisp", name="Dispatchable capacity", unit="GW", cad="A")
+def s_capdisp():
+    d, years, meta = _d512(); st, _ = _d516(); bat = st["5.16.C"].get("Battery storage - grid scale", {})
+    base = annual_rows(d, years, ["ccgt", "ocgt", "oil", "coal", "pwr", "agr", "magnox", "bio", "hydro", "other", "pumped"], dec=3)
+    return {"rows": [[y, round(v + (bat.get(y) or 0) / 1000, 1)] for y, v in base], "src": "DESNZ, DUKES tables 5.12 and 5.16: gas, oil, coal, nuclear, bioenergy, hydro, other fuels, pumped storage and grid batteries", "edition": meta}
+
+@series("capgas", name="Gas-fired capacity", unit="GW", cad="A")
+def s_capgas():
+    d, years, meta = _d512(); return {"rows": annual_rows(d, years, ["ccgt", "ocgt"], dec=1), "src": "DESNZ, DUKES table 5.12: CCGT plus OCGT and conventional thermal gas", "edition": meta}
+
+@series("capstor", name="Electricity storage capacity", unit="GW", cad="A")
+def s_capstor():
+    st, meta = _d516(); t = st["5.16.C"]; yrs = sorted(t["Total"])[-4:]
+    return {"rows": [[y, round(t["Total"][y] / 1000, 2)] for y in yrs], "cols": None, "parts": {"Pumped storage": [[y, round((t["Pumped storage"].get(y) or 0) / 1000, 2)] for y in yrs], "Grid-scale batteries": [[y, round((t.get("Battery storage - grid scale", {}).get(y) or 0) / 1000, 2)] for y in yrs]}, "src": "DESNZ, DUKES table 5.16.C: power capacity of storage facilities (pumped hydro, grid-scale batteries, other)", "edition": meta}
+
+def _et61():
+    url, meta = govuk_attachment(ET6, r"ET_6\.1_[A-Z]{3}_\d{2}\.xlsx$"); rows = sheet_rows(workbook(url), "Quarter")
+    out = {}
+    for frag, key in (("CUMULATIVE INSTALLED CAPACITY", "cap"), ("ELECTRICITY GENERATED", "gen")):
+        i = block(rows, frag); hdr = rows[i]
+        r = next(r for r in rows[i+1:] if r and norm(r[0]) == "TOTAL")
+        out[key] = [[period_from_header(h), num(r[j])] for j, h in enumerate(hdr) if j and h and period_from_header(h) and num(r[j]) is not None]
+    return out, meta
+
+@series("capren", name="Renewable capacity", unit="GW", cad="Q")
+def s_capren():
+    d, meta = _et61(); url, m2 = govuk_attachment(DUKES6, r"DUKES_6\.2\.xlsx$"); rows = sheet_rows(workbook(url), "6.2")
+    i = block(rows, "Installed Capacity (MW)"); yc = year_cols(rows[i]); r = next(r for r in rows[i+1:] if r and norm(r[0]) == "Total Installed Capacity")
+    annual = [[y, round(num(r[yc[y]]) / 1000, 2)] for y in sorted(yc)[-4:] if num(r[yc[y]]) is not None]
+    return {"rows": [[p, round(v / 1000, 2)] for p, v in d["cap"]][-10:], "annual": annual, "src": "DESNZ, Energy Trends table 6.1 (quarterly, cumulative) and DUKES table 6.2 (annual)", "edition": meta}
+
+def _d56():
+    url, meta = govuk_attachment(DUKES5, r"DUKES_5\.6\.xlsx$"); rows = sheet_rows(workbook(url), "5.6")
+    bi = block(rows, "5.6.B"); ei = block(rows, "5.6.C"); yc = year_cols(rows[bi + 1]); years = sorted(yc)[-4:]
+    g = {}
+    for r in rows[bi+2:ei]:
+        if r and r[0] and str(r[0]).startswith("All generating companies"): g[norm(r[1])] = {y: num(r[yc[y]]) for y in years}
+    return g, years, meta
+
+def _et51():
+    url, meta = govuk_attachment(ET5, r"ET_5\.1_[A-Z]{3}_\d{2}\.xlsx$"); rows = sheet_rows(workbook(url), "Quarter")
+    bi = block(rows, "Table 5.1b"); ci = block(rows, "Table 5.1c"); hdr = rows[bi + 1]
+    qc = [(j, period_from_header(h)) for j, h in enumerate(hdr) if j > 1 and h and period_from_header(h)]
+    g = {}
+    for r in rows[bi+2:ci]:
+        if r and r[0] and str(r[0]).startswith("All generating companies"): g[norm(r[1])] = [[q, num(r[j])] for j, q in qc if num(r[j]) is not None]
+    return g, meta
+
+def sum_by_period(series_list, scale=1.0, dec=2, require_all=False):
+    """Sum several [[period, value]] lists period by period (a series that starts later counts as 0 before it starts)."""
+    tot = {}; cnt = {}
+    for ser in series_list:
+        for p, v in ser: tot[p] = tot.get(p, 0) + (v or 0); cnt[p] = cnt.get(p, 0) + 1
+    ps = sorted(tot); first = max(min(p for p, _ in ser) for ser in series_list if ser) if require_all else ps[0]
+    return [[p, round(tot[p] * scale, dec)] for p in ps if p >= first]
+
+def gen_series(qkeys, akeys, dec=2):
+    q, meta = _et51(); a, years, m2 = _d56()
+    rows = sum_by_period([q[k] for k in qkeys], dec=dec)[-10:]
+    annual = [[y, round(sum((a[k][y] or 0) for k in akeys) / 1000, 1)] for y in years]
+    return rows, annual, meta
+
+@series("gentotal", name="Total electricity generation", unit="TWh", cad="Q")
+def s_gentotal():
+    r, a, m = gen_series(["Total all generating companies"], ["Total all generating companies"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 (quarterly) and DUKES table 5.6 (annual), all generating companies", "edition": m}
+@series("genbase", name="Baseload generation (nuclear and bioenergy)", unit="TWh", cad="Q")
+def s_genbase():
+    r, a, m = gen_series(["Nuclear", "Bioenergy"], ["Nuclear", "Thermal renewables"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: nuclear plus bioenergy (thermal renewables)", "edition": m}
+@series("gennuc", name="Nuclear generation", unit="TWh", cad="Q")
+def s_gennuc():
+    r, a, m = gen_series(["Nuclear"], ["Nuclear"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6", "edition": m}
+@series("gendisp", name="Dispatchable generation", unit="TWh", cad="Q")
+def s_gendisp():
+    r, a, m = gen_series(["Gas", "Oil", "Coal", "Nuclear", "Hydro (natural flow)", "Bioenergy", "Other fuels", "Pumped storage", "Battery storage"], ["Gas", "Oil", "Coal", "Nuclear", "Hydro (natural flow)", "Thermal renewables", "Other fuels", "Energy storage"])
+    return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: gas, oil, coal, nuclear, hydro, bioenergy, other fuels and storage", "edition": m}
+@series("gengas", name="Gas-fired generation", unit="TWh", cad="Q")
+def s_gengas():
+    r, a, m = gen_series(["Gas"], ["Gas"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6", "edition": m}
+@series("genren", name="Renewable generation", unit="TWh", cad="Q")
+def s_genren():
+    d, meta = _et61(); a, years, m2 = _d56()
+    return {"rows": [[p, round(v / 1000, 2)] for p, v in d["gen"]][-10:], "annual": [[y, round((a["Total renewable generation"][y] or 0) / 1000, 1)] for y in years], "src": "DESNZ, Energy Trends table 6.1 (quarterly) and DUKES table 5.6 (annual)", "edition": meta}
+@series("genstor", name="Electricity storage output", unit="TWh", cad="Q")
+def s_genstor():
+    r, a, m = gen_series(["Pumped storage", "Battery storage"], ["Energy storage"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: pumped storage and grid batteries", "edition": m}
+
+def _et56():
+    url, meta = govuk_attachment(ET5, r"ET_5\.6_[A-Z]{3}_\d{2}\.xlsx$"); rows = sheet_rows(workbook(url), "Quarterly imports and exports")
+    hi = next(i for i, r in enumerate(rows) if r and norm(r[0]) == "Year"); H = [norm(h).lower() for h in rows[hi]]
+    ji, je = H.index("uk total imports"), H.index("uk total exports"); out = {"imp": [], "exp": []}
+    for r in rows[hi+1:]:
+        if not r or num(r[0]) is None: continue
+        m = re.match(r"Quarter (\d)", norm(r[1]))
+        if not m or num(r[ji]) is None: continue
+        p = f"{int(num(r[0]))} Q{m[1]}"; out["imp"].append([p, round(num(r[ji]) / 1000, 2)]); out["exp"].append([p, round(num(r[je]) / 1000, 2)])
+    url2, m2 = govuk_attachment(DUKES5, r"DUKES_5\.13\.xlsx$"); rows = sheet_rows(workbook(url2), "5.13")
+    hi = next(i for i, r in enumerate(rows) if r and norm(r[0]) == "Year"); H = [norm(h) for h in rows[hi]]
+    ai, ae = H.index("Total Imports (to UK)"), H.index("Total Exports (from UK)"); ann = {"imp": [], "exp": []}
+    for r in rows[hi+1:]:
+        if r and num(r[0]) is not None and num(r[ai]) is not None: ann["imp"].append([str(int(num(r[0]))), round(num(r[ai]) / 1000, 1)]); ann["exp"].append([str(int(num(r[0]))), round(num(r[ae]) / 1000, 1)])
+    return out, ann, meta
+
+@series("imports", name="Electricity imports", unit="TWh", cad="Q")
+def s_imports():
+    q, a, m = _et56(); return {"rows": q["imp"][-10:], "annual": a["imp"][-4:], "src": "DESNZ, Energy Trends table 5.6 (quarterly) and DUKES table 5.13 (annual)", "edition": m}
+@series("exports", name="Electricity exports", unit="TWh", cad="Q")
+def s_exports():
+    q, a, m = _et56(); return {"rows": q["exp"][-10:], "annual": a["exp"][-4:], "src": "DESNZ, Energy Trends table 5.6 (quarterly) and DUKES table 5.13 (annual)", "edition": m}
+
+def _et52():
+    url, meta = govuk_attachment(ET5, r"ET_5\.2_[A-Z]{3}_\d{2}\.xlsx$"); wb = workbook(url); out = {}
+    for sh in ("Quarter", "Annual"):
+        rows = sheet_rows(wb, sh); hi = next(i for i, r in enumerate(rows) if r and r[0] and str(r[0]).startswith("Components of supply")); hdr = rows[hi]
+        cols = [(j, period_from_header(h)) for j, h in enumerate(hdr) if j and h and period_from_header(h)]
+        t = {}
+        for r in rows[hi+1:]:
+            if r and r[0]: t[norm(r[0])] = [[p, num(r[j])] for j, p in cols if num(r[j]) is not None]
+        out[sh] = t
+    return out, meta
+
+def dem_series(keys, dec=2):
+    d, meta = _et52()
+    def comb(t):
+        n = min(len(t[k]) for k in keys); return [[t[keys[0]][i][0], round(sum(t[k][i][1] for k in keys) / 1000, dec)] for i in range(n)]
+    return comb(d["Quarter"])[-10:], comb(d["Annual"])[-4:], meta
+
+@series("demtotal", name="Total electricity demand", unit="TWh", cad="Q")
+def s_demtotal():
+    r, a, m = dem_series(["Total demand"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.2: total demand (final consumption plus energy-industry use and losses)", "edition": m}
+@series("demdom", name="Domestic electricity consumption", unit="TWh", cad="Q")
+def s_demdom():
+    r, a, m = dem_series(["Domestic (excluding electric vehicles)"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.2 (domestic, excluding home charging of electric vehicles)", "edition": m}
+@series("demind", name="Industrial electricity consumption", unit="TWh", cad="Q")
+def s_demind():
+    r, a, m = dem_series(["Iron and steel", "Other industries"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.2: iron and steel plus other industries", "edition": m}
+@series("demcom", name="Commercial and other final users", unit="TWh", cad="Q")
+def s_demcom():
+    r, a, m = dem_series(["Other final users (excluding electric vehicles)"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.2: other final users (commercial, public administration, agriculture; excluding electric vehicles and transport)", "edition": m}
+@series("losses", name="Transmission and distribution losses", unit="TWh", cad="Q")
+def s_losses():
+    r, a, m = dem_series(["Losses"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.2", "edition": m}
+
+@series("dc", name="Data-centre electricity consumption (GB)", unit="TWh", cad="A")
+def s_dc():
+    d = json.loads(get("https://www.gov.uk/api/search.json?q=data+centre+electricity+consumption&filter_organisations=department-for-energy-security-and-net-zero&order=-public_timestamp&count=10"))
+    hits = [r for r in d.get("results", []) if "data centre electricity consumption" in r.get("title", "").lower()]
+    res = hits[0] if hits else {"link": "/government/publications/energy-trends-june-2026-special-feature-article-data-centre-electricity-consumption-in-great-britain-2020-to-2024"}
+    meta_d = json.loads(get("https://www.gov.uk/api/content" + res["link"]))
+    att = next(a for a in meta_d["details"]["attachments"] if a.get("url", "").endswith(".xlsx"))
+    rows = sheet_rows(workbook(att["url"]), "Table_2"); hi = next(i for i, r in enumerate(rows) if r and norm(r[0]) == "Area"); yc = year_cols(rows[hi])
+    r = next(r for r in rows[hi+1:] if r and norm(r[0]) == "Great Britain")
+    hist = [[y, round(num(r[yc[y]]), 2)] for y in sorted(yc)]
+    # NESO Ten Year Outlook / FES electricity demand summary (ED1): the regular forward estimate
+    pk = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=fes-electricity-demand-summary-data-table-ed1"))
+    rsrc = sorted([x for x in pk["result"]["resources"] if x.get("url", "").endswith(".csv")], key=lambda x: x.get("last_modified") or "", reverse=True)[0]
+    rr = list(_csv.reader(io.StringIO(get(rsrc["url"])))); hdr = rr[0]
+    row = next(x for x in rr if x[1] == "Data Centres" and x[2] == "GWh")
+    proj = [[hdr[j], round(float(row[j]) / 1000, 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= dt.date.today().year + 5]
+    return {"rows": hist[-5:], "projection": proj, "projection_src": f"NESO {rsrc.get('name') or 'electricity demand summary (ED1)'}", "src": "DESNZ, Energy Trends special feature: data-centre electricity consumption in Great Britain (metered colocation, hosting and hyperscale sites); projection from NESO's electricity demand summary", "edition": {"title": meta_d.get("title"), "page": "https://www.gov.uk" + res["link"], "published": meta_d.get("public_updated_at", "")[:10]}}
+
+@series("peak", name="Peak demand met (GB)", unit="GW", cad="A")
+def s_peak():
+    url, meta = govuk_attachment(DUKES5, r"DUKES_5\.10\.xlsx$"); rows = sheet_rows(workbook(url), "5.10.A")
+    hi = next(i for i, r in enumerate(rows) if r and norm(r[0]) == "Indicator"); yc = year_cols(rows[hi])
+    r = next(r for r in rows[hi+1:] if r and str(r[0]).startswith("Simultaneous maximum load met") and norm(r[1]) == "Great Britain")
+    hist = [[f"{y}/{str(int(y)+1)[2:]}", round(num(r[yc[y]]) / 1000, 2)] for y in sorted(yc)[-4:] if num(r[yc[y]]) is not None]
+    pk = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=fes-electricity-demand-summary-data-table-ed1"))
+    rsrc = sorted([x for x in pk["result"]["resources"] if x.get("url", "").endswith(".csv")], key=lambda x: x.get("last_modified") or "", reverse=True)[0]
+    rr = list(_csv.reader(io.StringIO(get(rsrc["url"])))); hdr = rr[0]
+    row = next(x for x in rr if x[1] == "Total Underlying Peak")
+    und = [[hdr[j], round(float(row[j]), 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= dt.date.today().year + 4]
+    return {"rows": hist, "underlying": und, "src": "DESNZ, DUKES table 5.10: simultaneous maximum load met, Great Britain (winter of the year shown); NESO electricity demand summary: total underlying (ACS) peak", "edition": meta}
+
 # ---------------------------------------------------------------- main -----
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--out", default="data/series.json"); ap.add_argument("--only", default="")
