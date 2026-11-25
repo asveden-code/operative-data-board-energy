@@ -14,7 +14,6 @@ Sister board for the key economic factors: https://asveden-code.github.io/operat
   fetches it on load. Series with an open feed (IMF Brent, Ofgem's NBP chart data, Elexon) are fetched live by the browser.
 - `quotes.json` — the daily media selection, served at https://asveden-code.github.io/operative-data-board-energy/quotes.json.
 - `scripts/fetch_series.py` — downloads the publisher files and writes `data/series.json` (deterministic; no judgement).
-- `scripts/check_rates.py` — re-reads the gov.uk pages that state the legislated tax rates and reports any change.
 - `scripts/fetch_candidates.py` — gathers candidate articles for the daily quote review.
 - `scripts/verify_quotes.py` — verifies every quote against its source and builds the text-fragment links.
 - `scripts/build.py` — rebuilds `index.html` from `template.html`, `app.js`, the data files and the fallbacks in `src/`.

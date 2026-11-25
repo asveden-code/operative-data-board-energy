@@ -4,12 +4,14 @@ You are refreshing the UK energy-market board: first its operative data file, th
 blocks. Work in the repository checkout. Steps:
 
 0. Data: `python scripts/fetch_series.py` rebuilds `data/series.json` from the publishers (DESNZ DUKES and Energy
-   Trends spreadsheets, Ofgem, NESO, NSTA, MCS, HMRC pages, the UK ETS auction results). It is deterministic and
-   needs no judgement: run it, read its report, and if a source failed leave that series as it was (the script keeps
-   the previous values and marks them stale) and mention the failure in your report. Never edit `data/series.json`
-   by hand. Also run `python scripts/check_rates.py`: it re-reads the gov.uk pages that state the Carbon Price Support
-   rate, the Energy Profits Levy, the Electricity Generator Levy and the ring-fence tax rates and reports whether the
-   stated rates still match `data/series.json`; if a rate has changed, report it (do not change the file by hand).
+   Trends spreadsheets, Ofgem chart data, the UK ETS tables, NSTA, DESNZ heat-pump and switching statistics, NESO,
+   the gov.uk pages that state the Carbon Price Support, Energy Profits Levy, Electricity Generator Levy and ring-fence
+   tax rates, the IMF). It is deterministic and needs no judgement: run it, read its report, and if a source failed
+   leave that series as it is (the script keeps the previous values and marks them stale) and mention the failure in
+   your report. Never edit `data/series.json` by hand. A legislated-rate series fails when the sentence on the gov.uk
+   page no longer matches: that usually means the rate has changed, so say so in the report rather than patching the
+   pattern. The `ebitact` series (Ofgem's annual supplier financial resilience report, a PDF) is transcribed by hand:
+   if the script reports `newer_edition`, say so in the report so the owner can update it.
 
 1. `python scripts/fetch_candidates.py --days 14 --tt-days 60` → writes `data/candidates.json`:
    - BBC Business, with full article text (paragraphs);
