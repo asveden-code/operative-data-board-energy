@@ -687,27 +687,55 @@ def s_peak():
 
 @series("mid", name="Wholesale electricity price, daily (APX market index)", unit="£/MWh", cad="D")
 def s_mid():
-    """Daily volume-weighted average of Elexon's APX Market Index Data (the exchange price used for imbalance pricing),
-    cached in data/elexon_mid_daily.json; only the last 10 days are re-read each run."""
-    cache_p = ROOT / "data/elexon_mid_daily.json"; cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
+    """Daily volume-weighted average of Elexon's APX market index data (the exchange price used in imbalance pricing)."""
     today = dt.date.today(); start = today - dt.timedelta(days=740)
-    d0 = max(start, today - dt.timedelta(days=10)) if cache else start
-    d0 = min(d0, min((dt.date.fromisoformat(k) for k in cache), default=today)) if cache and dt.date.fromisoformat(min(cache)) > start else d0
-    while d0 <= today:
-        d1 = min(d0 + dt.timedelta(days=6), today)
-        data = json.loads(get(f"{ELEXON}/balancing/pricing/market-index?from={d0}T00:00Z&to={d1 + dt.timedelta(days=1)}T00:00Z&dataProviders=APXMIDP", timeout=120)).get("data", [])
-        acc = {}
-        for r in data:
-            k = r["settlementDate"]; v = r.get("volume") or 0; pr = r.get("price")
-            if pr is None or v <= 0: continue
-            a = acc.setdefault(k, [0.0, 0.0, 0]); a[0] += pr * v; a[1] += v; a[2] += 1
-        for k, (pv, v, n) in acc.items():
-            if v > 0 and (k != today.isoformat()): cache[k] = {"vwap": round(pv / v, 2), "volume_mwh": round(v), "periods": n}
-        d0 = d1 + dt.timedelta(days=1)
-    cache = {k: cache[k] for k in sorted(cache) if dt.date.fromisoformat(k) >= start}
-    cache_p.write_text(json.dumps(cache, separators=(",", ":")))
-    rows = [[k, v["vwap"]] for k, v in cache.items() if v["periods"] >= 40]
-    return {"rows": rows, "src": "Elexon Insights, APX market index data (MID): daily volume-weighted average price of exchange trades, GB", "edition": {"title": "Elexon MID, APXMIDP", "page": "https://bmrs.elexon.co.uk/market-index-price", "published": today.isoformat()}}
+    data = json.loads(get(f"{ELEXON}/datasets/MID/stream?from={start}&to={today + dt.timedelta(days=1)}&dataProviders=APXMIDP", timeout=180))
+    acc = {}
+    for r in data:
+        v = r.get("volume") or 0; pr = r.get("price")
+        if pr is None or v <= 0: continue
+        a = acc.setdefault(r["settlementDate"], [0.0, 0.0, 0]); a[0] += pr * v; a[1] += v; a[2] += 1
+    rows = [[k, round(a[0] / a[1], 2), round(a[1] / 1000, 1)] for k, a in sorted(acc.items()) if a[2] >= 40 and k != today.isoformat()]
+    return {"rows": rows, "cols": ["Price", "Volume (GWh)"], "src": "Elexon Insights, APX market index data (MID): daily volume-weighted average price of exchange trades, GB", "edition": {"title": "Elexon MID, APXMIDP", "page": "https://bmrs.elexon.co.uk/market-index-price", "published": today.isoformat()}}
+
+@series("sap", name="NBP gas price, daily (System Average Price)", unit="p/therm", cad="D")
+def s_sap():
+    """National Gas Transmission: the System Average Price of all on-the-day commodity market trades for each gas day
+    (p/kWh, converted to p/therm), with the system marginal buy and sell prices."""
+    today = dt.date.today(); start = today - dt.timedelta(days=740)
+    url = f"https://data.nationalgas.com/api/find-gas-data-download?applicableFor=Y&dateFrom={start}&dateTo={today}&dateType=GASDAY&ids=PUBOB603,PUBOB604,PUBOB605&latestFlag=Y&type=CSV"
+    rows = list(_csv.DictReader(io.StringIO(get(url, timeout=120).lstrip("﻿")))); by = {}
+    for r in rows:
+        d = dt.datetime.strptime(r["Applicable For"].strip(), "%d/%m/%Y").date().isoformat(); item = r["Data Item"]; v = num(r["Value"])
+        if v is None: continue
+        k = "sap" if item.startswith("SAP") else "buy" if "Buy" in item else "sell" if "Sell" in item else None
+        if k: by.setdefault(d, {})[k] = round(v * 29.3071, 2)
+    out = [[d, x["sap"], x.get("buy"), x.get("sell")] for d, x in sorted(by.items()) if "sap" in x]
+    return {"rows": out, "cols": ["SAP", "SMP buy", "SMP sell"], "src": "National Gas Transmission data portal: System Average Price (volume-weighted average of on-the-day commodity market trades for the gas day), with system marginal buy and sell prices; 1 therm = 29.3071 kWh", "edition": {"title": "National Gas data items PUBOB603–605", "page": "https://data.nationalgas.com/", "published": today.isoformat()}}
+
+@series("dayahead", name="Day-ahead baseload electricity price (GB)", unit="€/MWh", cad="D")
+def s_dayahead():
+    """Ember's open daily wholesale price file (CC BY 4.0): GB day-ahead auction average, EUR/MWh, published with a lag of about two days."""
+    today = dt.date.today(); start = (today - dt.timedelta(days=740)).isoformat()
+    txt = get("https://files.ember-energy.org/public-downloads/price/outputs/european_wholesale_electricity_price_data_daily.csv", timeout=180)
+    rows = [[r["Date"][:10], round(float(r["Price (EUR/MWhe)"]), 2)] for r in _csv.DictReader(io.StringIO(txt)) if r.get("ISO3 Code") == "GBR" and r.get("Price (EUR/MWhe)") and r["Date"][:10] >= start]
+    return {"rows": sorted(rows), "src": "Ember, European wholesale electricity price data (daily): Great Britain day-ahead baseload average, euros per MWh", "edition": {"title": "Ember European wholesale electricity price data", "page": "https://ember-energy.org/data/european-wholesale-electricity-price-data/", "published": today.isoformat()}}
+
+@series("brentd", name="Brent crude, daily spot (EIA)", unit="$/bbl", cad="D")
+def s_brentd():
+    """EIA's Europe Brent spot price FOB, daily, from the weekly-updated history page (lag of about a week)."""
+    h = get("https://www.eia.gov/dnav/pet/hist/RBRTED.htm", timeout=120); rows = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", h, re.S):
+        cells = [html.unescape(re.sub(r"<[^>]+>", "", c)).replace("\xa0", " ").strip() for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)]
+        if len(cells) < 6: continue
+        m = re.match(r"^(\d{4}) ([A-Z][a-z]{2})-\s*(\d{1,2}) to ([A-Z][a-z]{2})-\s*(\d{1,2})$", cells[0])
+        if not m: continue
+        y = int(m[1]); d0 = dt.datetime.strptime(f"{m[2]} {m[3]} {y}", "%b %d %Y").date()
+        for i in range(5):
+            v = num(cells[1 + i].replace(",", ""))
+            if v is not None: rows.append([(d0 + dt.timedelta(days=i)).isoformat(), round(v, 2)])
+    rows = sorted(rows); start = (dt.date.today() - dt.timedelta(days=740)).isoformat()
+    return {"rows": [r for r in rows if r[0] >= start], "src": "US Energy Information Administration: Europe Brent spot price FOB, daily (updated weekly)", "edition": {"title": "EIA RBRTED", "page": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm", "published": dt.date.today().isoformat()}}
 
 # ---------------------------------------------------------------- main -----
 def main():
