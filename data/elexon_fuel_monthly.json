@@ -1,0 +1,626 @@
+{
+"2024-10": {
+"max_gw": {
+"NUCLEAR": 4.97,
+"GAS": 21.73,
+"BASE": 7.93,
+"DISP": 32.8,
+"PS": 1.64,
+"WIND": 15.38,
+"BIOMASS": 3.21,
+"TOTAL": 35.46
+},
+"twh": {
+"NUCLEAR": 3.019,
+"GAS": 6.798,
+"BASE": 4.846,
+"DISP": 12.127,
+"PS": -0.046,
+"WIND": 5.717,
+"BIOMASS": 1.827,
+"TOTAL": 17.844
+},
+"periods": 1490,
+"complete": true
+},
+"2024-11": {
+"max_gw": {
+"NUCLEAR": 4.81,
+"GAS": 24.07,
+"BASE": 8.0,
+"DISP": 35.21,
+"PS": 1.59,
+"WIND": 16.16,
+"BIOMASS": 3.23,
+"TOTAL": 44.16
+},
+"twh": {
+"NUCLEAR": 3.022,
+"GAS": 9.511,
+"BASE": 4.834,
+"DISP": 14.827,
+"PS": -0.048,
+"WIND": 5.287,
+"BIOMASS": 1.812,
+"TOTAL": 20.114
+},
+"periods": 1440,
+"complete": true
+},
+"2024-12": {
+"max_gw": {
+"NUCLEAR": 5.31,
+"GAS": 27.87,
+"BASE": 7.71,
+"DISP": 37.61,
+"PS": 1.71,
+"WIND": 17.28,
+"BIOMASS": 3.17,
+"TOTAL": 40.5
+},
+"twh": {
+"NUCLEAR": 3.044,
+"GAS": 7.479,
+"BASE": 4.502,
+"DISP": 12.826,
+"PS": -0.044,
+"WIND": 7.834,
+"BIOMASS": 1.458,
+"TOTAL": 20.66
+},
+"periods": 1488,
+"complete": true
+},
+"2025-01": {
+"max_gw": {
+"NUCLEAR": 5.07,
+"GAS": 27.25,
+"BASE": 7.77,
+"DISP": 39.53,
+"PS": 2.01,
+"WIND": 16.52,
+"BIOMASS": 3.23,
+"TOTAL": 43.15
+},
+"twh": {
+"NUCLEAR": 3.265,
+"GAS": 10.882,
+"BASE": 5.079,
+"DISP": 16.774,
+"PS": -0.064,
+"WIND": 6.092,
+"BIOMASS": 1.814,
+"TOTAL": 22.866
+},
+"periods": 1488,
+"complete": true
+},
+"2025-02": {
+"max_gw": {
+"NUCLEAR": 4.75,
+"GAS": 24.92,
+"BASE": 8.01,
+"DISP": 36.55,
+"PS": 2.21,
+"WIND": 16.41,
+"BIOMASS": 3.27,
+"TOTAL": 45.12
+},
+"twh": {
+"NUCLEAR": 2.971,
+"GAS": 8.236,
+"BASE": 4.75,
+"DISP": 13.589,
+"PS": -0.051,
+"WIND": 6.387,
+"BIOMASS": 1.779,
+"TOTAL": 19.977
+},
+"periods": 1344,
+"complete": true
+},
+"2025-03": {
+"max_gw": {
+"NUCLEAR": 4.23,
+"GAS": 23.45,
+"BASE": 7.29,
+"DISP": 34.47,
+"PS": 1.87,
+"WIND": 16.09,
+"BIOMASS": 3.09,
+"TOTAL": 40.13
+},
+"twh": {
+"NUCLEAR": 2.786,
+"GAS": 7.708,
+"BASE": 3.995,
+"DISP": 12.305,
+"PS": -0.051,
+"WIND": 5.273,
+"BIOMASS": 1.209,
+"TOTAL": 17.578
+},
+"periods": 1486,
+"complete": true
+},
+"2025-04": {
+"max_gw": {
+"NUCLEAR": 4.57,
+"GAS": 20.63,
+"BASE": 7.65,
+"DISP": 30.06,
+"PS": 0.81,
+"WIND": 14.66,
+"BIOMASS": 3.14,
+"TOTAL": 31.83
+},
+"twh": {
+"NUCLEAR": 2.875,
+"GAS": 5.714,
+"BASE": 4.473,
+"DISP": 10.629,
+"PS": -0.021,
+"WIND": 3.884,
+"BIOMASS": 1.598,
+"TOTAL": 14.512
+},
+"periods": 1440,
+"complete": true
+},
+"2025-05": {
+"max_gw": {
+"NUCLEAR": 5.3,
+"GAS": 16.9,
+"BASE": 8.36,
+"DISP": 25.47,
+"PS": 0.53,
+"WIND": 15.96,
+"BIOMASS": 3.14,
+"TOTAL": 29.02
+},
+"twh": {
+"NUCLEAR": 3.326,
+"GAS": 4.448,
+"BASE": 4.869,
+"DISP": 9.776,
+"PS": -0.015,
+"WIND": 4.662,
+"BIOMASS": 1.543,
+"TOTAL": 14.438
+},
+"periods": 1488,
+"complete": true
+},
+"2025-06": {
+"max_gw": {
+"NUCLEAR": 4.91,
+"GAS": 16.77,
+"BASE": 8.02,
+"DISP": 27.11,
+"PS": 0.61,
+"WIND": 16.16,
+"BIOMASS": 3.26,
+"TOTAL": 31.91
+},
+"twh": {
+"NUCLEAR": 3.195,
+"GAS": 3.859,
+"BASE": 4.675,
+"DISP": 9.1,
+"PS": -0.023,
+"WIND": 5.412,
+"BIOMASS": 1.48,
+"TOTAL": 14.511
+},
+"periods": 1440,
+"complete": true
+},
+"2025-07": {
+"max_gw": {
+"NUCLEAR": 4.82,
+"GAS": 16.3,
+"BASE": 8.12,
+"DISP": 26.82,
+"PS": 0.61,
+"WIND": 13.38,
+"BIOMASS": 3.32,
+"TOTAL": 29.61
+},
+"twh": {
+"NUCLEAR": 3.235,
+"GAS": 5.472,
+"BASE": 5.039,
+"DISP": 11.08,
+"PS": -0.008,
+"WIND": 3.319,
+"BIOMASS": 1.804,
+"TOTAL": 14.399
+},
+"periods": 1488,
+"complete": true
+},
+"2025-08": {
+"max_gw": {
+"NUCLEAR": 4.11,
+"GAS": 17.19,
+"BASE": 7.16,
+"DISP": 25.62,
+"PS": 0.61,
+"WIND": 15.66,
+"BIOMASS": 3.37,
+"TOTAL": 29.37
+},
+"twh": {
+"NUCLEAR": 2.387,
+"GAS": 5.03,
+"BASE": 4.048,
+"DISP": 9.655,
+"PS": -0.012,
+"WIND": 4.441,
+"BIOMASS": 1.661,
+"TOTAL": 14.095
+},
+"periods": 1488,
+"complete": true
+},
+"2025-09": {
+"max_gw": {
+"NUCLEAR": 4.04,
+"GAS": 18.85,
+"BASE": 7.14,
+"DISP": 28.19,
+"PS": 1.1,
+"WIND": 16.68,
+"BIOMASS": 3.32,
+"TOTAL": 32.37
+},
+"twh": {
+"NUCLEAR": 2.134,
+"GAS": 4.879,
+"BASE": 3.751,
+"DISP": 9.275,
+"PS": -0.031,
+"WIND": 6.374,
+"BIOMASS": 1.617,
+"TOTAL": 15.649
+},
+"periods": 1440,
+"complete": true
+},
+"2025-10": {
+"max_gw": {
+"NUCLEAR": 4.07,
+"GAS": 23.89,
+"BASE": 7.06,
+"DISP": 32.7,
+"PS": 1.7,
+"WIND": 17.5,
+"BIOMASS": 3.32,
+"TOTAL": 36.92
+},
+"twh": {
+"NUCLEAR": 2.539,
+"GAS": 7.1,
+"BASE": 3.979,
+"DISP": 11.815,
+"PS": -0.037,
+"WIND": 6.647,
+"BIOMASS": 1.441,
+"TOTAL": 18.462
+},
+"periods": 1490,
+"complete": true
+},
+"2025-11": {
+"max_gw": {
+"NUCLEAR": 4.16,
+"GAS": 23.88,
+"BASE": 7.48,
+"DISP": 34.61,
+"PS": 1.84,
+"WIND": 17.77,
+"BIOMASS": 3.34,
+"TOTAL": 46.12
+},
+"twh": {
+"NUCLEAR": 2.67,
+"GAS": 7.205,
+"BASE": 4.813,
+"DISP": 12.85,
+"PS": -0.049,
+"WIND": 7.923,
+"BIOMASS": 2.143,
+"TOTAL": 20.773
+},
+"periods": 1440,
+"complete": true
+},
+"2025-12": {
+"max_gw": {
+"NUCLEAR": 4.18,
+"GAS": 22.26,
+"BASE": 7.35,
+"DISP": 33.26,
+"PS": 1.75,
+"WIND": 18.38,
+"BIOMASS": 3.18,
+"TOTAL": 42.19
+},
+"twh": {
+"NUCLEAR": 2.753,
+"GAS": 6.829,
+"BASE": 4.582,
+"DISP": 12.332,
+"PS": -0.031,
+"WIND": 8.261,
+"BIOMASS": 1.829,
+"TOTAL": 20.593
+},
+"periods": 1488,
+"complete": true
+},
+"2026-01": {
+"max_gw": {
+"NUCLEAR": 4.38,
+"GAS": 26.79,
+"BASE": 7.73,
+"DISP": 39.1,
+"PS": 1.65,
+"WIND": 17.8,
+"BIOMASS": 3.42,
+"TOTAL": 47.83
+},
+"twh": {
+"NUCLEAR": 2.859,
+"GAS": 9.162,
+"BASE": 4.798,
+"DISP": 14.762,
+"PS": -0.047,
+"WIND": 8.616,
+"BIOMASS": 1.939,
+"TOTAL": 23.378
+},
+"periods": 1488,
+"complete": true
+},
+"2026-02": {
+"max_gw": {
+"NUCLEAR": 4.37,
+"GAS": 23.85,
+"BASE": 7.67,
+"DISP": 35.51,
+"PS": 1.74,
+"WIND": 18.44,
+"BIOMASS": 3.31,
+"TOTAL": 44.98
+},
+"twh": {
+"NUCLEAR": 2.692,
+"GAS": 7.54,
+"BASE": 4.416,
+"DISP": 12.582,
+"PS": -0.023,
+"WIND": 7.643,
+"BIOMASS": 1.724,
+"TOTAL": 20.225
+},
+"periods": 1344,
+"complete": true
+},
+"2026-03": {
+"max_gw": {
+"NUCLEAR": 4.99,
+"GAS": 22.06,
+"BASE": 7.68,
+"DISP": 33.03,
+"PS": 1.89,
+"WIND": 18.35,
+"BIOMASS": 3.08,
+"TOTAL": 36.98
+},
+"twh": {
+"NUCLEAR": 2.828,
+"GAS": 5.813,
+"BASE": 4.389,
+"DISP": 11.066,
+"PS": -0.059,
+"WIND": 7.245,
+"BIOMASS": 1.56,
+"TOTAL": 18.311
+},
+"periods": 1486,
+"complete": true
+},
+"2026-04": {
+"max_gw": {
+"NUCLEAR": 5.72,
+"GAS": 14.74,
+"BASE": 8.69,
+"DISP": 26.31,
+"PS": 1.66,
+"WIND": 17.32,
+"BIOMASS": 3.07,
+"TOTAL": 35.34
+},
+"twh": {
+"NUCLEAR": 3.732,
+"GAS": 3.75,
+"BASE": 5.233,
+"DISP": 9.873,
+"PS": -0.051,
+"WIND": 5.752,
+"BIOMASS": 1.502,
+"TOTAL": 15.625
+},
+"periods": 1440,
+"complete": true
+},
+"2026-05": {
+"max_gw": {
+"NUCLEAR": 5.18,
+"GAS": 15.93,
+"BASE": 7.7,
+"DISP": 26.6,
+"PS": 1.63,
+"WIND": 16.09,
+"BIOMASS": 2.98,
+"TOTAL": 31.0
+},
+"twh": {
+"NUCLEAR": 2.451,
+"GAS": 5.069,
+"BASE": 4.07,
+"DISP": 9.816,
+"PS": -0.039,
+"WIND": 4.551,
+"BIOMASS": 1.619,
+"TOTAL": 14.366
+},
+"periods": 1488,
+"complete": true
+},
+"2026-06": {
+"max_gw": {
+"NUCLEAR": 3.62,
+"GAS": 17.57,
+"BASE": 5.61,
+"DISP": 28.17,
+"PS": 1.39,
+"WIND": 14.57,
+"BIOMASS": 2.42,
+"TOTAL": 34.62
+},
+"twh": {
+"NUCLEAR": 2.118,
+"GAS": 5.861,
+"BASE": 3.299,
+"DISP": 9.876,
+"PS": -0.047,
+"WIND": 4.791,
+"BIOMASS": 1.181,
+"TOTAL": 14.667
+},
+"periods": 1440,
+"complete": true
+},
+"2026-07": {
+"max_gw": {
+"NUCLEAR": 3.84,
+"GAS": 15.68,
+"BASE": 6.41,
+"DISP": 26.9,
+"PS": 1.44,
+"WIND": 14.6,
+"BIOMASS": 2.68,
+"TOTAL": 29.63
+},
+"twh": {
+"NUCLEAR": 2.366,
+"GAS": 5.014,
+"BASE": 3.868,
+"DISP": 9.63,
+"PS": -0.043,
+"WIND": 4.147,
+"BIOMASS": 1.502,
+"TOTAL": 13.777
+},
+"periods": 1488,
+"complete": true
+},
+"2026-08": {
+"max_gw": {
+"NUCLEAR": 4.96,
+"GAS": 14.52,
+"BASE": 8.26,
+"DISP": 25.19,
+"PS": 1.36,
+"WIND": 14.32,
+"BIOMASS": 3.31,
+"TOTAL": 30.46
+},
+"twh": {
+"NUCLEAR": 3.104,
+"GAS": 4.833,
+"BASE": 4.945,
+"DISP": 10.479,
+"PS": -0.037,
+"WIND": 4.124,
+"BIOMASS": 1.841,
+"TOTAL": 14.602
+},
+"periods": 1488,
+"complete": true
+},
+"2026-09": {
+"max_gw": {
+"NUCLEAR": 4.99,
+"GAS": 17.4,
+"BASE": 8.27,
+"DISP": 28.56,
+"PS": 1.51,
+"WIND": 17.36,
+"BIOMASS": 3.3,
+"TOTAL": 33.18
+},
+"twh": {
+"NUCLEAR": 2.751,
+"GAS": 4.619,
+"BASE": 4.605,
+"DISP": 10.047,
+"PS": -0.05,
+"WIND": 6.622,
+"BIOMASS": 1.854,
+"TOTAL": 16.669
+},
+"periods": 1440,
+"complete": true
+},
+"2026-10": {
+"max_gw": {
+"NUCLEAR": 5.14,
+"GAS": 19.41,
+"BASE": 8.47,
+"DISP": 32.67,
+"PS": 1.66,
+"WIND": 17.89,
+"BIOMASS": 3.35,
+"TOTAL": 38.31
+},
+"twh": {
+"NUCLEAR": 3.373,
+"GAS": 5.51,
+"BASE": 5.252,
+"DISP": 11.791,
+"PS": -0.047,
+"WIND": 7.252,
+"BIOMASS": 1.879,
+"TOTAL": 19.043
+},
+"periods": 1490,
+"complete": true
+},
+"2026-11": {
+"max_gw": {
+"NUCLEAR": 5.14,
+"GAS": 24.89,
+"BASE": 8.48,
+"DISP": 39.06,
+"PS": 1.56,
+"WIND": 17.43,
+"BIOMASS": 3.35,
+"TOTAL": 47.02
+},
+"twh": {
+"NUCLEAR": 3.023,
+"GAS": 8.424,
+"BASE": 4.682,
+"DISP": 13.814,
+"PS": -0.033,
+"WIND": 4.191,
+"BIOMASS": 1.659,
+"TOTAL": 18.005
+},
+"periods": 1180,
+"complete": false
+}
+}

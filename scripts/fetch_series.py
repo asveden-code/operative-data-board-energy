@@ -120,13 +120,13 @@ def et(slug, pattern):
 def s_crude():
     wb, meta, url = et("oil-and-oil-products-section-3-energy-trends", r"ET_3\.1_[A-Z]{3}_\d{2}\.xlsx$")
     q = sheet_rows(wb, "Quarter"); a = sheet_rows(wb, "Annual")
-    return {"rows": wide_series(q, 4, "Crude oil", 1/1000, last=10), "annual": wide_series(a, 4, "Crude oil", 1/1000, last=4), "src": "DESNZ, Energy Trends table 3.1", "edition": meta}
+    return {"rows": wide_series(q, 4, "Crude oil", 1/1000, last=10), "annual": wide_series(a, 4, "Crude oil", 1/1000, last=4), "src": "DESNZ, Energy Trends table 3.1 (quarterly)", "edition": meta}
 
 @series("ngl", name="NGLs production", unit="Mt", cad="Q")
 def s_ngl():
     wb, meta, url = et("oil-and-oil-products-section-3-energy-trends", r"ET_3\.1_[A-Z]{3}_\d{2}\.xlsx$")
     q = sheet_rows(wb, "Quarter"); a = sheet_rows(wb, "Annual")
-    return {"rows": wide_series(q, 4, "NGLs", 1/1000, last=10), "annual": wide_series(a, 4, "NGLs", 1/1000, last=4), "src": "DESNZ, Energy Trends table 3.1", "edition": meta}
+    return {"rows": wide_series(q, 4, "NGLs", 1/1000, last=10), "annual": wide_series(a, 4, "NGLs", 1/1000, last=4), "src": "DESNZ, Energy Trends table 3.1 (quarterly)", "edition": meta}
 
 @series("gasprod", name="Natural gas production", unit="TWh", cad="Q")
 def s_gasprod():
@@ -447,35 +447,6 @@ def _d516():
 def annual_rows(d, years, keys, scale=1/1000, dec=2):
     return [[y, round(sum(d[k][y] or 0 for k in keys) * scale, dec)] for y in years]
 
-@series("captotal", name="Total installed capacity", unit="GW", cad="A")
-def s_captotal():
-    d, years, meta = _d512(); st, _ = _d516(); bat = st["5.16.C"].get("Battery storage - grid scale", {})
-    rows = [[y, round((d["total"][y] + (bat.get(y) or 0)) / 1000, 1)] for y in years]
-    return {"rows": rows, "src": "DESNZ, DUKES table 5.12 (installed capacity by connection, UK) plus grid-scale batteries from DUKES 5.16", "edition": meta}
-
-@series("capbase", name="Baseload capacity (nuclear and bioenergy)", unit="GW", cad="A")
-def s_capbase():
-    d, years, meta = _d512(); return {"rows": annual_rows(d, years, ["pwr", "agr", "magnox", "bio"], dec=1), "src": "DESNZ, DUKES table 5.12: nuclear plus bioenergy plant", "edition": meta}
-
-@series("capnuc", name="Nuclear capacity", unit="GW", cad="A")
-def s_capnuc():
-    d, years, meta = _d512(); return {"rows": annual_rows(d, years, ["pwr", "agr", "magnox"], dec=2), "src": "DESNZ, DUKES table 5.12", "edition": meta}
-
-@series("capdisp", name="Dispatchable capacity", unit="GW", cad="A")
-def s_capdisp():
-    d, years, meta = _d512(); st, _ = _d516(); bat = st["5.16.C"].get("Battery storage - grid scale", {})
-    base = annual_rows(d, years, ["ccgt", "ocgt", "oil", "coal", "pwr", "agr", "magnox", "bio", "hydro", "other", "pumped"], dec=3)
-    return {"rows": [[y, round(v + (bat.get(y) or 0) / 1000, 1)] for y, v in base], "src": "DESNZ, DUKES tables 5.12 and 5.16: gas, oil, coal, nuclear, bioenergy, hydro, other fuels, pumped storage and grid batteries", "edition": meta}
-
-@series("capgas", name="Gas-fired capacity", unit="GW", cad="A")
-def s_capgas():
-    d, years, meta = _d512(); return {"rows": annual_rows(d, years, ["ccgt", "ocgt"], dec=1), "src": "DESNZ, DUKES table 5.12: CCGT plus OCGT and conventional thermal gas", "edition": meta}
-
-@series("capstor", name="Electricity storage capacity", unit="GW", cad="A")
-def s_capstor():
-    st, meta = _d516(); t = st["5.16.C"]; yrs = sorted(t["Total"])[-4:]
-    return {"rows": [[y, round(t["Total"][y] / 1000, 2)] for y in yrs], "cols": None, "parts": {"Pumped storage": [[y, round((t["Pumped storage"].get(y) or 0) / 1000, 2)] for y in yrs], "Grid-scale batteries": [[y, round((t.get("Battery storage - grid scale", {}).get(y) or 0) / 1000, 2)] for y in yrs]}, "src": "DESNZ, DUKES table 5.16.C: power capacity of storage facilities (pumped hydro, grid-scale batteries, other)", "edition": meta}
-
 def _et61():
     url, meta = govuk_attachment(ET6, r"ET_6\.1_[A-Z]{3}_\d{2}\.xlsx$"); rows = sheet_rows(workbook(url), "Quarter")
     out = {}
@@ -490,7 +461,7 @@ def s_capren():
     d, meta = _et61(); url, m2 = govuk_attachment(DUKES6, r"DUKES_6\.2\.xlsx$"); rows = sheet_rows(workbook(url), "6.2")
     i = block(rows, "Installed Capacity (MW)"); yc = year_cols(rows[i]); r = next(r for r in rows[i+1:] if r and norm(r[0]) == "Total Installed Capacity")
     annual = [[y, round(num(r[yc[y]]) / 1000, 2)] for y in sorted(yc)[-4:] if num(r[yc[y]]) is not None]
-    return {"rows": [[p, round(v / 1000, 2)] for p, v in d["cap"]][-10:], "annual": annual, "src": "DESNZ, Energy Trends table 6.1 (quarterly, cumulative) and DUKES table 6.2 (annual)", "edition": meta}
+    return {"rows": [[p, round(v / 1000, 2)] for p, v in d["cap"]][-10:], "annual": annual, "src": "DESNZ, Energy Trends table 6.1 (quarterly, cumulative installed capacity)", "edition": meta}
 
 def _d56():
     url, meta = govuk_attachment(DUKES5, r"DUKES_5\.6\.xlsx$"); rows = sheet_rows(workbook(url), "5.6")
@@ -525,27 +496,27 @@ def gen_series(qkeys, akeys, dec=2):
 
 @series("gentotal", name="Total electricity generation", unit="TWh", cad="Q")
 def s_gentotal():
-    r, a, m = gen_series(["Total all generating companies"], ["Total all generating companies"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 (quarterly) and DUKES table 5.6 (annual), all generating companies", "edition": m}
+    r, a, m = gen_series(["Total all generating companies"], ["Total all generating companies"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 (quarterly), all generating companies", "edition": m}
 @series("genbase", name="Baseload generation (nuclear and bioenergy)", unit="TWh", cad="Q")
 def s_genbase():
-    r, a, m = gen_series(["Nuclear", "Bioenergy"], ["Nuclear", "Thermal renewables"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: nuclear plus bioenergy (thermal renewables)", "edition": m}
+    r, a, m = gen_series(["Nuclear", "Bioenergy"], ["Nuclear", "Thermal renewables"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1: nuclear plus bioenergy (thermal renewables)", "edition": m}
 @series("gennuc", name="Nuclear generation", unit="TWh", cad="Q")
 def s_gennuc():
-    r, a, m = gen_series(["Nuclear"], ["Nuclear"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6", "edition": m}
+    r, a, m = gen_series(["Nuclear"], ["Nuclear"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1", "edition": m}
 @series("gendisp", name="Dispatchable generation", unit="TWh", cad="Q")
 def s_gendisp():
     r, a, m = gen_series(["Gas", "Oil", "Coal", "Nuclear", "Hydro (natural flow)", "Bioenergy", "Other fuels", "Pumped storage", "Battery storage"], ["Gas", "Oil", "Coal", "Nuclear", "Hydro (natural flow)", "Thermal renewables", "Other fuels", "Energy storage"])
-    return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: gas, oil, coal, nuclear, hydro, bioenergy, other fuels and storage", "edition": m}
+    return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1: gas, oil, coal, nuclear, hydro, bioenergy, other fuels and storage", "edition": m}
 @series("gengas", name="Gas-fired generation", unit="TWh", cad="Q")
 def s_gengas():
-    r, a, m = gen_series(["Gas"], ["Gas"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6", "edition": m}
+    r, a, m = gen_series(["Gas"], ["Gas"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1", "edition": m}
 @series("genren", name="Renewable generation", unit="TWh", cad="Q")
 def s_genren():
     d, meta = _et61(); a, years, m2 = _d56()
-    return {"rows": [[p, round(v / 1000, 2)] for p, v in d["gen"]][-10:], "annual": [[y, round((a["Total renewable generation"][y] or 0) / 1000, 1)] for y in years], "src": "DESNZ, Energy Trends table 6.1 (quarterly) and DUKES table 5.6 (annual)", "edition": meta}
+    return {"rows": [[p, round(v / 1000, 2)] for p, v in d["gen"]][-10:], "annual": [[y, round((a["Total renewable generation"][y] or 0) / 1000, 1)] for y in years], "src": "DESNZ, Energy Trends table 6.1 (quarterly)", "edition": meta}
 @series("genstor", name="Electricity storage output", unit="TWh", cad="Q")
 def s_genstor():
-    r, a, m = gen_series(["Pumped storage", "Battery storage"], ["Energy storage"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1 and DUKES table 5.6: pumped storage and grid batteries", "edition": m}
+    r, a, m = gen_series(["Pumped storage", "Battery storage"], ["Energy storage"]); return {"rows": r, "annual": a, "src": "DESNZ, Energy Trends table 5.1: pumped storage and grid batteries", "edition": m}
 
 def _et56():
     url, meta = govuk_attachment(ET5, r"ET_5\.6_[A-Z]{3}_\d{2}\.xlsx$"); rows = sheet_rows(workbook(url), "Quarterly imports and exports")
@@ -565,10 +536,10 @@ def _et56():
 
 @series("imports", name="Electricity imports", unit="TWh", cad="Q")
 def s_imports():
-    q, a, m = _et56(); return {"rows": q["imp"][-10:], "annual": a["imp"][-4:], "src": "DESNZ, Energy Trends table 5.6 (quarterly) and DUKES table 5.13 (annual)", "edition": m}
+    q, a, m = _et56(); return {"rows": q["imp"][-10:], "annual": a["imp"][-4:], "src": "DESNZ, Energy Trends table 5.6 (quarterly)", "edition": m}
 @series("exports", name="Electricity exports", unit="TWh", cad="Q")
 def s_exports():
-    q, a, m = _et56(); return {"rows": q["exp"][-10:], "annual": a["exp"][-4:], "src": "DESNZ, Energy Trends table 5.6 (quarterly) and DUKES table 5.13 (annual)", "edition": m}
+    q, a, m = _et56(); return {"rows": q["exp"][-10:], "annual": a["exp"][-4:], "src": "DESNZ, Energy Trends table 5.6 (quarterly)", "edition": m}
 
 def _et52():
     url, meta = govuk_attachment(ET5, r"ET_5\.2_[A-Z]{3}_\d{2}\.xlsx$"); wb = workbook(url); out = {}
@@ -621,34 +592,98 @@ def s_dc():
     proj = [[hdr[j], round(float(row[j]) / 1000, 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= dt.date.today().year + 5]
     return {"rows": hist[-5:], "projection": proj, "projection_src": f"NESO {rsrc.get('name') or 'electricity demand summary (ED1)'}", "src": "DESNZ, Energy Trends special feature: data-centre electricity consumption in Great Britain (metered colocation, hosting and hyperscale sites); projection from NESO's electricity demand summary", "edition": {"title": meta_d.get("title"), "page": "https://www.gov.uk" + res["link"], "published": meta_d.get("public_updated_at", "")[:10]}}
 
-@series("peak", name="Peak demand met (GB)", unit="GW", cad="A")
+
+# --- Capacity in use and peak demand: Elexon half-hourly generation by fuel (monthly maxima) and NESO demand data ---
+ELEXON = "https://data.elexon.co.uk/bmrs/api/v1"
+FUEL_GROUPS = {"NUCLEAR": ["NUCLEAR"], "GAS": ["CCGT", "OCGT"], "BASE": ["NUCLEAR", "BIOMASS"], "DISP": ["CCGT", "OCGT", "OIL", "COAL", "NUCLEAR", "BIOMASS", "NPSHYD", "PS", "OTHER"], "PS": ["PS"], "WIND": ["WIND"], "BIOMASS": ["BIOMASS"],
+               "TOTAL": ["CCGT", "OCGT", "OIL", "COAL", "NUCLEAR", "BIOMASS", "NPSHYD", "PS", "OTHER", "WIND"]}
+def elexon_monthly(months_back=24):
+    """Monthly maximum half-hourly output (MW) and energy (TWh) per fuel group from Elexon's FUELHH dataset, with a
+    cache in data/elexon_fuel_monthly.json so that only the current and previous month are re-read each day."""
+    cache_p = ROOT / "data/elexon_fuel_monthly.json"; cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
+    today = dt.date.today(); first = (today.replace(day=1) - dt.timedelta(days=31 * months_back)).replace(day=1)
+    months = []; m = first
+    while m <= today.replace(day=1): months.append(m); m = (m.replace(day=28) + dt.timedelta(days=4)).replace(day=1)
+    for m in months:
+        key = m.strftime("%Y-%m"); nxt = (m.replace(day=28) + dt.timedelta(days=4)).replace(day=1); last = nxt - dt.timedelta(days=1)
+        if cache.get(key, {}).get("complete") and key not in (today.strftime("%Y-%m"), (today.replace(day=1) - dt.timedelta(days=1)).strftime("%Y-%m")): continue
+        per = {}  # (date, sp) -> {fuel: MW}
+        d0 = m
+        while d0 <= min(last, today):
+            d1 = min(d0 + dt.timedelta(days=6), last, today)
+            data = json.loads(get(f"{ELEXON}/datasets/FUELHH?settlementDateFrom={d0}&settlementDateTo={d1}&format=json", timeout=120)).get("data", [])
+            for r in data:
+                k = (r["settlementDate"], r["settlementPeriod"]); per.setdefault(k, {})[r["fuelType"]] = r.get("generation") or 0
+            d0 = d1 + dt.timedelta(days=1)
+        if not per: continue
+        mx = {}; twh = {}
+        for g, fuels in FUEL_GROUPS.items():
+            vals = [sum(v.get(f, 0) for f in fuels) for v in per.values()]
+            mx[g] = round(max(vals) / 1000, 2); twh[g] = round(sum(vals) / 2 / 1e6, 3)
+        cache[key] = {"max_gw": mx, "twh": twh, "periods": len(per), "complete": last < today}
+    cache = {k: cache[k] for k in sorted(cache)}
+    cache_p.write_text(json.dumps(cache, indent=0)); return cache
+
+def tec_snapshot():
+    """Built transmission-connected capacity by plant type from NESO's TEC register (a current snapshot, MW)."""
+    pk = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=transmission-entry-capacity-tec-register"))["result"]
+    r = pk["resources"][0]; rows = list(_csv.DictReader(io.StringIO(get(r["url"], timeout=120).lstrip("﻿"))))
+    agg = {}
+    for x in rows:
+        if x.get("Project Status", "").strip() != "Built": continue
+        try: mw = float((x.get("MW Connected") or "0").replace(",", ""))
+        except ValueError: continue
+        agg[x.get("Plant Type", "")] = agg.get(x.get("Plant Type", ""), 0) + mw
+    def grp(pred): return round(sum(v for k, v in agg.items() if pred(k)) / 1000, 2)
+    snap = {"nuclear": grp(lambda k: k == "Nuclear"), "gas": grp(lambda k: k.startswith("CCGT") or k.startswith("OCGT")), "storage": grp(lambda k: "Energy Storage System" in k or "Pump Storage" in k), "pumped": grp(lambda k: k == "Pump Storage"), "total": grp(lambda k: "Demand" not in k and "Reactive" not in k and "Hydrogen" not in k)}
+    return snap, {"title": r.get("name"), "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register", "published": (r.get("last_modified") or "")[:10]}
+
+def cap_series(group, name, unit="GW"):
+    c = elexon_monthly(); rows = [[k, v["max_gw"][group]] for k, v in c.items() if v["periods"] > 100][-24:]
+    return {"rows": rows, "twh": [[k, v["twh"][group]] for k, v in c.items()][-24:], "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB", "edition": {"title": "Elexon FUELHH", "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type", "published": dt.date.today().isoformat()}}
+
+@series("captotal", name="Generation capacity in use (all transmission-metered fuels)", unit="GW", cad="M")
+def s_captotal():
+    d = cap_series("TOTAL", "total"); snap, meta = tec_snapshot(); d["tec"] = [["Built transmission-connected capacity, TEC register " + meta["published"], snap["total"]]]; return d
+@series("capbase", name="Baseload capacity in use (nuclear and biomass)", unit="GW", cad="M")
+def s_capbase(): return cap_series("BASE", "base")
+@series("capnuc", name="Nuclear capacity in use", unit="GW", cad="M")
+def s_capnuc():
+    d = cap_series("NUCLEAR", "nuclear"); snap, meta = tec_snapshot(); d["tec"] = [["Connected nuclear capacity, TEC register " + meta["published"], snap["nuclear"]]]; return d
+@series("capdisp", name="Dispatchable capacity in use", unit="GW", cad="M")
+def s_capdisp(): return cap_series("DISP", "dispatchable")
+@series("capgas", name="Gas-fired capacity in use", unit="GW", cad="M")
+def s_capgas():
+    d = cap_series("GAS", "gas"); snap, meta = tec_snapshot(); d["tec"] = [["Connected CCGT and OCGT capacity, TEC register " + meta["published"], snap["gas"]]]; return d
+@series("capstor", name="Storage capacity in use (pumped storage output)", unit="GW", cad="M")
+def s_capstor():
+    d = cap_series("PS", "pumped"); snap, meta = tec_snapshot(); d["tec"] = [["Connected storage (batteries and pumped), TEC register " + meta["published"], snap["storage"]], ["of which pumped storage", snap["pumped"]]]; return d
+
+@series("peak", name="Peak transmission demand (GB)", unit="GW", cad="M")
 def s_peak():
-    url, meta = govuk_attachment(DUKES5, r"DUKES_5\.10\.xlsx$"); rows = sheet_rows(workbook(url), "5.10.A")
-    hi = next(i for i, r in enumerate(rows) if r and norm(r[0]) == "Indicator"); yc = year_cols(rows[hi])
-    r = next(r for r in rows[hi+1:] if r and str(r[0]).startswith("Simultaneous maximum load met") and norm(r[1]) == "Great Britain")
-    hist = [[f"{y}/{str(int(y)+1)[2:]}", round(num(r[yc[y]]) / 1000, 2)] for y in sorted(yc)[-4:] if num(r[yc[y]]) is not None]
-    pk = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=fes-electricity-demand-summary-data-table-ed1"))
-    rsrc = sorted([x for x in pk["result"]["resources"] if x.get("url", "").endswith(".csv")], key=lambda x: x.get("last_modified") or "", reverse=True)[0]
-    rr = list(_csv.reader(io.StringIO(get(rsrc["url"])))); hdr = rr[0]
-    row = next(x for x in rr if x[1] == "Total Underlying Peak")
-    und = [[hdr[j], round(float(row[j]), 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= dt.date.today().year + 4]
-    return {"rows": hist, "underlying": und, "src": "DESNZ, DUKES table 5.10: simultaneous maximum load met, Great Britain (winter of the year shown); NESO electricity demand summary: total underlying (ACS) peak", "edition": meta}
-
-
-@series("ebitact", name="Actual domestic supply EBIT, all suppliers", unit="£bn", cad="A")
-def s_ebitact():
-    """Ofgem's annual supplier financial resilience report (PDF, around June). The figures are transcribed by hand from
-    the report's 'Domestic market EBIT' table; the daily job only checks that the report page still exists and flags
-    a new edition in its report for the owner to transcribe."""
-    page = "https://www.ofgem.gov.uk/publications/supplier-financial-resilience-report-2026"
-    rows = [["2022", -1.66], ["2023", 2.57], ["2024", 0.88], ["2025", 0.19]]
-    try:
-        h = get("https://www.ofgem.gov.uk/search?keys=supplier+financial+resilience+report", timeout=40)
-        yrs = sorted(set(re.findall(r"supplier-financial-resilience-report-(\d{4})", h)))
-        newer = [y for y in yrs if int(y) > 2026]
-    except Exception:
-        newer = []
-    return {"rows": rows, "newer_edition": newer or None, "src": "Ofgem, Supplier financial resilience report 2026 (domestic market EBIT, calendar years; 2025 is Ofgem's estimate)", "edition": {"title": "Supplier financial resilience report 2026", "page": page, "published": "2026-06-30"}}
+    """Monthly maximum half-hourly transmission system demand (TSD) and national demand (ND) from NESO's historic demand data."""
+    pk = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=historic-demand-data"))["result"]
+    today = dt.date.today(); years = {today.year, today.year - 1, today.year - 2}; mx = {}
+    for r in pk["resources"]:
+        yr = re.search(r"(20\d\d)", r.get("name", "") or ""); 
+        if not yr or int(yr[1]) not in years or not r.get("url", "").endswith(".csv"): continue
+        rows = list(_csv.DictReader(io.StringIO(get(r["url"], timeout=180).lstrip("﻿"))))
+        for x in rows:
+            if x.get("FORECAST_ACTUAL_INDICATOR", "A").strip() not in ("A", ""): continue
+            ds = x.get("SETTLEMENT_DATE", "").strip(); m = None
+            for fmt in ("%Y-%m-%d", "%d-%b-%y", "%d-%b-%Y", "%d/%m/%Y"):
+                try: m = dt.datetime.strptime(ds[:10] if fmt == "%Y-%m-%d" else ds, fmt).strftime("%Y-%m"); break
+                except ValueError: pass
+            if not m: continue
+            try: tsd = float(x.get("TSD") or 0); nd = float(x.get("ND") or 0)
+            except ValueError: continue
+            cur = mx.setdefault(m, [0, 0]); cur[0] = max(cur[0], tsd); cur[1] = max(cur[1], nd)
+    rows = [[k, round(v[0] / 1000, 2), round(v[1] / 1000, 2)] for k, v in sorted(mx.items())][-24:]
+    pk2 = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=fes-electricity-demand-summary-data-table-ed1"))
+    rsrc = sorted([x for x in pk2["result"]["resources"] if x.get("url", "").endswith(".csv")], key=lambda x: x.get("last_modified") or "", reverse=True)[0]
+    rr = list(_csv.reader(io.StringIO(get(rsrc["url"])))); hdr = rr[0]; row = next(x for x in rr if x[1] == "Total Underlying Peak")
+    und = [[hdr[j], round(float(row[j]), 2)] for j in range(6, len(hdr)) if row[j] and int(hdr[j]) <= today.year + 1]
+    return {"rows": rows, "cols": ["Transmission system demand", "National demand"], "underlying": und, "src": "NESO historic demand data: monthly maximum half-hourly transmission system demand and national demand, Great Britain", "edition": {"title": "NESO historic demand data", "page": "https://www.neso.energy/data-portal/historic-demand-data", "published": today.isoformat()}}
 
 # ---------------------------------------------------------------- main -----
 def main():
@@ -661,7 +696,7 @@ def main():
     for k in keys:
         f, meta = REG[k]
         try:
-            d = f(); d.update(meta); d["fetched"] = now; d["stale"] = False; d.pop("error", None); result[k] = d; ok += 1
+            d = f(); d.pop("annual", None); d.update(meta); d["fetched"] = now; d["stale"] = False; d.pop("error", None); result[k] = d; ok += 1
             print(f"ok   {k:9s} {d['rows'][-1] if d.get('rows') else '-'}  {d.get('edition',{}).get('title','')[:60]}")
         except Exception as e:
             old = result.get(k, {}); old.update(meta); old["stale"] = True; old["error"] = f"{type(e).__name__}: {e}"[:200]; result[k] = old
