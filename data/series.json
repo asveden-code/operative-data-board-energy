@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T14:33Z",
+ "generated_at": "2026-11-26T10:04Z",
  "series": {
   "crude": {
    "rows": [
@@ -48,12 +48,12 @@
    "edition": {
     "title": "Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/oil-and-oil-products-section-3-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Crude oil production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "ngl": {
@@ -103,12 +103,12 @@
    "edition": {
     "title": "Supply and use of crude oil, natural gas liquids and feedstocks (ET 3.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/oil-and-oil-products-section-3-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "NGLs production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasprod": {
@@ -158,12 +158,12 @@
    "edition": {
     "title": "Natural gas supply and consumption (ET 4.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Natural gas production",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "oilimp": {
@@ -213,12 +213,12 @@
    "edition": {
     "title": "Supply and use of fuels (ET 1.3 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/total-energy-section-1-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Net imports of oil",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasimp": {
@@ -268,12 +268,12 @@
    "edition": {
     "title": "Supply and use of fuels (ET 1.3 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/total-energy-section-1-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Net imports of natural gas",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "opex": {
@@ -329,15 +329,11 @@
    "name": "Average unit operating cost, UKCS",
    "unit": "£/boe",
    "cad": "A",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasdem": {
    "rows": [
-    [
-     "2024 Q1",
-     236.9149
-    ],
     [
      "2024 Q2",
      128.0861
@@ -373,13 +369,13 @@
     [
      "2026 Q2",
      121.3827
+    ],
+    [
+     "2026 Q3",
+     93.1901
     ]
    ],
    "monthly": [
-    [
-     "2024-09",
-     39.9515
-    ],
     [
      "2024-10",
      55.1919
@@ -466,31 +462,31 @@
     ],
     [
      "2026-07",
-     30.0924
+     30.7076
     ],
     [
      "2026-08",
-     29.736
+     30.0517
+    ],
+    [
+     "2026-09",
+     32.4308
     ]
    ],
    "src": "DESNZ, Energy Trends table 4.2",
    "edition": {
     "title": "Official Statistics in Development: Natural gas supply and demand (ET 4.2 - monthly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Natural gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasdom": {
    "rows": [
-    [
-     "2024 Q1",
-     103.4142
-    ],
     [
      "2024 Q2",
      40.3741
@@ -526,13 +522,13 @@
     [
      "2026 Q2",
      34.0168
+    ],
+    [
+     "2026 Q3",
+     14.1435
     ]
    ],
    "monthly": [
-    [
-     "2024-09",
-     9.7059
-    ],
     [
      "2024-10",
      18.2613
@@ -619,31 +615,31 @@
     ],
     [
      "2026-07",
-     4.2297
+     3.9274
     ],
     [
      "2026-08",
-     4.6908
+     4.1292
+    ],
+    [
+     "2026-09",
+     6.0869
     ]
    ],
    "src": "DESNZ, Energy Trends table 4.2",
    "edition": {
     "title": "Official Statistics in Development: Natural gas supply and demand (ET 4.2 - monthly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Domestic gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasgen": {
    "rows": [
-    [
-     "2024 Q1",
-     52.3096
-    ],
     [
      "2024 Q2",
      34.3538
@@ -679,13 +675,13 @@
     [
      "2026 Q2",
      37.7266
+    ],
+    [
+     "2026 Q3",
+     37.1843
     ]
    ],
    "monthly": [
-    [
-     "2024-09",
-     13.2934
-    ],
     [
      "2024-10",
      16.757
@@ -772,31 +768,31 @@
     ],
     [
      "2026-07",
-     12.6508
+     12.6804
     ],
     [
      "2026-08",
-     12.5852
+     12.6719
+    ],
+    [
+     "2026-09",
+     11.832
     ]
    ],
    "src": "DESNZ, Energy Trends table 4.2",
    "edition": {
     "title": "Official Statistics in Development: Natural gas supply and demand (ET 4.2 - monthly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Gas for electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gascom": {
    "rows": [
-    [
-     "2024 Q1",
-     37.5811
-    ],
     [
      "2024 Q2",
      18.0868
@@ -832,13 +828,13 @@
     [
      "2026 Q2",
      19.8244
+    ],
+    [
+     "2026 Q3",
+     13.0088
     ]
    ],
    "monthly": [
-    [
-     "2024-09",
-     6.1273
-    ],
     [
      "2024-10",
      8.5922
@@ -925,31 +921,31 @@
     ],
     [
      "2026-07",
-     4.3132
+     4.3889
     ],
     [
      "2026-08",
-     3.9717
+     4.0131
+    ],
+    [
+     "2026-09",
+     4.6068
     ]
    ],
    "src": "DESNZ, Energy Trends table 4.2",
    "edition": {
     "title": "Official Statistics in Development: Natural gas supply and demand (ET 4.2 - monthly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Commercial and services gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasind": {
    "rows": [
-    [
-     "2024 Q1",
-     20.797
-    ],
     [
      "2024 Q2",
      16.6022
@@ -985,13 +981,13 @@
     [
      "2026 Q2",
      15.1134
+    ],
+    [
+     "2026 Q3",
+     13.8543
     ]
    ],
    "monthly": [
-    [
-     "2024-09",
-     4.8213
-    ],
     [
      "2024-10",
      5.1355
@@ -1078,31 +1074,31 @@
     ],
     [
      "2026-07",
-     4.0995
+     4.6528
     ],
     [
      "2026-08",
-     4.2317
+     4.5782
+    ],
+    [
+     "2026-09",
+     4.6233
     ]
    ],
    "src": "DESNZ, Energy Trends table 4.2",
    "edition": {
     "title": "Official Statistics in Development: Natural gas supply and demand (ET 4.2 - monthly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Industrial gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gasnet": {
    "rows": [
-    [
-     "2024 Q1",
-     127.9975
-    ],
     [
      "2024 Q2",
      50.9321
@@ -1138,13 +1134,13 @@
     [
      "2026 Q2",
      33.4638
+    ],
+    [
+     "2026 Q3",
+     19.649
     ]
    ],
    "monthly": [
-    [
-     "2024-09",
-     12.526
-    ],
     [
      "2024-10",
      27.7291
@@ -1236,18 +1232,22 @@
     [
      "2026-08",
      5.077
+    ],
+    [
+     "2026-09",
+     7.7999
     ]
    ],
    "src": "DESNZ, Energy Trends table 4.2",
    "edition": {
     "title": "Official Statistics in Development: Natural gas supply and demand (ET 4.2 - monthly)",
     "page": "https://www.gov.uk/government/statistics/gas-section-4-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Net imports of natural gas (ET 4.2)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "hp": {
@@ -1302,7 +1302,7 @@
    "name": "Heat pump installations",
    "unit": "thousand",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "power": {
@@ -1413,7 +1413,7 @@
    "name": "Wholesale electricity price (GB)",
    "unit": "£/MWh",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "nbp": {
@@ -1524,7 +1524,7 @@
    "name": "NBP gas price (GB)",
    "unit": "p/therm",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "cap": {
@@ -1615,7 +1615,7 @@
    "name": "Ofgem price cap, typical dual-fuel direct debit",
    "unit": "£/year",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capparams": {
@@ -1669,7 +1669,7 @@
    "name": "Price cap EBIT allowance parameters",
    "unit": "",
    "cad": "A",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "debt": {
@@ -1749,7 +1749,7 @@
    "name": "Domestic customer debt and arrears",
    "unit": "£bn",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "suppliers": {
@@ -1804,7 +1804,7 @@
    "name": "Active domestic suppliers (GB)",
    "unit": "suppliers",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "shares_e": {
@@ -1955,7 +1955,7 @@
    "unit": "%",
    "cad": "Q",
    "kind": "shares",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "shares_g": {
@@ -2106,7 +2106,7 @@
    "unit": "%",
    "cad": "Q",
    "kind": "shares",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "switch": {
@@ -2245,7 +2245,7 @@
    "name": "Domestic customers switching supplier",
    "unit": "thousand",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "switchrate": {
@@ -2409,7 +2409,7 @@
    "name": "Switching rate, domestic electricity",
    "unit": "% per month",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "uka": {
@@ -2534,7 +2534,7 @@
    "name": "UK ETS allowance price (UKA)",
    "unit": "£/tCO2",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "cps": {
@@ -2555,7 +2555,7 @@
    "name": "Carbon Price Support rate",
    "unit": "£/tCO2",
    "cad": "S",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "epl": {
@@ -2584,7 +2584,7 @@
    "name": "Energy Profits Levy rate",
    "unit": "%",
    "cad": "S",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "egl": {
@@ -2609,7 +2609,7 @@
    "name": "Electricity Generator Levy rate",
    "unit": "%",
    "cad": "S",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "upstream": {
@@ -2637,7 +2637,7 @@
    "name": "Headline tax rate on upstream oil and gas profits",
    "unit": "%",
    "cad": "S",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "brent": {
@@ -2747,7 +2747,7 @@
    "name": "Brent crude",
    "unit": "$/bbl",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "ttf": {
@@ -2857,7 +2857,7 @@
    "name": "TTF gas (EU)",
    "unit": "$/MMBtu",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "captotal": {
@@ -3054,14 +3054,14 @@
     ],
     [
      "2026-11",
-     18.005
+     18.74
     ]
    ],
    "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
    "edition": {
     "title": "Elexon FUELHH",
     "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "tec": [
     [
@@ -3072,7 +3072,7 @@
    "name": "Generation capacity in use (all transmission-metered fuels)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capbase": {
@@ -3269,19 +3269,19 @@
     ],
     [
      "2026-11",
-     4.682
+     4.831
     ]
    ],
    "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
    "edition": {
     "title": "Elexon FUELHH",
     "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "Baseload capacity in use (nuclear and biomass)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capnuc": {
@@ -3478,14 +3478,14 @@
     ],
     [
      "2026-11",
-     3.023
+     3.126
     ]
    ],
    "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
    "edition": {
     "title": "Elexon FUELHH",
     "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "tec": [
     [
@@ -3496,7 +3496,7 @@
    "name": "Nuclear capacity in use",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capdisp": {
@@ -3693,19 +3693,19 @@
     ],
     [
      "2026-11",
-     13.814
+     14.306
     ]
    ],
    "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
    "edition": {
     "title": "Elexon FUELHH",
     "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "Dispatchable capacity in use",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capgas": {
@@ -3902,14 +3902,14 @@
     ],
     [
      "2026-11",
-     8.424
+     8.744
     ]
    ],
    "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
    "edition": {
     "title": "Elexon FUELHH",
     "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "tec": [
     [
@@ -3920,7 +3920,7 @@
    "name": "Gas-fired capacity in use",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capstor": {
@@ -4117,14 +4117,14 @@
     ],
     [
      "2026-11",
-     -0.033
+     -0.04
     ]
    ],
    "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
    "edition": {
     "title": "Elexon FUELHH",
     "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "tec": [
     [
@@ -4139,7 +4139,7 @@
    "name": "Storage capacity in use (pumped storage output)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "capren": {
@@ -4189,12 +4189,12 @@
    "edition": {
     "title": "Renewable electricity capacity and generation (ET 6.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
-    "published": "2026-11-12"
+    "published": "2026-11-26"
    },
    "name": "Renewable capacity",
    "unit": "GW",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gentotal": {
@@ -4244,12 +4244,12 @@
    "edition": {
     "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Total electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "genbase": {
@@ -4299,12 +4299,12 @@
    "edition": {
     "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Baseload generation (nuclear and bioenergy)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gennuc": {
@@ -4354,12 +4354,12 @@
    "edition": {
     "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Nuclear generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gendisp": {
@@ -4409,12 +4409,12 @@
    "edition": {
     "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Dispatchable generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "gengas": {
@@ -4464,12 +4464,12 @@
    "edition": {
     "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Gas-fired generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "genren": {
@@ -4519,12 +4519,12 @@
    "edition": {
     "title": "Renewable electricity capacity and generation (ET 6.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/energy-trends-section-6-renewables",
-    "published": "2026-11-12"
+    "published": "2026-11-26"
    },
    "name": "Renewable generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "genstor": {
@@ -4574,12 +4574,12 @@
    "edition": {
     "title": "Fuel used in electricity generation and electricity supplied (ET 5.1 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Electricity storage output",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "imports": {
@@ -4629,12 +4629,12 @@
    "edition": {
     "title": "Imports, exports and transfers of electricity (ET 5.6 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Electricity imports",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "exports": {
@@ -4684,12 +4684,12 @@
    "edition": {
     "title": "Imports, exports and transfers of electricity (ET 5.6 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Electricity exports",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "demtotal": {
@@ -4739,12 +4739,12 @@
    "edition": {
     "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Total electricity demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "demdom": {
@@ -4794,12 +4794,12 @@
    "edition": {
     "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Domestic electricity consumption",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "demind": {
@@ -4849,12 +4849,12 @@
    "edition": {
     "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Industrial electricity consumption",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "demcom": {
@@ -4904,12 +4904,12 @@
    "edition": {
     "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Commercial and other final users",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "losses": {
@@ -4959,12 +4959,12 @@
    "edition": {
     "title": "Supply and consumption of electricity (ET 5.2 - quarterly)",
     "page": "https://www.gov.uk/government/statistics/electricity-section-5-energy-trends",
-    "published": "2026-10-29"
+    "published": "2026-11-26"
    },
    "name": "Transmission and distribution losses",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "dc": {
@@ -5030,7 +5030,7 @@
    "name": "Data-centre electricity consumption (GB)",
    "unit": "TWh",
    "cad": "A",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "peak": {
@@ -5153,7 +5153,7 @@
     [
      "2026-11",
      43.44,
-     39.71
+     39.89
     ]
    ],
    "cols": [
@@ -5178,12 +5178,12 @@
    "edition": {
     "title": "NESO historic demand data",
     "page": "https://www.neso.energy/data-portal/historic-demand-data",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "Peak transmission demand (GB)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-25T14:08Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "ebitact": {
@@ -5220,11 +5220,6 @@
   },
   "mid": {
    "rows": [
-    [
-     "2024-11-15",
-     97.44,
-     114.1
-    ],
     [
      "2024-11-16",
      87.57,
@@ -8919,6 +8914,11 @@
      "2026-11-24",
      201.83,
      149.9
+    ],
+    [
+     "2026-11-25",
+     204.95,
+     147.6
     ]
    ],
    "cols": [
@@ -8929,22 +8929,16 @@
    "edition": {
     "title": "Elexon MID, APXMIDP",
     "page": "https://bmrs.elexon.co.uk/market-index-price",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "Wholesale electricity price, daily (APX market index)",
    "unit": "£/MWh",
    "cad": "D",
-   "fetched": "2026-11-25T14:33Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "sap": {
    "rows": [
-    [
-     "2024-11-15",
-     115.68,
-     117.24,
-     114.11
-    ],
     [
      "2024-11-16",
      113.77,
@@ -13389,20 +13383,16 @@
    "edition": {
     "title": "National Gas data items PUBOB603–605",
     "page": "https://data.nationalgas.com/",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "NBP gas price, daily (System Average Price)",
    "unit": "p/therm",
    "cad": "D",
-   "fetched": "2026-11-25T14:33Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "dayahead": {
    "rows": [
-    [
-     "2024-11-15",
-     119.47
-    ],
     [
      "2024-11-16",
      107.85
@@ -16370,26 +16360,26 @@
     [
      "2026-11-23",
      249.49
+    ],
+    [
+     "2026-11-24",
+     231.15
     ]
    ],
    "src": "Ember, European wholesale electricity price data (daily): Great Britain day-ahead baseload average, euros per MWh",
    "edition": {
     "title": "Ember European wholesale electricity price data",
     "page": "https://ember-energy.org/data/european-wholesale-electricity-price-data/",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "Day-ahead baseload electricity price (GB)",
    "unit": "€/MWh",
    "cad": "D",
-   "fetched": "2026-11-25T14:33Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   },
   "brentd": {
    "rows": [
-    [
-     "2024-11-15",
-     73.45
-    ],
     [
      "2024-11-18",
      74.35
@@ -18413,18 +18403,38 @@
     [
      "2026-11-17",
      92.94
+    ],
+    [
+     "2026-11-18",
+     92.88
+    ],
+    [
+     "2026-11-19",
+     95.17
+    ],
+    [
+     "2026-11-20",
+     92.76
+    ],
+    [
+     "2026-11-23",
+     91.2
+    ],
+    [
+     "2026-11-24",
+     91.8
     ]
    ],
    "src": "US Energy Information Administration: Europe Brent spot price FOB, daily (updated weekly)",
    "edition": {
     "title": "EIA RBRTED",
     "page": "https://www.eia.gov/dnav/pet/hist/RBRTED.htm",
-    "published": "2026-11-25"
+    "published": "2026-11-26"
    },
    "name": "Brent crude, daily spot (EIA)",
    "unit": "$/bbl",
    "cad": "D",
-   "fetched": "2026-11-25T14:33Z",
+   "fetched": "2026-11-26T10:04Z",
    "stale": false
   }
  }

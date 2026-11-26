@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-25T13:35Z",
+ "generated_at": "2026-11-26T10:12Z",
  "window_days": {
   "press": 14,
   "think_tanks": 60
@@ -308,6 +308,20 @@
    }
   ],
   "dc": [
+   {
+    "source": "BBC Business",
+    "title": "Musk's plan to send a million SpaceX data satellites into space approved",
+    "url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo",
+    "date": "2026-11-26",
+    "quote": "US regulators have given SpaceX the go-ahead to launch a million satellites into Earth's orbit to help build data centres in space - the first approval of its kind. […] The company, which is owned by Elon Musk, wants to use sunlight to power satellites that will process data for AI and send the results back to Earth.",
+    "pieces": [
+     "US regulators have given SpaceX the go-ahead to launch a million satellites into Earth's orbit to help build data centres in space - the first approval of its kind.",
+     "The company, which is owned by Elon Musk, wants to use sunlight to power satellites that will process data for AI and send the results back to Earth."
+    ],
+    "tag": "First approval",
+    "verified": "page text",
+    "link": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo#:~:text=US%20regulators%20have%20given%20SpaceX%20the%20go%2Dahead,and%20send%20the%20results%20back%20to%20Earth."
+   },
    {
     "source": "CNBC Economy",
     "title": "Data center electricity use could double by 2030, IEA says",
@@ -724,48 +738,45 @@
     "verified": "page text"
    },
    {
-    "source": "Energy UK",
-    "title": "Heat networks: a landmark year, but a hard road ahead",
-    "url": "https://www.energy-uk.org.uk/publications/heat-networks-a-landmark-year-but-a-hard-road-ahead/",
-    "date": "2026-11-09",
-    "quote": "However, the picture is far from rosy. Revenue uncertainty and high capital and operational costs continue to hold back investment. Energy UK and the Heat Networks Industry Council (HeatNIC) have estimated that £5 billion of investment could be unlocked by 2030, but projects are unable to reach Final Investment Decision due to the lack of revenue certainty, part driven by the high cost of low-carbon heat. Energy UK and HeatNIC estimate that incumbent gas boilers remain around 50% cheaper for building managers to own and operate than connecting to a new low-carbon heat network. This led to calls for an additional £1 billion of public investment to unlock private capital which was not committed to in the Autumn Budget. Overall cuts to Warm Homes Plan funding reduce future spending options, with clarity needed on possible cuts to the Green Heat Network Fund. Other announcements were more promising, including no- and low-interest loans of up to £7,500 for a heat network connection through the Warm Homes Loan Scheme.",
+    "source": "Bruegel",
+    "title": "Proposing heating efficiency standards for Europe",
+    "url": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe",
+    "date": "2026-10-26",
+    "quote": "In April 2025, the UK launched a Clean Heat Market Mechanism, which requires manufacturers to sell specified numbers of heat pumps relative to gas boilers, with a £500 fine for each unit below the target. Early evidence suggests that manufacturers that sell both technologies have responded by discounting heat pumps to meet the target, rather than by purchasing credits from other manufacturers (Agora Energiewende, 2025). This suggests that an EU scheme must set ambitious targets and sufficiently high fines. If the target is not ambitious enough, demand does not increase, and the result is to shift sales away from heat-pump-only manufacturers to those that also sell boilers.",
     "pieces": [
-     "However, the picture is far from rosy. Revenue uncertainty and high capital and operational costs continue to hold back investment. Energy UK and the Heat Networks Industry Council (HeatNIC) have estimated that £5 billion of investment could be unlocked by 2030, but projects are unable to reach Final Investment Decision due to the lack of revenue certainty, part driven by the high cost of low-carbon heat. Energy UK and HeatNIC estimate that incumbent gas boilers remain around 50% cheaper for building managers to own and operate than connecting to a new low-carbon heat network.",
-     "This led to calls for an additional £1 billion of public investment to unlock private capital which was not committed to in the Autumn Budget. Overall cuts to Warm Homes Plan funding reduce future spending options, with clarity needed on possible cuts to the Green Heat Network Fund. Other announcements were more promising, including no- and low-interest loans of up to £7,500 for a heat network connection through the Warm Homes Loan Scheme."
+     "In April 2025, the UK launched a Clean Heat Market Mechanism, which requires manufacturers to sell specified numbers of heat pumps relative to gas boilers, with a £500 fine for each unit below the target8. Early evidence suggests that manufacturers that sell both technologies have responded by discounting heat pumps to meet the target, rather than by purchasing credits from other manufacturers (Agora Energiewende, 2025). This suggests that an EU scheme must set ambitious targets and sufficiently high fines. If the target is not ambitious enough, demand does not increase, and the result is to shift sales away from heat-pump-only manufacturers to those that also sell boilers."
     ],
     "tag": null,
-    "link": "https://www.energy-uk.org.uk/publications/heat-networks-a-landmark-year-but-a-hard-road-ahead/#:~:text=However%2C%20the%20picture%20is%20far%20from%20rosy.,connection%20through%20the%20Warm%20Homes%20Loan%20Scheme.",
-    "verified": "page text"
+    "verified": "page text",
+    "link": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe#:~:text=In%20April%202025%2C%20the%20UK%20launched%20a,manufacturers%20to%20those%20that%20also%20sell%20boilers."
    },
    {
-    "source": "Energy UK",
-    "title": "Heat networks: a landmark year, but a hard road ahead",
-    "url": "https://www.energy-uk.org.uk/publications/heat-networks-a-landmark-year-but-a-hard-road-ahead/",
-    "date": "2026-11-09",
-    "quote": "There is a case for factoring in the benefits heat networks provide to the wider energy system. The Government’s Warm Homes Plan estimates that the flexible capacity provided by heat networks with large thermal stores could avoid between £5 billion and £7 billion of electricity distribution network upgrades by 2035.",
+    "source": "Bruegel",
+    "title": "Proposing heating efficiency standards for Europe",
+    "url": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe",
+    "date": "2026-10-26",
+    "quote": "However, heat pumps cost more to buy and install than gas boilers: up to five times more, depending on the country (Toleikyte et al, 2024). Because a heat pump is about three times as efficient as a boiler, it is cheaper to run only if electricity costs less than about three times as much as gas. In 2025, this cost ratio was 1.9 in France but 3.2 in Germany, meaning the extra cost of a heat pump is recouped in about three years in France but 13 years in Germany (LCP Delta, 2025).",
     "pieces": [
-     "There is a case for factoring in the benefits heat networks provide to the wider energy system. The Government’s Warm Homes Plan estimates that the flexible capacity provided by heat networks with large thermal stores could avoid between £5 billion and £7 billion of electricity distribution network upgrades by 2035."
+     "However, heat pumps cost more to buy and install than gas boilers: up to five times more, depending on the country (Toleikyte et al, 2024). Because a heat pump is about three times as efficient as a boiler, it is cheaper to run only if electricity costs less than about three times as much as gas. In 2025, this cost ratio was 1.9 in France but 3.2 in Germany2, meaning the extra cost of a heat pump is recouped in about three years in France but 13 years in Germany (LCP Delta, 2025)."
     ],
     "tag": null,
-    "link": "https://www.energy-uk.org.uk/publications/heat-networks-a-landmark-year-but-a-hard-road-ahead/#:~:text=There%20is%20a%20case%20for%20factoring%20in,of%20electricity%20distribution%20network%20upgrades%20by%202035.",
-    "verified": "page text"
-   },
-   {
-    "source": "E3G",
-    "title": "The UK’s 2026 Autumn Budget has laid the ground for cleaner and cheaper electricity. The 2027 Spending Review must build on it",
-    "url": "https://www.e3g.org/news/the-uk-s-2026-autumn-budget-has-laid-the-ground-for-cleaner-and-cheaper-electricity-the-2027-spending-review-must-build-on-it/",
-    "date": "2026-11-02",
-    "quote": "UK household energy bills could increase by as much as a quarter, or by £470 a year, in January 2027 due to the closure of the Strait of Hormuz and the resulting surge in global gas prices. This will hurt for households who are already struggling with a cost-of-living crisis. It is also a stark reminder of the UK’s continued dependence on international gas markets and the urgent need to move to a cleaner more-resilient energy system. The Chancellor’s response has been to provide a £100 payment to 20 million households. While this support will offer some short-term relief, it is a one-off measure that does little to reduce long-term dependence on gas or encourage the switch from gas boilers to heat pumps. Reliance on gas means the UK will remain vulnerable to economic shocks and military threats.",
-    "pieces": [
-     "UK household energy bills could increase by as much as a quarter, or by £470 a year, in January 2027 due to the closure of the Strait of Hormuz and the resulting surge in global gas prices. This will hurt for households who are already struggling with a cost-of-living crisis. It is also a stark reminder of the UK’s continued dependence on international gas markets and the urgent need to move to a cleaner more-resilient energy system.",
-     "The Chancellor’s response has been to provide a £100 payment to 20 million households. While this support will offer some short-term relief, it is a one-off measure that does little to reduce long-term dependence on gas or encourage the switch from gas boilers to heat pumps. Reliance on gas means the UK will remain vulnerable to economic shocks and military threats."
-    ],
-    "tag": null,
-    "link": "https://www.e3g.org/news/the-uk-s-2026-autumn-budget-has-laid-the-ground-for-cleaner-and-cheaper-electricity-the-2027-spending-review-must-build-on-it/#:~:text=UK%20household%20energy%20bills%20could%20increase%20by,vulnerable%20to%20economic%20shocks%20and%20military%20threats.",
-    "verified": "page text"
+    "verified": "page text",
+    "link": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe#:~:text=However%2C%20heat%20pumps%20cost%20more%20to%20buy,13%20years%20in%20Germany%20%28LCP%20Delta%2C%202025%29."
    }
   ],
   "brent": [
+   {
+    "source": "CNBC Economy",
+    "title": "Ukraine tells Putin to ‘stop complaining’ over oil refinery attacks as Russia promises retaliation",
+    "url": "https://www.cnbc.com/2026/11/25/ukraine-putin-russia-oil-refinery-attacks.html",
+    "date": "2026-11-25",
+    "quote": "Ukraine tells Putin to ‘stop complaining’ over oil refinery attacks as Russia promises retaliation. Ukraine’s foreign minister told Putin to end the war if he wants Kyiv to stop attacking Russian refineries, after Putin said retaliation was “inevitable.”",
+    "headline": "Ukraine tells Putin to ‘stop complaining’ over oil refinery attacks as Russia promises retaliation",
+    "standfirst": "Ukraine’s foreign minister told Putin to end the war if he wants Kyiv to stop attacking Russian refineries, after Putin said retaliation was “inevitable.”",
+    "tag": "Escalation",
+    "verified": "publisher feed",
+    "link": "https://www.cnbc.com/2026/11/25/ukraine-putin-russia-oil-refinery-attacks.html#:~:text=Ukraine%20tells%20Putin%20to%20%E2%80%98stop%20complaining%E2%80%99%20over%20oil%20refinery%20attacks%20as%20Russia%20promises%20retaliation"
+   },
    {
     "source": "CNBC Economy",
     "title": "Iran says three tankers hit mines in Hormuz despite U.S. escort, as Treasury widens sanctions",
@@ -838,20 +849,6 @@
     ],
     "tag": null,
     "link": "https://carbontracker.org/oils-growth-engine-is-changing-and-so-are-the-risks-of-new-production/#:~:text=The%20IEA%E2%80%99s%20Stated%20Policies%20Scenario%20sees%20oil,accelerate%20the%20shift%20away%20from%20imported%20fuels.",
-    "verified": "page text"
-   },
-   {
-    "source": "Carbon Tracker",
-    "title": "Oil’s growth engine is changing – and so are the risks of new production",
-    "url": "https://carbontracker.org/oils-growth-engine-is-changing-and-so-are-the-risks-of-new-production/",
-    "date": "2026-11-19",
-    "quote": "Crucially, the IEA also finds that much more substitution is already economically competitive using today’s technologies. That has important consequences for investment: the WEO finds that a difference of just 4% in oil demand between two of its scenarios in 2035 translates into a 13% difference in oil prices.",
-    "pieces": [
-     "Crucially, the IEA also finds that much more substitution is already economically competitive using today’s technologies.",
-     "That has important consequences for investment: the WEO finds that a difference of just 4% in oil demand between two of its scenarios in 2035 translates into a 13% difference in oil prices."
-    ],
-    "tag": null,
-    "link": "https://carbontracker.org/oils-growth-engine-is-changing-and-so-are-the-risks-of-new-production/#:~:text=Crucially%2C%20the%20IEA%20also%20finds%20that%20much,into%20a%2013%25%20difference%20in%20oil%20prices.",
     "verified": "page text"
    }
   ],
@@ -1018,17 +1015,17 @@
     "verified": "page text"
    },
    {
-    "source": "E3G",
-    "title": "The UK’s 2026 Autumn Budget has laid the ground for cleaner and cheaper electricity. The 2027 Spending Review must build on it",
-    "url": "https://www.e3g.org/news/the-uk-s-2026-autumn-budget-has-laid-the-ground-for-cleaner-and-cheaper-electricity-the-2027-spending-review-must-build-on-it/",
-    "date": "2026-11-02",
-    "quote": "This falls far short of a package which will get UK electricity costs in line with Europe’s. We recently outlined how the UK could lower its electricity prices by 20% by 2030. The government now needs to release a similar strategy as to how it will achieve this aim.",
+    "source": "Bruegel",
+    "title": "Where and when it pays: the economic value of solar and wind power placement in Europe",
+    "url": "https://www.bruegel.org/analysis/where-and-when-it-pays-economic-value-solar-and-wind-power-placement-europe",
+    "date": "2026-10-08",
+    "quote": "While increasing renewable capacity is essential for decarbonising the electricity system, additional renewables entering the market affect market prices. When a large amount renewable electricity is generated at the same time, electricity prices tend to decline, a phenomenon called ‘cannibalisation’ (Joskow, 2011; Hirth, 2013; Clò et al, 2015), which matters most where generation is strongly correlated within and across countries, as is the case for solar PV. Capture rates, the share of a technology's market value to the average wholesale price, illustrate this well: technologies that generate electricity when wholesale prices are high, and so realise high market values, show high capture rates.",
     "pieces": [
-     "This falls far short of a package which will get UK electricity costs in line with Europe’s. We recently outlined how the UK could lower its electricity prices by 20% by 2030. The government now needs to release a similar strategy as to how it will achieve this aim."
+     "While increasing renewable capacity is essential for decarbonising the electricity system, additional renewables entering the market affect market prices. When a large amount renewable electricity is generated at the same time, electricity prices tend to decline, a phenomenon called ‘cannibalisation’ (Joskow, 2011; Hirth, 2013; Clò et al, 2015), which matters most where generation is strongly correlated within and across countries, as is the case for solar PV. Capture rates8, the share of a technology's market value to the average wholesale price, illustrate this well: technologies that generate electricity when wholesale prices are high, and so realise high market values, show high capture rates."
     ],
     "tag": null,
-    "link": "https://www.e3g.org/news/the-uk-s-2026-autumn-budget-has-laid-the-ground-for-cleaner-and-cheaper-electricity-the-2027-spending-review-must-build-on-it/#:~:text=This%20falls%20far%20short%20of%20a%20package,to%20how%20it%20will%20achieve%20this%20aim.",
-    "verified": "page text"
+    "verified": "page text",
+    "link": "https://www.bruegel.org/analysis/where-and-when-it-pays-economic-value-solar-and-wind-power-placement-europe#:~:text=While%20increasing%20renewable%20capacity%20is%20essential%20for,high%20market%20values%2C%20show%20high%20capture%20rates."
    }
   ],
   "carbon": [
@@ -1153,13 +1150,14 @@
     "title": "Energy UK responds to Ofgem’s latest price cap",
     "url": "https://www.energy-uk.org.uk/news/energy-uk-responds-to-ofgems-latest-price-cap/",
     "date": "2026-11-25",
-    "quote": "“Despite welcome support from Government with the VAT cut on electricity and the £100 household payment, customers will in effect be paying more for their energy than they did during the height of the 2022/23 crisis. Energy suppliers continue to do all they can to help customers, providing a range of support to those in need, but this scale of price rise requires a stronger Government response.",
+    "quote": "“This is the biggest increase in the price cap since following Russia’s invasion of Ukraine – and it could not come at a worse time as cold temperatures start to bite and with household energy debt already at record levels. […] “Despite welcome support from Government with the VAT cut on electricity and the £100 household payment, customers will in effect be paying more for their energy than they did during the height of the 2022/23 crisis. Energy suppliers continue to do all they can to help customers, providing a range of support to those in need, but this scale of price rise requires a stronger Government response.",
     "pieces": [
+     "“This is the biggest increase in the price cap since following Russia’s invasion of Ukraine – and it could not come at a worse time as cold temperatures start to bite and with household energy debt already at record levels.",
      "“Despite welcome support from Government with the VAT cut on electricity and the £100 household payment, customers will in effect be paying more for their energy than they did during the height of the 2022/23 crisis. Energy suppliers continue to do all they can to help customers, providing a range of support to those in need, but this scale of price rise requires a stronger Government response."
     ],
     "tag": null,
-    "link": "https://www.energy-uk.org.uk/news/energy-uk-responds-to-ofgems-latest-price-cap/#:~:text=%E2%80%9CDespite%20welcome%20support%20from%20Government%20with%20the,price%20rise%20requires%20a%20stronger%20Government%20response.",
-    "verified": "page text"
+    "verified": "page text",
+    "link": "https://www.energy-uk.org.uk/news/energy-uk-responds-to-ofgems-latest-price-cap/#:~:text=%E2%80%9CThis%20is%20the%20biggest%20increase%20in%20the,price%20rise%20requires%20a%20stronger%20Government%20response."
    },
    {
     "source": "BBC Business",
@@ -1288,31 +1286,32 @@
     "verified": "page text"
    },
    {
-    "source": "BBC Business",
-    "title": "Energy bills to rise by 26% from January after gas prices surge",
-    "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o",
-    "date": "2026-11-25",
-    "quote": "Campaign Groups Friends of the Earth and Global Witness said major oil and energy companies are making huge profits because of spiralling oil costs, hurting households. Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped and do not see the same benefit as international energy generating companies.",
-    "pieces": [
-     "Campaign Groups Friends of the Earth and Global Witness said major oil and energy companies are making huge profits because of spiralling oil costs, hurting households.",
-     "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped and do not see the same benefit as international energy generating companies."
-    ],
-    "tag": null,
-    "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=Campaign%20Groups%20Friends%20of%20the%20Earth%20and,same%20benefit%20as%20international%20energy%20generating%20companies.",
-    "verified": "page text"
-   },
-   {
     "source": "Energy UK",
     "title": "Energy UK responds to Ofgem’s latest price cap",
     "url": "https://www.energy-uk.org.uk/news/energy-uk-responds-to-ofgems-latest-price-cap/",
     "date": "2026-11-25",
-    "quote": "“Despite welcome support from Government with the VAT cut on electricity and the £100 household payment, customers will in effect be paying more for their energy than they did during the height of the 2022/23 crisis. Energy suppliers continue to do all they can to help customers, providing a range of support to those in need, but this scale of price rise requires a stronger Government response.",
+    "quote": "“This is the biggest increase in the price cap since following Russia’s invasion of Ukraine – and it could not come at a worse time as cold temperatures start to bite and with household energy debt already at record levels. […] “Despite welcome support from Government with the VAT cut on electricity and the £100 household payment, customers will in effect be paying more for their energy than they did during the height of the 2022/23 crisis. Energy suppliers continue to do all they can to help customers, providing a range of support to those in need, but this scale of price rise requires a stronger Government response.",
     "pieces": [
+     "“This is the biggest increase in the price cap since following Russia’s invasion of Ukraine – and it could not come at a worse time as cold temperatures start to bite and with household energy debt already at record levels.",
      "“Despite welcome support from Government with the VAT cut on electricity and the £100 household payment, customers will in effect be paying more for their energy than they did during the height of the 2022/23 crisis. Energy suppliers continue to do all they can to help customers, providing a range of support to those in need, but this scale of price rise requires a stronger Government response."
     ],
     "tag": null,
-    "link": "https://www.energy-uk.org.uk/news/energy-uk-responds-to-ofgems-latest-price-cap/#:~:text=%E2%80%9CDespite%20welcome%20support%20from%20Government%20with%20the,price%20rise%20requires%20a%20stronger%20Government%20response.",
-    "verified": "page text"
+    "verified": "page text",
+    "link": "https://www.energy-uk.org.uk/news/energy-uk-responds-to-ofgems-latest-price-cap/#:~:text=%E2%80%9CThis%20is%20the%20biggest%20increase%20in%20the,price%20rise%20requires%20a%20stronger%20Government%20response."
+   },
+   {
+    "source": "BBC Business",
+    "title": "Energy bills to rise by 26% from January after gas prices surge",
+    "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o",
+    "date": "2026-11-25",
+    "quote": "Campaign Groups Friends of the Earth and Global Witness said major oil and energy companies are making huge profits because of spiralling oil costs, hurting households. […] Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped on a percentage basis and do not see the same benefit as international energy generating companies. However, higher bills will mean higher profits in nominal cash terms.",
+    "pieces": [
+     "Campaign Groups Friends of the Earth and Global Witness said major oil and energy companies are making huge profits because of spiralling oil costs, hurting households.",
+     "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped on a percentage basis and do not see the same benefit as international energy generating companies. However, higher bills will mean higher profits in nominal cash terms."
+    ],
+    "tag": null,
+    "verified": "page text",
+    "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=Campaign%20Groups%20Friends%20of%20the%20Earth%20and,mean%20higher%20profits%20in%20nominal%20cash%20terms."
    }
   ],
   "taxes": [
@@ -1415,13 +1414,13 @@
     "title": "Energy bills to rise by 26% from January after gas prices surge",
     "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o",
     "date": "2026-11-25",
-    "quote": "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped and do not see the same benefit as international energy generating companies.",
+    "quote": "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped on a percentage basis and do not see the same benefit as international energy generating companies. However, higher bills will mean higher profits in nominal cash terms.",
     "pieces": [
-     "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped and do not see the same benefit as international energy generating companies."
+     "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped on a percentage basis and do not see the same benefit as international energy generating companies. However, higher bills will mean higher profits in nominal cash terms."
     ],
     "tag": null,
-    "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=Energy%20UK%2C%20which%20represents%20suppliers%2C%20said%20the,same%20benefit%20as%20international%20energy%20generating%20companies.",
-    "verified": "page text"
+    "verified": "page text",
+    "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=Energy%20UK%2C%20which%20represents%20suppliers%2C%20said%20the,mean%20higher%20profits%20in%20nominal%20cash%20terms."
    },
    {
     "source": "Energy UK",
@@ -1451,19 +1450,6 @@
    }
   ],
   "shares": [
-   {
-    "source": "BBC Business",
-    "title": "Energy bills to rise by 26% from January after gas prices surge",
-    "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o",
-    "date": "2026-11-25",
-    "quote": "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped and do not see the same benefit as international energy generating companies.",
-    "pieces": [
-     "Energy UK, which represents suppliers,  said the firms which send your bill, have profits capped and do not see the same benefit as international energy generating companies."
-    ],
-    "tag": null,
-    "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=Energy%20UK%2C%20which%20represents%20suppliers%2C%20said%20the,same%20benefit%20as%20international%20energy%20generating%20companies.",
-    "verified": "page text"
-   },
    {
     "source": "Energy UK",
     "title": "Report highlights energy supplier action on debt, accessible support and prepayment",
@@ -1741,6 +1727,19 @@
     "tag": null,
     "link": "https://www.energy-uk.org.uk/publications/securing-tomorrow-growth-resilience-and-uk-eu-cooperation/#:~:text=Afry%E2%80%99s%202024%20impact%20study%20highlights%20the%20scale,million%20per%20GW%20in%20a%20single%20year.",
     "verified": "page text"
+   },
+   {
+    "source": "Bruegel",
+    "title": "Proposing heating efficiency standards for Europe",
+    "url": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe",
+    "date": "2026-10-26",
+    "quote": "EU policy on heat pumps focuses currently on reducing their running costs. The European Commission’s Electrification Action Plan asks countries to bring household electricity prices to no more than 2.5 times the price of gas by 2030, mainly by cutting taxes and levies on electricity (European Commission, 2026). In addition, from 2028, a carbon price will be put on fuels used for heating in the EU. This will improve the investment case for heat pumps, though the carbon price would need to be very high in certain markets. In Germany, a carbon price of around €350 per tonne of CO2 would be needed to repay a heat pump’s extra cost within ten years. That is more than twice the roughly €150 per tonne analysts expect by 2030.",
+    "pieces": [
+     "EU policy on heat pumps focuses currently on reducing their running costs. The European Commission’s Electrification Action Plan asks countries to bring household electricity prices to no more than 2.5 times the price of gas by 2030, mainly by cutting taxes and levies on electricity (European Commission, 2026). In addition, from 2028, a carbon price will be put on fuels used for heating in the EU12. This will improve the investment case for heat pumps, though the carbon price would need to be very high in certain markets. In Germany, a carbon price of around €350 per tonne of CO2 would be needed to repay a heat pump’s extra cost within ten years13. That is more than twice the roughly €150 per tonne analysts expect by 203014."
+    ],
+    "tag": null,
+    "verified": "page text",
+    "link": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe#:~:text=EU%20policy%20on%20heat%20pumps%20focuses%20currently,%E2%82%AC150%20per%20tonne%20analysts%20expect%20by%20203014."
    }
   ]
  }
