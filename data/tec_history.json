@@ -7,14 +7,14 @@
 "hydro": 1.0,
 "storage": 8.52,
 "solar": 0.1,
-"other": 0.23,
-"biomass": 4.83,
+"thermal": 0.23,
+"biomass": 4.78,
 "pumped": 2.74,
 "nuclear": 6.04,
-"total": 79.56,
-"base": 10.87,
-"disp": 53.16,
-"allstorage": 11.26
+"waste": 0.06,
+"base": 10.88,
+"disp": 31.03,
+"nonren": 36.07
 },
 "register": "2026-11-24"
 }

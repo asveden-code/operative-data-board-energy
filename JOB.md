@@ -3,7 +3,12 @@
 You are refreshing the UK energy-market board: first its interim data file, then the "In the media and think tanks"
 blocks. Work in the repository checkout. Steps:
 
-0. Data: `python scripts/fetch_series.py` rebuilds `data/series.json` from the publishers (DESNZ DUKES and Energy
+0. Data: `python scripts/fetch_series.py` rebuilds `data/series.json` from the publishers. Capacity definitions are fixed
+   in the script and must not be changed by the job: baseload = nuclear + biomass + waste (TEC register); dispatchable =
+   gas-fired + hydro + other thermal (TEC register); total = nuclear + gas-fired + other thermal (TEC register) +
+   renewables (Energy Trends 6.1, all connection levels) + storage (Renewable Energy Planning Database). The TEC register
+   is a snapshot replaced in place, so the job records each month's latest register in `data/tec_history.json`; never
+   edit or delete that file. The script reads (DESNZ DUKES and Energy
    Trends spreadsheets, Ofgem chart data, the UK ETS tables, NSTA, DESNZ heat-pump and switching statistics, NESO,
    National Gas, Elexon, Ember, the EIA, the IMF). It is deterministic and needs no judgement: run it, read its report, and if a source failed
    leave that series as it is (the script keeps the previous values and marks them stale) and mention the failure in

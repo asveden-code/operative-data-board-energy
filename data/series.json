@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T17:43Z",
+ "generated_at": "2026-11-26T18:12Z",
  "series": {
   "crude": {
    "rows": [
@@ -2705,38 +2705,50 @@
    "rows": [
     [
      "2026-11",
-     79.56
+     110.78
     ]
    ],
-   "src": "NESO Transmission Entry Capacity register: all generation and storage connected to the GB transmission system (built projects), latest register of each month",
+   "parts": {
+    "Nuclear (TEC register)": 6.04,
+    "Gas-fired (TEC register)": 29.8,
+    "Other thermal (TEC register)": 0.23,
+    "Renewables incl. hydro and bioenergy (Energy Trends 6.1, 2026 Q2)": 66.29,
+    "Storage (REPD, 2026 Q3)": 8.42
+   },
+   "src": "Composed: NESO TEC register (nuclear, gas, other thermal; monthly) + DESNZ Energy Trends 6.1 (renewables, quarterly) + DESNZ Renewable Energy Planning Database (storage, quarterly)",
    "edition": {
     "title": "TEC Register",
     "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
     "published": "2026-11-24"
    },
-   "name": "Connected generation capacity (transmission)",
+   "name": "Total installed capacity (composed)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "capbase": {
    "rows": [
     [
      "2026-11",
-     10.87
+     10.88
     ]
    ],
-   "src": "NESO Transmission Entry Capacity register: nuclear and biomass plant connected to the GB transmission system (built projects), latest register of each month",
+   "parts": {
+    "Nuclear": 6.04,
+    "Biomass": 4.78,
+    "Waste": 0.06
+   },
+   "src": "NESO Transmission Entry Capacity register: nuclear, biomass and waste plant connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
     "title": "TEC Register",
     "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
     "published": "2026-11-24"
    },
-   "name": "Baseload capacity (nuclear and biomass)",
+   "name": "Baseload capacity (nuclear, biomass, waste)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "capnuc": {
@@ -2746,6 +2758,7 @@
      6.04
     ]
    ],
+   "parts": null,
    "src": "NESO Transmission Entry Capacity register: nuclear stations connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
     "title": "TEC Register",
@@ -2755,26 +2768,31 @@
    "name": "Nuclear capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "capdisp": {
    "rows": [
     [
      "2026-11",
-     53.16
+     31.03
     ]
    ],
-   "src": "NESO Transmission Entry Capacity register: gas, nuclear, biomass, hydro, pumped storage, batteries and other thermal plant connected to the GB transmission system (built projects), latest register of each month",
+   "parts": {
+    "Gas": 29.8,
+    "Hydro": 1.0,
+    "Thermal": 0.23
+   },
+   "src": "NESO Transmission Entry Capacity register: gas-fired, hydro and other thermal plant connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
     "title": "TEC Register",
     "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
     "published": "2026-11-24"
    },
-   "name": "Dispatchable capacity",
+   "name": "Dispatchable capacity (gas, hydro, thermal)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "capgas": {
@@ -2784,6 +2802,7 @@
      29.8
     ]
    ],
+   "parts": null,
    "src": "NESO Transmission Entry Capacity register: CCGT, OCGT, gas reciprocating and CHP plant connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
     "title": "TEC Register",
@@ -2793,7 +2812,7 @@
    "name": "Gas-fired capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "capstor": {
@@ -2873,7 +2892,7 @@
    "name": "Electricity storage capacity",
    "unit": "GW",
    "cad": "Q",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "capren": {
@@ -2928,7 +2947,7 @@
    "name": "Renewable capacity",
    "unit": "GW",
    "cad": "Q",
-   "fetched": "2026-11-26T17:43Z",
+   "fetched": "2026-11-26T18:12Z",
    "stale": false
   },
   "gentotal": {

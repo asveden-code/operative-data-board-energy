@@ -557,13 +557,13 @@ def tec_snapshot():
         gen = [t for t in types if t not in ("Demand", "Reactive Compensation", "Hydrogen")]
         if not gen or mw <= 0: continue
         t = gen[0]
-        k = ("nuclear" if t == "Nuclear" else "gas" if t.startswith(("CCGT", "OCGT", "Gas Reciprocating", "CHP")) else "biomass" if t in ("Biomass", "Waste") else "pumped" if t == "Pump Storage"
-             else "storage" if t.startswith("Energy Storage System") else "windoff" if t == "Wind Offshore" else "windon" if t == "Wind Onshore" else "solar" if t.startswith("PV") else "hydro" if t == "Hydro" else "other")
+        k = ("nuclear" if t == "Nuclear" else "gas" if t.startswith(("CCGT", "OCGT", "Gas Reciprocating", "CHP")) else "biomass" if t == "Biomass" else "waste" if t == "Waste" else "pumped" if t == "Pump Storage"
+             else "storage" if t.startswith("Energy Storage System") else "windoff" if t == "Wind Offshore" else "windon" if t == "Wind Onshore" else "solar" if t.startswith("PV") else "hydro" if t == "Hydro" else "thermal" if t in ("Thermal", "Oil & AGT (Advanced Gas Turbine)") else "other")
         agg[k] = agg.get(k, 0) + mw
     g = {k: round(v / 1000, 2) for k, v in agg.items()}
-    g["total"] = round(sum(agg.values()) / 1000, 2); g["base"] = round(g.get("nuclear", 0) + g.get("biomass", 0), 2)
-    g["disp"] = round(sum(g.get(k, 0) for k in ("gas", "nuclear", "biomass", "hydro", "pumped", "storage", "other")), 2)
-    g["allstorage"] = round(g.get("storage", 0) + g.get("pumped", 0), 2)
+    g["base"] = round(g.get("nuclear", 0) + g.get("biomass", 0) + g.get("waste", 0), 2)          # baseload: nuclear, biomass, waste
+    g["disp"] = round(g.get("gas", 0) + g.get("hydro", 0) + g.get("thermal", 0), 2)              # dispatchable: gas, hydro, thermal
+    g["nonren"] = round(g.get("nuclear", 0) + g.get("gas", 0) + g.get("thermal", 0), 2)          # non-renewable, non-storage plant (for the composed total)
     return g, {"title": r.get("name"), "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register", "published": (r.get("last_modified") or "")[:10]}
 
 def tec_history():
@@ -574,18 +574,35 @@ def tec_history():
     hist[key] = {"snapshot": snap, "register": meta["published"]}
     hist = {k: hist[k] for k in sorted(hist)}; hp.write_text(json.dumps(hist, indent=0)); return hist, meta
 
+PARTS = {"base": ["nuclear", "biomass", "waste"], "disp": ["gas", "hydro", "thermal"], "gas": ["gas"], "nuclear": ["nuclear"]}
 def tec_series(field, src):
-    hist, meta = tec_history()
-    return {"rows": [[k, v["snapshot"].get(field, 0)] for k, v in hist.items()][-24:], "src": "NESO Transmission Entry Capacity register: " + src + " connected to the GB transmission system (built projects), latest register of each month", "edition": meta}
+    hist, meta = tec_history(); last = hist[max(hist)]["snapshot"]
+    parts = {k.capitalize(): last.get(k, 0) for k in PARTS.get(field, [])} if len(PARTS.get(field, [])) > 1 else None
+    return {"rows": [[k, v["snapshot"].get(field, 0)] for k, v in hist.items()][-24:], "parts": parts, "src": "NESO Transmission Entry Capacity register: " + src + " connected to the GB transmission system (built projects), latest register of each month", "edition": meta}
 
-@series("captotal", name="Connected generation capacity (transmission)", unit="GW", cad="M")
-def s_captotal(): return tec_series("total", "all generation and storage")
-@series("capbase", name="Baseload capacity (nuclear and biomass)", unit="GW", cad="M")
-def s_capbase(): return tec_series("base", "nuclear and biomass plant")
+@series("captotal", name="Total installed capacity (composed)", unit="GW", cad="M")
+def s_captotal():
+    """Total = non-renewable plant from the TEC register (nuclear, gas, other thermal) + renewable capacity from Energy
+    Trends 6.1 (all connection levels; includes hydro and bioenergy) + storage from the REPD (batteries, pumped hydro)."""
+    hist, meta = tec_history(); ren = s_capren()["rows"]; sto = s_capstor()["rows"]
+    def latest(series, month):   # latest quarterly value whose quarter ended on or before the month
+        best = None
+        for p, v, *rest in series:
+            y, q = int(p[:4]), int(p[-1]); endm = f"{y}-{3*q:02d}"
+            if endm <= month: best = (p, v)
+        return best or (series[0][0], series[0][1])
+    rows, parts = [], {}
+    for m, v in hist.items():
+        sn = v["snapshot"]; r = latest(ren, m); st = latest(sto, m)
+        rows.append([m, round(sn.get("nonren", 0) + r[1] + st[1], 2)]); parts = {"Nuclear (TEC register)": sn.get("nuclear", 0), "Gas-fired (TEC register)": sn.get("gas", 0), "Other thermal (TEC register)": sn.get("thermal", 0), f"Renewables incl. hydro and bioenergy (Energy Trends 6.1, {r[0]})": r[1], f"Storage (REPD, {st[0]})": st[1]}
+    return {"rows": rows[-24:], "parts": parts, "src": "Composed: NESO TEC register (nuclear, gas, other thermal; monthly) + DESNZ Energy Trends 6.1 (renewables, quarterly) + DESNZ Renewable Energy Planning Database (storage, quarterly)", "edition": meta}
+
+@series("capbase", name="Baseload capacity (nuclear, biomass, waste)", unit="GW", cad="M")
+def s_capbase(): return tec_series("base", "nuclear, biomass and waste plant")
 @series("capnuc", name="Nuclear capacity", unit="GW", cad="M")
 def s_capnuc(): return tec_series("nuclear", "nuclear stations")
-@series("capdisp", name="Dispatchable capacity", unit="GW", cad="M")
-def s_capdisp(): return tec_series("disp", "gas, nuclear, biomass, hydro, pumped storage, batteries and other thermal plant")
+@series("capdisp", name="Dispatchable capacity (gas, hydro, thermal)", unit="GW", cad="M")
+def s_capdisp(): return tec_series("disp", "gas-fired, hydro and other thermal plant")
 @series("capgas", name="Gas-fired capacity", unit="GW", cad="M")
 def s_capgas(): return tec_series("gas", "CCGT, OCGT, gas reciprocating and CHP plant")
 
