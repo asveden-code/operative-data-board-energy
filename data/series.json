@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T10:04Z",
+ "generated_at": "2026-11-26T17:41Z",
  "series": {
   "crude": {
    "rows": [
@@ -53,7 +53,7 @@
    "name": "Crude oil production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "ngl": {
@@ -108,7 +108,7 @@
    "name": "NGLs production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasprod": {
@@ -163,7 +163,7 @@
    "name": "Natural gas production",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "oilimp": {
@@ -218,7 +218,7 @@
    "name": "Net imports of oil",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasimp": {
@@ -273,63 +273,7 @@
    "name": "Net imports of natural gas",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
-   "stale": false
-  },
-  "opex": {
-   "rows": [
-    [
-     "2022",
-     16.28
-    ],
-    [
-     "2023",
-     18.57
-    ],
-    [
-     "2024",
-     19.66
-    ],
-    [
-     "2025",
-     17.85
-    ]
-   ],
-   "projection": [
-    [
-     "2026",
-     18.27
-    ],
-    [
-     "2027",
-     18.85
-    ],
-    [
-     "2028",
-     18.73
-    ],
-    [
-     "2029",
-     20.02
-    ],
-    [
-     "2030",
-     19.39
-    ],
-    [
-     "2031",
-     21.23
-    ]
-   ],
-   "src": "North Sea Transition Authority, production and expenditure projections",
-   "edition": {
-    "title": "October 2026",
-    "page": "https://www.nstauthority.co.uk/data-and-insights/insights-and-analysis/production-and-expenditure-projections/"
-   },
-   "name": "Average unit operating cost, UKCS",
-   "unit": "£/boe",
-   "cad": "A",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasdem": {
@@ -482,7 +426,7 @@
    "name": "Natural gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasdom": {
@@ -635,7 +579,7 @@
    "name": "Domestic gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasgen": {
@@ -788,7 +732,7 @@
    "name": "Gas for electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gascom": {
@@ -941,7 +885,7 @@
    "name": "Commercial and services gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasind": {
@@ -1094,7 +1038,7 @@
    "name": "Industrial gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gasnet": {
@@ -1247,7 +1191,7 @@
    "name": "Net imports of natural gas (ET 4.2)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "hp": {
@@ -1302,7 +1246,7 @@
    "name": "Heat pump installations",
    "unit": "thousand",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "power": {
@@ -1413,7 +1357,7 @@
    "name": "Wholesale electricity price (GB)",
    "unit": "£/MWh",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "nbp": {
@@ -1524,7 +1468,7 @@
    "name": "NBP gas price (GB)",
    "unit": "p/therm",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "cap": {
@@ -1615,7 +1559,7 @@
    "name": "Ofgem price cap, typical dual-fuel direct debit",
    "unit": "£/year",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "capparams": {
@@ -1669,7 +1613,7 @@
    "name": "Price cap EBIT allowance parameters",
    "unit": "",
    "cad": "A",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "debt": {
@@ -1749,7 +1693,7 @@
    "name": "Domestic customer debt and arrears",
    "unit": "£bn",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "suppliers": {
@@ -1804,7 +1748,7 @@
    "name": "Active domestic suppliers (GB)",
    "unit": "suppliers",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "shares_e": {
@@ -1955,7 +1899,7 @@
    "unit": "%",
    "cad": "Q",
    "kind": "shares",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "shares_g": {
@@ -2106,7 +2050,7 @@
    "unit": "%",
    "cad": "Q",
    "kind": "shares",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "switch": {
@@ -2245,7 +2189,7 @@
    "name": "Domestic customers switching supplier",
    "unit": "thousand",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "switchrate": {
@@ -2409,7 +2353,7 @@
    "name": "Switching rate, domestic electricity",
    "unit": "% per month",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "uka": {
@@ -2534,110 +2478,7 @@
    "name": "UK ETS allowance price (UKA)",
    "unit": "£/tCO2",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
-   "stale": false
-  },
-  "cps": {
-   "rows": [
-    [
-     "2016-04-01",
-     18.0
-    ]
-   ],
-   "ends": "31 March 2028",
-   "statement": "Carbon Price Support £18.00/tCO2 (gas 0.00331 £/kWh) from 1 April 2016 to 31 March 2028",
-   "src": "HMRC climate change levy rates; environmental taxes bulletin",
-   "edition": {
-    "title": "Climate Change Levy rates",
-    "page": "https://www.gov.uk/guidance/climate-change-levy-rates",
-    "published": "2026-11-17"
-   },
-   "name": "Carbon Price Support rate",
-   "unit": "£/tCO2",
-   "cad": "S",
-   "fetched": "2026-11-26T10:04Z",
-   "stale": false
-  },
-  "epl": {
-   "rows": [
-    [
-     "2022-05-26",
-     25
-    ],
-    [
-     "2023-01-01",
-     35
-    ],
-    [
-     "2024-11-01",
-     38
-    ]
-   ],
-   "ends": "31 March 2030",
-   "statement": "Energy Profits Levy 38% from 1 November 2024 to 31 March 2030 (or earlier if the Energy Security Investment Mechanism is triggered); 25% from 26 May 2022, 35% from 1 January 2023",
-   "src": "HM Treasury / HMRC policy paper, Energy Profits Levy reforms 2024",
-   "edition": {
-    "title": "Energy Profits Levy — reforms 2024",
-    "page": "https://www.gov.uk/government/publications/energy-profits-levy-reforms-2024/energy-profits-levy-reforms-2024",
-    "published": "2024-10-30"
-   },
-   "name": "Energy Profits Levy rate",
-   "unit": "%",
-   "cad": "S",
-   "fetched": "2026-11-26T10:04Z",
-   "stale": false
-  },
-  "egl": {
-   "rows": [
-    [
-     "2023-01-01",
-     45
-    ],
-    [
-     "2026-07-01",
-     55
-    ]
-   ],
-   "benchmark": 82.61,
-   "statement": "Electricity Generator Levy 55% from 1 July 2026 (45% from 1 January 2023); charged on receipts above a benchmark price of £82.61/MWh",
-   "src": "HMRC policy paper, amended rate of the Electricity Generator Levy",
-   "edition": {
-    "title": "Amended rate of the Electricity Generator Levy — 2026 to 2027",
-    "page": "https://www.gov.uk/government/publications/increase-in-the-rate-of-the-electricity-generator-levy",
-    "published": "2026-06-17"
-   },
-   "name": "Electricity Generator Levy rate",
-   "unit": "%",
-   "cad": "S",
-   "fetched": "2026-11-26T10:04Z",
-   "stale": false
-  },
-  "upstream": {
-   "rows": [
-    [
-     "2022-05-26",
-     65
-    ],
-    [
-     "2023-01-01",
-     75
-    ],
-    [
-     "2024-11-01",
-     78
-    ]
-   ],
-   "statement": "Ring Fence Corporation Tax 30% + Supplementary Charge 10% + Energy Profits Levy 38% = 78%",
-   "src": "HM Treasury policy papers (Oil and Gas Revenue Levy; Energy Profits Levy reforms 2024)",
-   "edition": {
-    "title": "Oil and Gas Revenue Levy (OGRL)",
-    "page": "https://www.gov.uk/government/publications/oil-and-gas-taxation-oil-and-gas-revenue-levy/oil-and-gas-revenue-levy-ogrl",
-    "published": "2026-10-28"
-   },
-   "name": "Headline tax rate on upstream oil and gas profits",
-   "unit": "%",
-   "cad": "S",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "brent": {
@@ -2747,7 +2588,7 @@
    "name": "Brent crude",
    "unit": "$/bbl",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "ttf": {
@@ -2857,1289 +2698,182 @@
    "name": "TTF gas (EU)",
    "unit": "$/MMBtu",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "captotal": {
    "rows": [
     [
-     "2024-12",
-     40.5
-    ],
-    [
-     "2025-01",
-     43.15
-    ],
-    [
-     "2025-02",
-     45.12
-    ],
-    [
-     "2025-03",
-     40.13
-    ],
-    [
-     "2025-04",
-     31.83
-    ],
-    [
-     "2025-05",
-     29.02
-    ],
-    [
-     "2025-06",
-     31.91
-    ],
-    [
-     "2025-07",
-     29.61
-    ],
-    [
-     "2025-08",
-     29.37
-    ],
-    [
-     "2025-09",
-     32.37
-    ],
-    [
-     "2025-10",
-     36.92
-    ],
-    [
-     "2025-11",
-     46.12
-    ],
-    [
-     "2025-12",
-     42.19
-    ],
-    [
-     "2026-01",
-     47.83
-    ],
-    [
-     "2026-02",
-     44.98
-    ],
-    [
-     "2026-03",
-     36.98
-    ],
-    [
-     "2026-04",
-     35.34
-    ],
-    [
-     "2026-05",
-     31.0
-    ],
-    [
-     "2026-06",
-     34.62
-    ],
-    [
-     "2026-07",
-     29.63
-    ],
-    [
-     "2026-08",
-     30.46
-    ],
-    [
-     "2026-09",
-     33.18
-    ],
-    [
-     "2026-10",
-     38.31
-    ],
-    [
      "2026-11",
-     47.02
+     79.56
     ]
    ],
-   "twh": [
-    [
-     "2024-12",
-     20.66
-    ],
-    [
-     "2025-01",
-     22.866
-    ],
-    [
-     "2025-02",
-     19.977
-    ],
-    [
-     "2025-03",
-     17.578
-    ],
-    [
-     "2025-04",
-     14.512
-    ],
-    [
-     "2025-05",
-     14.438
-    ],
-    [
-     "2025-06",
-     14.511
-    ],
-    [
-     "2025-07",
-     14.399
-    ],
-    [
-     "2025-08",
-     14.095
-    ],
-    [
-     "2025-09",
-     15.649
-    ],
-    [
-     "2025-10",
-     18.462
-    ],
-    [
-     "2025-11",
-     20.773
-    ],
-    [
-     "2025-12",
-     20.593
-    ],
-    [
-     "2026-01",
-     23.378
-    ],
-    [
-     "2026-02",
-     20.225
-    ],
-    [
-     "2026-03",
-     18.311
-    ],
-    [
-     "2026-04",
-     15.625
-    ],
-    [
-     "2026-05",
-     14.366
-    ],
-    [
-     "2026-06",
-     14.667
-    ],
-    [
-     "2026-07",
-     13.777
-    ],
-    [
-     "2026-08",
-     14.602
-    ],
-    [
-     "2026-09",
-     16.669
-    ],
-    [
-     "2026-10",
-     19.043
-    ],
-    [
-     "2026-11",
-     18.74
-    ]
-   ],
-   "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
+   "src": "NESO Transmission Entry Capacity register: all generation and storage connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
-    "title": "Elexon FUELHH",
-    "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-26"
+    "title": "TEC Register",
+    "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
+    "published": "2026-11-24"
    },
-   "tec": [
-    [
-     "Built transmission-connected capacity, TEC register 2026-11-24",
-     74.73
-    ]
-   ],
-   "name": "Generation capacity in use (all transmission-metered fuels)",
+   "name": "Connected generation capacity (transmission)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "capbase": {
    "rows": [
     [
-     "2024-12",
-     7.71
-    ],
-    [
-     "2025-01",
-     7.77
-    ],
-    [
-     "2025-02",
-     8.01
-    ],
-    [
-     "2025-03",
-     7.29
-    ],
-    [
-     "2025-04",
-     7.65
-    ],
-    [
-     "2025-05",
-     8.36
-    ],
-    [
-     "2025-06",
-     8.02
-    ],
-    [
-     "2025-07",
-     8.12
-    ],
-    [
-     "2025-08",
-     7.16
-    ],
-    [
-     "2025-09",
-     7.14
-    ],
-    [
-     "2025-10",
-     7.06
-    ],
-    [
-     "2025-11",
-     7.48
-    ],
-    [
-     "2025-12",
-     7.35
-    ],
-    [
-     "2026-01",
-     7.73
-    ],
-    [
-     "2026-02",
-     7.67
-    ],
-    [
-     "2026-03",
-     7.68
-    ],
-    [
-     "2026-04",
-     8.69
-    ],
-    [
-     "2026-05",
-     7.7
-    ],
-    [
-     "2026-06",
-     5.61
-    ],
-    [
-     "2026-07",
-     6.41
-    ],
-    [
-     "2026-08",
-     8.26
-    ],
-    [
-     "2026-09",
-     8.27
-    ],
-    [
-     "2026-10",
-     8.47
-    ],
-    [
      "2026-11",
-     8.48
+     10.87
     ]
    ],
-   "twh": [
-    [
-     "2024-12",
-     4.502
-    ],
-    [
-     "2025-01",
-     5.079
-    ],
-    [
-     "2025-02",
-     4.75
-    ],
-    [
-     "2025-03",
-     3.995
-    ],
-    [
-     "2025-04",
-     4.473
-    ],
-    [
-     "2025-05",
-     4.869
-    ],
-    [
-     "2025-06",
-     4.675
-    ],
-    [
-     "2025-07",
-     5.039
-    ],
-    [
-     "2025-08",
-     4.048
-    ],
-    [
-     "2025-09",
-     3.751
-    ],
-    [
-     "2025-10",
-     3.979
-    ],
-    [
-     "2025-11",
-     4.813
-    ],
-    [
-     "2025-12",
-     4.582
-    ],
-    [
-     "2026-01",
-     4.798
-    ],
-    [
-     "2026-02",
-     4.416
-    ],
-    [
-     "2026-03",
-     4.389
-    ],
-    [
-     "2026-04",
-     5.233
-    ],
-    [
-     "2026-05",
-     4.07
-    ],
-    [
-     "2026-06",
-     3.299
-    ],
-    [
-     "2026-07",
-     3.868
-    ],
-    [
-     "2026-08",
-     4.945
-    ],
-    [
-     "2026-09",
-     4.605
-    ],
-    [
-     "2026-10",
-     5.252
-    ],
-    [
-     "2026-11",
-     4.831
-    ]
-   ],
-   "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
+   "src": "NESO Transmission Entry Capacity register: nuclear and biomass plant connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
-    "title": "Elexon FUELHH",
-    "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-26"
+    "title": "TEC Register",
+    "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
+    "published": "2026-11-24"
    },
-   "name": "Baseload capacity in use (nuclear and biomass)",
+   "name": "Baseload capacity (nuclear and biomass)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "capnuc": {
    "rows": [
     [
-     "2024-12",
-     5.31
-    ],
-    [
-     "2025-01",
-     5.07
-    ],
-    [
-     "2025-02",
-     4.75
-    ],
-    [
-     "2025-03",
-     4.23
-    ],
-    [
-     "2025-04",
-     4.57
-    ],
-    [
-     "2025-05",
-     5.3
-    ],
-    [
-     "2025-06",
-     4.91
-    ],
-    [
-     "2025-07",
-     4.82
-    ],
-    [
-     "2025-08",
-     4.11
-    ],
-    [
-     "2025-09",
-     4.04
-    ],
-    [
-     "2025-10",
-     4.07
-    ],
-    [
-     "2025-11",
-     4.16
-    ],
-    [
-     "2025-12",
-     4.18
-    ],
-    [
-     "2026-01",
-     4.38
-    ],
-    [
-     "2026-02",
-     4.37
-    ],
-    [
-     "2026-03",
-     4.99
-    ],
-    [
-     "2026-04",
-     5.72
-    ],
-    [
-     "2026-05",
-     5.18
-    ],
-    [
-     "2026-06",
-     3.62
-    ],
-    [
-     "2026-07",
-     3.84
-    ],
-    [
-     "2026-08",
-     4.96
-    ],
-    [
-     "2026-09",
-     4.99
-    ],
-    [
-     "2026-10",
-     5.14
-    ],
-    [
      "2026-11",
-     5.14
-    ]
-   ],
-   "twh": [
-    [
-     "2024-12",
-     3.044
-    ],
-    [
-     "2025-01",
-     3.265
-    ],
-    [
-     "2025-02",
-     2.971
-    ],
-    [
-     "2025-03",
-     2.786
-    ],
-    [
-     "2025-04",
-     2.875
-    ],
-    [
-     "2025-05",
-     3.326
-    ],
-    [
-     "2025-06",
-     3.195
-    ],
-    [
-     "2025-07",
-     3.235
-    ],
-    [
-     "2025-08",
-     2.387
-    ],
-    [
-     "2025-09",
-     2.134
-    ],
-    [
-     "2025-10",
-     2.539
-    ],
-    [
-     "2025-11",
-     2.67
-    ],
-    [
-     "2025-12",
-     2.753
-    ],
-    [
-     "2026-01",
-     2.859
-    ],
-    [
-     "2026-02",
-     2.692
-    ],
-    [
-     "2026-03",
-     2.828
-    ],
-    [
-     "2026-04",
-     3.732
-    ],
-    [
-     "2026-05",
-     2.451
-    ],
-    [
-     "2026-06",
-     2.118
-    ],
-    [
-     "2026-07",
-     2.366
-    ],
-    [
-     "2026-08",
-     3.104
-    ],
-    [
-     "2026-09",
-     2.751
-    ],
-    [
-     "2026-10",
-     3.373
-    ],
-    [
-     "2026-11",
-     3.126
-    ]
-   ],
-   "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
-   "edition": {
-    "title": "Elexon FUELHH",
-    "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-26"
-   },
-   "tec": [
-    [
-     "Connected nuclear capacity, TEC register 2026-11-24",
      6.04
     ]
    ],
-   "name": "Nuclear capacity in use",
+   "src": "NESO Transmission Entry Capacity register: nuclear stations connected to the GB transmission system (built projects), latest register of each month",
+   "edition": {
+    "title": "TEC Register",
+    "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
+    "published": "2026-11-24"
+   },
+   "name": "Nuclear capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "capdisp": {
    "rows": [
     [
-     "2024-12",
-     37.61
-    ],
-    [
-     "2025-01",
-     39.53
-    ],
-    [
-     "2025-02",
-     36.55
-    ],
-    [
-     "2025-03",
-     34.47
-    ],
-    [
-     "2025-04",
-     30.06
-    ],
-    [
-     "2025-05",
-     25.47
-    ],
-    [
-     "2025-06",
-     27.11
-    ],
-    [
-     "2025-07",
-     26.82
-    ],
-    [
-     "2025-08",
-     25.62
-    ],
-    [
-     "2025-09",
-     28.19
-    ],
-    [
-     "2025-10",
-     32.7
-    ],
-    [
-     "2025-11",
-     34.61
-    ],
-    [
-     "2025-12",
-     33.26
-    ],
-    [
-     "2026-01",
-     39.1
-    ],
-    [
-     "2026-02",
-     35.51
-    ],
-    [
-     "2026-03",
-     33.03
-    ],
-    [
-     "2026-04",
-     26.31
-    ],
-    [
-     "2026-05",
-     26.6
-    ],
-    [
-     "2026-06",
-     28.17
-    ],
-    [
-     "2026-07",
-     26.9
-    ],
-    [
-     "2026-08",
-     25.19
-    ],
-    [
-     "2026-09",
-     28.56
-    ],
-    [
-     "2026-10",
-     32.67
-    ],
-    [
      "2026-11",
-     39.06
+     53.16
     ]
    ],
-   "twh": [
-    [
-     "2024-12",
-     12.826
-    ],
-    [
-     "2025-01",
-     16.774
-    ],
-    [
-     "2025-02",
-     13.589
-    ],
-    [
-     "2025-03",
-     12.305
-    ],
-    [
-     "2025-04",
-     10.629
-    ],
-    [
-     "2025-05",
-     9.776
-    ],
-    [
-     "2025-06",
-     9.1
-    ],
-    [
-     "2025-07",
-     11.08
-    ],
-    [
-     "2025-08",
-     9.655
-    ],
-    [
-     "2025-09",
-     9.275
-    ],
-    [
-     "2025-10",
-     11.815
-    ],
-    [
-     "2025-11",
-     12.85
-    ],
-    [
-     "2025-12",
-     12.332
-    ],
-    [
-     "2026-01",
-     14.762
-    ],
-    [
-     "2026-02",
-     12.582
-    ],
-    [
-     "2026-03",
-     11.066
-    ],
-    [
-     "2026-04",
-     9.873
-    ],
-    [
-     "2026-05",
-     9.816
-    ],
-    [
-     "2026-06",
-     9.876
-    ],
-    [
-     "2026-07",
-     9.63
-    ],
-    [
-     "2026-08",
-     10.479
-    ],
-    [
-     "2026-09",
-     10.047
-    ],
-    [
-     "2026-10",
-     11.791
-    ],
-    [
-     "2026-11",
-     14.306
-    ]
-   ],
-   "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
+   "src": "NESO Transmission Entry Capacity register: gas, nuclear, biomass, hydro, pumped storage, batteries and other thermal plant connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
-    "title": "Elexon FUELHH",
-    "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-26"
+    "title": "TEC Register",
+    "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
+    "published": "2026-11-24"
    },
-   "name": "Dispatchable capacity in use",
+   "name": "Dispatchable capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "capgas": {
    "rows": [
     [
-     "2024-12",
-     27.87
-    ],
-    [
-     "2025-01",
-     27.25
-    ],
-    [
-     "2025-02",
-     24.92
-    ],
-    [
-     "2025-03",
-     23.45
-    ],
-    [
-     "2025-04",
-     20.63
-    ],
-    [
-     "2025-05",
-     16.9
-    ],
-    [
-     "2025-06",
-     16.77
-    ],
-    [
-     "2025-07",
-     16.3
-    ],
-    [
-     "2025-08",
-     17.19
-    ],
-    [
-     "2025-09",
-     18.85
-    ],
-    [
-     "2025-10",
-     23.89
-    ],
-    [
-     "2025-11",
-     23.88
-    ],
-    [
-     "2025-12",
-     22.26
-    ],
-    [
-     "2026-01",
-     26.79
-    ],
-    [
-     "2026-02",
-     23.85
-    ],
-    [
-     "2026-03",
-     22.06
-    ],
-    [
-     "2026-04",
-     14.74
-    ],
-    [
-     "2026-05",
-     15.93
-    ],
-    [
-     "2026-06",
-     17.57
-    ],
-    [
-     "2026-07",
-     15.68
-    ],
-    [
-     "2026-08",
-     14.52
-    ],
-    [
-     "2026-09",
-     17.4
-    ],
-    [
-     "2026-10",
-     19.41
-    ],
-    [
      "2026-11",
-     24.89
+     29.8
     ]
    ],
-   "twh": [
-    [
-     "2024-12",
-     7.479
-    ],
-    [
-     "2025-01",
-     10.882
-    ],
-    [
-     "2025-02",
-     8.236
-    ],
-    [
-     "2025-03",
-     7.708
-    ],
-    [
-     "2025-04",
-     5.714
-    ],
-    [
-     "2025-05",
-     4.448
-    ],
-    [
-     "2025-06",
-     3.859
-    ],
-    [
-     "2025-07",
-     5.472
-    ],
-    [
-     "2025-08",
-     5.03
-    ],
-    [
-     "2025-09",
-     4.879
-    ],
-    [
-     "2025-10",
-     7.1
-    ],
-    [
-     "2025-11",
-     7.205
-    ],
-    [
-     "2025-12",
-     6.829
-    ],
-    [
-     "2026-01",
-     9.162
-    ],
-    [
-     "2026-02",
-     7.54
-    ],
-    [
-     "2026-03",
-     5.813
-    ],
-    [
-     "2026-04",
-     3.75
-    ],
-    [
-     "2026-05",
-     5.069
-    ],
-    [
-     "2026-06",
-     5.861
-    ],
-    [
-     "2026-07",
-     5.014
-    ],
-    [
-     "2026-08",
-     4.833
-    ],
-    [
-     "2026-09",
-     4.619
-    ],
-    [
-     "2026-10",
-     5.51
-    ],
-    [
-     "2026-11",
-     8.744
-    ]
-   ],
-   "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
+   "src": "NESO Transmission Entry Capacity register: CCGT, OCGT, gas reciprocating and CHP plant connected to the GB transmission system (built projects), latest register of each month",
    "edition": {
-    "title": "Elexon FUELHH",
-    "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-26"
+    "title": "TEC Register",
+    "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register",
+    "published": "2026-11-24"
    },
-   "tec": [
-    [
-     "Connected CCGT and OCGT capacity, TEC register 2026-11-24",
-     28.9
-    ]
-   ],
-   "name": "Gas-fired capacity in use",
+   "name": "Gas-fired capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "capstor": {
    "rows": [
     [
-     "2024-12",
-     1.71
+     "2024 Q2",
+     6.1,
+     3.27,
+     2.83
     ],
     [
-     "2025-01",
-     2.01
+     "2024 Q3",
+     6.22,
+     3.39,
+     2.83
     ],
     [
-     "2025-02",
-     2.21
+     "2024 Q4",
+     6.35,
+     3.51,
+     2.83
     ],
     [
-     "2025-03",
-     1.87
+     "2025 Q1",
+     6.56,
+     3.73,
+     2.83
     ],
     [
-     "2025-04",
-     0.81
+     "2025 Q2",
+     6.73,
+     3.9,
+     2.83
     ],
     [
-     "2025-05",
-     0.53
+     "2025 Q3",
+     7.1,
+     4.27,
+     2.83
     ],
     [
-     "2025-06",
-     0.61
+     "2025 Q4",
+     7.23,
+     4.4,
+     2.83
     ],
     [
-     "2025-07",
-     0.61
+     "2026 Q1",
+     7.75,
+     4.92,
+     2.83
     ],
     [
-     "2025-08",
-     0.61
+     "2026 Q2",
+     7.75,
+     4.92,
+     2.83
     ],
     [
-     "2025-09",
-     1.1
-    ],
-    [
-     "2025-10",
-     1.7
-    ],
-    [
-     "2025-11",
-     1.84
-    ],
-    [
-     "2025-12",
-     1.75
-    ],
-    [
-     "2026-01",
-     1.65
-    ],
-    [
-     "2026-02",
-     1.74
-    ],
-    [
-     "2026-03",
-     1.89
-    ],
-    [
-     "2026-04",
-     1.66
-    ],
-    [
-     "2026-05",
-     1.63
-    ],
-    [
-     "2026-06",
-     1.39
-    ],
-    [
-     "2026-07",
-     1.44
-    ],
-    [
-     "2026-08",
-     1.36
-    ],
-    [
-     "2026-09",
-     1.51
-    ],
-    [
-     "2026-10",
-     1.66
-    ],
-    [
-     "2026-11",
-     1.56
+     "2026 Q3",
+     8.42,
+     5.59,
+     2.83
     ]
    ],
-   "twh": [
-    [
-     "2024-12",
-     -0.044
-    ],
-    [
-     "2025-01",
-     -0.064
-    ],
-    [
-     "2025-02",
-     -0.051
-    ],
-    [
-     "2025-03",
-     -0.051
-    ],
-    [
-     "2025-04",
-     -0.021
-    ],
-    [
-     "2025-05",
-     -0.015
-    ],
-    [
-     "2025-06",
-     -0.023
-    ],
-    [
-     "2025-07",
-     -0.008
-    ],
-    [
-     "2025-08",
-     -0.012
-    ],
-    [
-     "2025-09",
-     -0.031
-    ],
-    [
-     "2025-10",
-     -0.037
-    ],
-    [
-     "2025-11",
-     -0.049
-    ],
-    [
-     "2025-12",
-     -0.031
-    ],
-    [
-     "2026-01",
-     -0.047
-    ],
-    [
-     "2026-02",
-     -0.023
-    ],
-    [
-     "2026-03",
-     -0.059
-    ],
-    [
-     "2026-04",
-     -0.051
-    ],
-    [
-     "2026-05",
-     -0.039
-    ],
-    [
-     "2026-06",
-     -0.047
-    ],
-    [
-     "2026-07",
-     -0.043
-    ],
-    [
-     "2026-08",
-     -0.037
-    ],
-    [
-     "2026-09",
-     -0.05
-    ],
-    [
-     "2026-10",
-     -0.047
-    ],
-    [
-     "2026-11",
-     -0.04
-    ]
+   "cols": [
+    "Total",
+    "Batteries",
+    "Pumped storage"
    ],
-   "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB",
+   "src": "DESNZ Renewable Energy Planning Database (quarterly extract): operational battery, pumped-hydro, liquid-air, compressed-air and flywheel storage by operational date, UK",
    "edition": {
-    "title": "Elexon FUELHH",
-    "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type",
-    "published": "2026-11-26"
+    "title": "Renewable Energy Planning Database (REPD): October 2026 (CSV)",
+    "page": "https://www.gov.uk/government/publications/renewable-energy-planning-database-quarterly-extract",
+    "published": "2026-11-13"
    },
-   "tec": [
-    [
-     "Connected storage (batteries and pumped), TEC register 2026-11-24",
-     14.84
-    ],
-    [
-     "of which pumped storage",
-     2.74
-    ]
-   ],
-   "name": "Storage capacity in use (pumped storage output)",
+   "name": "Electricity storage capacity",
    "unit": "GW",
-   "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
+   "cad": "Q",
+   "fetched": "2026-11-26T17:41Z",
    "stale": false
   },
   "capren": {
@@ -4194,7 +2928,7 @@
    "name": "Renewable capacity",
    "unit": "GW",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gentotal": {
@@ -4249,7 +2983,7 @@
    "name": "Total electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "genbase": {
@@ -4304,7 +3038,7 @@
    "name": "Baseload generation (nuclear and bioenergy)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gennuc": {
@@ -4359,7 +3093,7 @@
    "name": "Nuclear generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gendisp": {
@@ -4414,7 +3148,7 @@
    "name": "Dispatchable generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "gengas": {
@@ -4469,7 +3203,7 @@
    "name": "Gas-fired generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "genren": {
@@ -4524,7 +3258,7 @@
    "name": "Renewable generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "genstor": {
@@ -4579,7 +3313,7 @@
    "name": "Electricity storage output",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "imports": {
@@ -4634,7 +3368,7 @@
    "name": "Electricity imports",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "exports": {
@@ -4689,7 +3423,7 @@
    "name": "Electricity exports",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "demtotal": {
@@ -4744,7 +3478,7 @@
    "name": "Total electricity demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "demdom": {
@@ -4799,7 +3533,7 @@
    "name": "Domestic electricity consumption",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "demind": {
@@ -4854,7 +3588,7 @@
    "name": "Industrial electricity consumption",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "demcom": {
@@ -4909,7 +3643,7 @@
    "name": "Commercial and other final users",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "losses": {
@@ -4964,7 +3698,7 @@
    "name": "Transmission and distribution losses",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "dc": {
@@ -5030,7 +3764,7 @@
    "name": "Data-centre electricity consumption (GB)",
    "unit": "TWh",
    "cad": "A",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "peak": {
@@ -5183,39 +3917,7 @@
    "name": "Peak transmission demand (GB)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T10:04Z",
-   "stale": false
-  },
-  "ebitact": {
-   "rows": [
-    [
-     "2022",
-     -1.66
-    ],
-    [
-     "2023",
-     2.57
-    ],
-    [
-     "2024",
-     0.88
-    ],
-    [
-     "2025",
-     0.19
-    ]
-   ],
-   "newer_edition": null,
-   "src": "Ofgem, Supplier financial resilience report 2026 (domestic market EBIT, calendar years; 2025 is Ofgem's estimate)",
-   "edition": {
-    "title": "Supplier financial resilience report 2026",
-    "page": "https://www.ofgem.gov.uk/publications/supplier-financial-resilience-report-2026",
-    "published": "2026-06-30"
-   },
-   "name": "Actual domestic supply EBIT, all suppliers",
-   "unit": "£bn",
-   "cad": "A",
-   "fetched": "2026-11-25T13:31Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "mid": {
@@ -8934,7 +7636,7 @@
    "name": "Wholesale electricity price, daily (APX market index)",
    "unit": "£/MWh",
    "cad": "D",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "sap": {
@@ -13372,6 +12074,12 @@
      228.91,
      231.17,
      226.65
+    ],
+    [
+     "2026-11-25",
+     221.03,
+     223.29,
+     218.77
     ]
    ],
    "cols": [
@@ -13388,7 +12096,7 @@
    "name": "NBP gas price, daily (System Average Price)",
    "unit": "p/therm",
    "cad": "D",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "dayahead": {
@@ -16375,7 +15083,7 @@
    "name": "Day-ahead baseload electricity price (GB)",
    "unit": "€/MWh",
    "cad": "D",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   },
   "brentd": {
@@ -18434,7 +17142,869 @@
    "name": "Brent crude, daily spot (EIA)",
    "unit": "$/bbl",
    "cad": "D",
-   "fetched": "2026-11-26T10:04Z",
+   "fetched": "2026-11-26T17:38Z",
+   "stale": false
+  },
+  "nbpfwd": {
+   "rows": [
+    [
+     "2024-10-07",
+     96.67
+    ],
+    [
+     "2024-10-14",
+     97.27
+    ],
+    [
+     "2024-10-21",
+     100.79
+    ],
+    [
+     "2024-10-28",
+     99.9
+    ],
+    [
+     "2024-11-04",
+     96.49
+    ],
+    [
+     "2024-11-11",
+     107.58
+    ],
+    [
+     "2024-11-18",
+     100.59
+    ],
+    [
+     "2024-11-25",
+     108.82
+    ],
+    [
+     "2024-12-02",
+     106.82
+    ],
+    [
+     "2024-12-09",
+     90.51
+    ],
+    [
+     "2024-12-16",
+     101.39
+    ],
+    [
+     "2024-12-23",
+     108.85
+    ],
+    [
+     "2024-12-30",
+     116.98
+    ],
+    [
+     "2025-01-06",
+     111.53
+    ],
+    [
+     "2025-01-13",
+     116.26
+    ],
+    [
+     "2025-01-20",
+     117.52
+    ],
+    [
+     "2025-01-27",
+     114.74
+    ],
+    [
+     "2025-02-03",
+     126.35
+    ],
+    [
+     "2025-02-10",
+     128.37
+    ],
+    [
+     "2025-02-17",
+     92.49
+    ],
+    [
+     "2025-02-24",
+     102.45
+    ],
+    [
+     "2025-03-03",
+     99.92
+    ],
+    [
+     "2025-03-10",
+     101.73
+    ],
+    [
+     "2025-03-17",
+     96.04
+    ],
+    [
+     "2025-03-24",
+     104.33
+    ],
+    [
+     "2025-03-31",
+     100.97
+    ],
+    [
+     "2025-04-07",
+     91.9
+    ],
+    [
+     "2025-04-14",
+     88.86
+    ],
+    [
+     "2025-04-21",
+     86.11
+    ],
+    [
+     "2025-04-28",
+     81.61
+    ],
+    [
+     "2025-05-05",
+     88.72
+    ],
+    [
+     "2025-05-12",
+     88.99
+    ],
+    [
+     "2025-05-19",
+     90.32
+    ],
+    [
+     "2025-05-26",
+     92.23
+    ],
+    [
+     "2025-06-02",
+     89.77
+    ],
+    [
+     "2025-06-09",
+     90.87
+    ],
+    [
+     "2025-06-16",
+     97.9
+    ],
+    [
+     "2025-06-23",
+     91.15
+    ],
+    [
+     "2025-06-30",
+     86.51
+    ],
+    [
+     "2025-07-07",
+     90.98
+    ],
+    [
+     "2025-07-14",
+     88.37
+    ],
+    [
+     "2025-07-21",
+     86.08
+    ],
+    [
+     "2025-07-28",
+     90.64
+    ],
+    [
+     "2025-08-04",
+     87.15
+    ],
+    [
+     "2025-08-11",
+     84.54
+    ],
+    [
+     "2025-08-18",
+     83.39
+    ],
+    [
+     "2025-08-25",
+     79.7
+    ],
+    [
+     "2025-09-01",
+     84.14
+    ],
+    [
+     "2025-09-08",
+     85.19
+    ],
+    [
+     "2025-09-15",
+     82.68
+    ],
+    [
+     "2025-09-22",
+     81.34
+    ],
+    [
+     "2025-09-29",
+     82.72
+    ],
+    [
+     "2025-10-06",
+     81.77
+    ],
+    [
+     "2025-10-13",
+     79.27
+    ],
+    [
+     "2025-10-20",
+     78.29
+    ],
+    [
+     "2025-10-27",
+     77.83
+    ],
+    [
+     "2025-11-03",
+     78.92
+    ],
+    [
+     "2025-11-10",
+     77.82
+    ],
+    [
+     "2025-11-17",
+     77.64
+    ],
+    [
+     "2025-11-24",
+     73.26
+    ],
+    [
+     "2025-12-01",
+     69.86
+    ],
+    [
+     "2025-12-08",
+     67.09
+    ],
+    [
+     "2025-12-15",
+     65.95
+    ],
+    [
+     "2025-12-22",
+     65.39
+    ],
+    [
+     "2025-12-29",
+     66.01
+    ],
+    [
+     "2026-01-05",
+     66.7
+    ],
+    [
+     "2026-01-12",
+     68.56
+    ],
+    [
+     "2026-01-19",
+     74.99
+    ],
+    [
+     "2026-01-26",
+     73.03
+    ],
+    [
+     "2026-02-02",
+     75.47
+    ],
+    [
+     "2026-02-09",
+     74.67
+    ],
+    [
+     "2026-02-16",
+     74.62
+    ],
+    [
+     "2026-02-23",
+     78.14
+    ],
+    [
+     "2026-03-02",
+     101.71
+    ],
+    [
+     "2026-03-09",
+     114.71
+    ],
+    [
+     "2026-03-16",
+     138.67
+    ],
+    [
+     "2026-03-23",
+     126.06
+    ],
+    [
+     "2026-03-30",
+     131.21
+    ],
+    [
+     "2026-04-06",
+     107.01
+    ],
+    [
+     "2026-04-13",
+     98.84
+    ],
+    [
+     "2026-04-20",
+     103.97
+    ],
+    [
+     "2026-04-27",
+     112.63
+    ],
+    [
+     "2026-05-04",
+     103.66
+    ],
+    [
+     "2026-05-11",
+     117.02
+    ],
+    [
+     "2026-05-18",
+     114.26
+    ],
+    [
+     "2026-05-25",
+     108.47
+    ],
+    [
+     "2026-06-01",
+     110.19
+    ],
+    [
+     "2026-06-08",
+     113.27
+    ],
+    [
+     "2026-06-15",
+     97.83
+    ],
+    [
+     "2026-06-22",
+     91.46
+    ],
+    [
+     "2026-06-29",
+     94.67
+    ],
+    [
+     "2026-07-06",
+     101.82
+    ],
+    [
+     "2026-07-13",
+     113.96
+    ],
+    [
+     "2026-07-20",
+     123.48
+    ],
+    [
+     "2026-07-27",
+     119.8
+    ],
+    [
+     "2026-08-03",
+     112.99
+    ],
+    [
+     "2026-08-10",
+     121.09
+    ],
+    [
+     "2026-08-17",
+     132.93
+    ],
+    [
+     "2026-08-24",
+     120.59
+    ],
+    [
+     "2026-08-31",
+     132.85
+    ],
+    [
+     "2026-09-07",
+     143.07
+    ],
+    [
+     "2026-09-14",
+     165.6
+    ],
+    [
+     "2026-09-21",
+     143.49
+    ],
+    [
+     "2026-09-28",
+     148.63
+    ]
+   ],
+   "src": "Ofgem wholesale market indicators: gas forward delivery contracts, weekly average price, Great Britain (Ofgem analysis of broker data)",
+   "edition": {
+    "title": "Ofgem chart xQHwOz4nR",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/wholesale-market-indicators",
+    "asof": "November 2026"
+   },
+   "name": "NBP gas forward contracts, weekly",
+   "unit": "p/therm",
+   "cad": "W",
+   "fetched": "2026-11-26T17:38Z",
+   "stale": false
+  },
+  "powerfwd": {
+   "rows": [
+    [
+     "2024-10-07",
+     82.14
+    ],
+    [
+     "2024-10-14",
+     79.88
+    ],
+    [
+     "2024-10-21",
+     80.44
+    ],
+    [
+     "2024-10-28",
+     81.05
+    ],
+    [
+     "2024-11-04",
+     79.86
+    ],
+    [
+     "2024-11-11",
+     85.83
+    ],
+    [
+     "2024-11-18",
+     85.34
+    ],
+    [
+     "2024-11-25",
+     85.84
+    ],
+    [
+     "2024-12-02",
+     83.72
+    ],
+    [
+     "2024-12-09",
+     81.36
+    ],
+    [
+     "2024-12-16",
+     78.12
+    ],
+    [
+     "2024-12-23",
+     85.28
+    ],
+    [
+     "2024-12-30",
+     88.87
+    ],
+    [
+     "2025-01-06",
+     86.88
+    ],
+    [
+     "2025-01-13",
+     88.06
+    ],
+    [
+     "2025-01-20",
+     90.68
+    ],
+    [
+     "2025-01-27",
+     95.22
+    ],
+    [
+     "2025-02-03",
+     100.18
+    ],
+    [
+     "2025-02-10",
+     104.02
+    ],
+    [
+     "2025-02-17",
+     94.0
+    ],
+    [
+     "2025-02-24",
+     87.57
+    ],
+    [
+     "2025-03-03",
+     84.05
+    ],
+    [
+     "2025-03-10",
+     86.86
+    ],
+    [
+     "2025-03-17",
+     88.08
+    ],
+    [
+     "2025-03-24",
+     83.97
+    ],
+    [
+     "2025-03-31",
+     83.99
+    ],
+    [
+     "2025-04-07",
+     79.1
+    ],
+    [
+     "2025-04-14",
+     79.99
+    ],
+    [
+     "2025-04-21",
+     80.61
+    ],
+    [
+     "2025-04-28",
+     77.86
+    ],
+    [
+     "2025-05-05",
+     80.21
+    ],
+    [
+     "2025-05-12",
+     81.79
+    ],
+    [
+     "2025-05-19",
+     84.1
+    ],
+    [
+     "2025-05-26",
+     79.3
+    ],
+    [
+     "2025-06-02",
+     82.3
+    ],
+    [
+     "2025-06-09",
+     82.28
+    ],
+    [
+     "2025-06-16",
+     89.5
+    ],
+    [
+     "2025-06-23",
+     83.55
+    ],
+    [
+     "2025-06-30",
+     78.68
+    ],
+    [
+     "2025-07-07",
+     78.31
+    ],
+    [
+     "2025-07-14",
+     82.5
+    ],
+    [
+     "2025-07-21",
+     79.73
+    ],
+    [
+     "2025-07-28",
+     80.3
+    ],
+    [
+     "2025-08-04",
+     78.97
+    ],
+    [
+     "2025-08-11",
+     78.78
+    ],
+    [
+     "2025-08-18",
+     77.96
+    ],
+    [
+     "2025-08-25",
+     74.85
+    ],
+    [
+     "2025-09-01",
+     79.78
+    ],
+    [
+     "2025-09-08",
+     78.75
+    ],
+    [
+     "2025-09-15",
+     81.45
+    ],
+    [
+     "2025-09-22",
+     81.19
+    ],
+    [
+     "2025-09-29",
+     77.16
+    ],
+    [
+     "2025-10-06",
+     78.1
+    ],
+    [
+     "2025-10-13",
+     75.99
+    ],
+    [
+     "2025-10-20",
+     76.62
+    ],
+    [
+     "2025-10-27",
+     76.19
+    ],
+    [
+     "2025-11-03",
+     77.06
+    ],
+    [
+     "2025-11-10",
+     75.76
+    ],
+    [
+     "2025-11-17",
+     75.64
+    ],
+    [
+     "2025-11-24",
+     72.54
+    ],
+    [
+     "2025-12-01",
+     69.03
+    ],
+    [
+     "2025-12-08",
+     69.27
+    ],
+    [
+     "2025-12-15",
+     69.95
+    ],
+    [
+     "2025-12-22",
+     71.51
+    ],
+    [
+     "2025-12-29",
+     72.52
+    ],
+    [
+     "2026-01-05",
+     71.6
+    ],
+    [
+     "2026-01-12",
+     73.77
+    ],
+    [
+     "2026-01-19",
+     77.18
+    ],
+    [
+     "2026-01-26",
+     76.3
+    ],
+    [
+     "2026-02-02",
+     75.55
+    ],
+    [
+     "2026-02-09",
+     71.83
+    ],
+    [
+     "2026-02-16",
+     71.85
+    ],
+    [
+     "2026-02-23",
+     73.34
+    ],
+    [
+     "2026-03-02",
+     92.51
+    ],
+    [
+     "2026-03-09",
+     97.85
+    ],
+    [
+     "2026-03-16",
+     108.81
+    ],
+    [
+     "2026-03-23",
+     104.91
+    ],
+    [
+     "2026-03-30",
+     102.7
+    ],
+    [
+     "2026-04-06",
+     94.4
+    ],
+    [
+     "2026-04-13",
+     89.85
+    ],
+    [
+     "2026-04-20",
+     89.7
+    ],
+    [
+     "2026-04-27",
+     95.49
+    ],
+    [
+     "2026-05-04",
+     95.02
+    ],
+    [
+     "2026-05-11",
+     98.01
+    ],
+    [
+     "2026-05-18",
+     103.16
+    ],
+    [
+     "2026-05-25",
+     95.21
+    ],
+    [
+     "2026-06-01",
+     95.37
+    ],
+    [
+     "2026-06-08",
+     98.14
+    ],
+    [
+     "2026-06-15",
+     91.51
+    ],
+    [
+     "2026-06-22",
+     90.4
+    ],
+    [
+     "2026-06-29",
+     92.88
+    ],
+    [
+     "2026-07-06",
+     97.21
+    ],
+    [
+     "2026-07-13",
+     97.82
+    ],
+    [
+     "2026-07-20",
+     116.5
+    ],
+    [
+     "2026-07-27",
+     103.37
+    ],
+    [
+     "2026-08-03",
+     99.6
+    ],
+    [
+     "2026-08-10",
+     103.96
+    ],
+    [
+     "2026-08-17",
+     109.53
+    ],
+    [
+     "2026-08-24",
+     109.92
+    ],
+    [
+     "2026-08-31",
+     118.37
+    ],
+    [
+     "2026-09-07",
+     121.26
+    ],
+    [
+     "2026-09-14",
+     134.69
+    ],
+    [
+     "2026-09-21",
+     123.55
+    ],
+    [
+     "2026-09-28",
+     123.51
+    ]
+   ],
+   "src": "Ofgem wholesale market indicators: electricity forward delivery contracts, weekly average price, Great Britain (Ofgem analysis of broker data)",
+   "edition": {
+    "title": "Ofgem chart 0eDBSsofl",
+    "page": "https://www.ofgem.gov.uk/news-and-insight/data/data-portal/wholesale-market-indicators",
+    "asof": "November 2026"
+   },
+   "name": "Electricity forward contracts, weekly",
+   "unit": "£/MWh",
+   "cad": "W",
+   "fetched": "2026-11-26T17:38Z",
    "stale": false
   }
  }

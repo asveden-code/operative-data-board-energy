@@ -1,16 +1,13 @@
 # Daily refresh — job instructions (UK energy board)
 
-You are refreshing the UK energy-market board: first its operative data file, then the "In the media and think tanks"
+You are refreshing the UK energy-market board: first its interim data file, then the "In the media and think tanks"
 blocks. Work in the repository checkout. Steps:
 
 0. Data: `python scripts/fetch_series.py` rebuilds `data/series.json` from the publishers (DESNZ DUKES and Energy
    Trends spreadsheets, Ofgem chart data, the UK ETS tables, NSTA, DESNZ heat-pump and switching statistics, NESO,
-   the gov.uk pages that state the Carbon Price Support, Energy Profits Levy, Electricity Generator Levy and ring-fence
-   tax rates, the IMF). It is deterministic and needs no judgement: run it, read its report, and if a source failed
+   National Gas, Elexon, Ember, the EIA, the IMF). It is deterministic and needs no judgement: run it, read its report, and if a source failed
    leave that series as it is (the script keeps the previous values and marks them stale) and mention the failure in
-   your report. Never edit `data/series.json` by hand. A legislated-rate series fails when the sentence on the gov.uk
-   page no longer matches: that usually means the rate has changed, so say so in the report rather than patching the
-   pattern. The `ebitact` series (Ofgem's annual supplier financial resilience report, a PDF) is transcribed by hand:
+   your report. Never edit `data/series.json` by hand. The `ebitact` series (Ofgem's annual supplier financial resilience report, a PDF) is transcribed by hand:
    if the script reports `newer_edition`, say so in the report so the owner can update it.
 
 1. `python scripts/fetch_candidates.py --days 14 --tt-days 60` → writes `data/candidates.json`:
@@ -30,8 +27,8 @@ blocks. Work in the repository checkout. Steps:
    readers, as do the IEA, the Oxford Institute for Energy Studies, IPPR and Nesta; they are not in the perimeter
    for that reason.
 2. Read `quotes.json` (yesterday's selection) and `data/candidates.json`. For each indicator key
-   (cap, gen, trade, dem, dc, peak, prod, imp, opex, gasdem, hp, brent, nbp, power, carbon, pricecap, baddebt,
-   margin, taxes, suppliers, shares, switching, gulf, ttf, euets — see `app.js` IND for what each covers) decide the
+   (cap, gen, trade, dem, dc, peak, prod, imp, gasdem, hp, brent, nbp, power, carbon, pricecap, baddebt,
+   margin, suppliers, shares, switching, gulf, ttf — see `app.js` IND for what each covers) decide the
    new set of at most seven passages. Judge each candidate on these things, in this order:
    - Relevance: does it substantially explain the current trend in this indicator, give an expectation or forecast
      for it, or signal a change in it or in a factor that could move it (a data release, a policy decision, a supply

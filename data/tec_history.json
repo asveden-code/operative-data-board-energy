@@ -1,0 +1,21 @@
+{
+"2026-11": {
+"snapshot": {
+"gas": 29.8,
+"windoff": 18.73,
+"windon": 7.57,
+"hydro": 1.0,
+"storage": 8.52,
+"solar": 0.1,
+"other": 0.23,
+"biomass": 4.83,
+"pumped": 2.74,
+"nuclear": 6.04,
+"total": 79.56,
+"base": 10.87,
+"disp": 53.16,
+"allstorage": 11.26
+},
+"register": "2026-11-24"
+}
+}

@@ -29,13 +29,13 @@ def get(url, tries=3, timeout=60, binary=False):
             if i == tries - 1: raise
             time.sleep(3 * (i + 1))
 
-def govuk_attachment(slug, pattern):
-    """URL and page metadata of the attachment of a gov.uk statistics page whose file name or title matches pattern."""
-    d = json.loads(get(f"https://www.gov.uk/api/content/government/statistics/{slug}"))
+def govuk_attachment(slug, pattern, kind="statistics"):
+    """URL and page metadata of the attachment of a gov.uk page whose file name or title matches pattern."""
+    d = json.loads(get(f"https://www.gov.uk/api/content/government/{kind}/{slug}"))
     rx = re.compile(pattern, re.I)
     for a in d["details"].get("attachments", []):
         if rx.search(a.get("url", "")) or rx.search(a.get("title", "")):
-            return a["url"], {"title": a.get("title"), "page": f"https://www.gov.uk/government/statistics/{slug}", "published": d.get("public_updated_at", "")[:10]}
+            return a["url"], {"title": a.get("title"), "page": f"https://www.gov.uk/government/{kind}/{slug}", "published": d.get("public_updated_at", "")[:10]}
     raise RuntimeError(f"no attachment matching {pattern} on {slug}")
 
 def govuk_latest_in_collection(collection_slug):
@@ -158,26 +158,6 @@ def s_oilimp():
 @series("gasimp", name="Net imports of natural gas", unit="mtoe", cad="Q")
 def s_gasimp():
     d, meta = _et13(); return {"rows": d["gas"][-10:], "src": "DESNZ, Energy Trends table 1.3 (imports less exports)", "edition": meta}
-
-@series("opex", name="Average unit operating cost, UKCS", unit="£/boe", cad="A")
-def s_opex():
-    page = "https://www.nstauthority.co.uk/data-and-insights/insights-and-analysis/production-and-expenditure-projections/"
-    h = get(page)
-    m = re.search(r"href=['\"]([^'\"]*projections-of-uk-oil-and-gas-production-and-expenditure\.xlsx)['\"]", h, re.I)
-    if not m: raise RuntimeError("NSTA projections workbook link not found")
-    url = m[1] if m[1].startswith("http") else "https://www.nstauthority.co.uk" + m[1]
-    wb = workbook(url); rows = sheet_rows(wb, "Public Table")
-    yr = None
-    for r in rows:
-        if r and norm(r[0]).lower() == "production": yr = r; break
-    ri = next(i for i, r in enumerate(rows) if r and norm(r[0]) == "Average Unit" and norm(r[1]) == "(£/boe)")
-    hist, proj = [], []
-    for j in range(3, len(yr)):
-        y = norm(yr[j]); v = num(rows[ri][j])
-        if not re.match(r"^\d{4}$", y) or v is None: continue
-        (proj if int(y) >= dt.date.today().year else hist).append([y, round(v, 2)])
-    ed = re.search(r"nsta-([a-z]+-\d{4})-projections", url)
-    return {"rows": hist, "projection": proj, "src": "North Sea Transition Authority, production and expenditure projections", "edition": {"title": ed[1].replace("-", " ").title() if ed else url, "page": page}}
 
 # --- IV. Gas demand (Energy Trends 4.2 monthly/quarterly/annual) ---
 def _et42(col, last=10):
@@ -361,38 +341,6 @@ def s_uka():
 def page_text(path):
     d = json.loads(get("https://www.gov.uk/api/content" + path)); body = d["details"].get("body") or json.dumps(d["details"])
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body))), d
-
-@series("cps", name="Carbon Price Support rate", unit="£/tCO2", cad="S")
-def s_cps():
-    txt, d = page_text("/government/statistics/environmental-taxes-bulletin/environmental-taxes-bulletin-historical-rates")
-    m = re.search(r"1 April 2016\s+£(\d+\.\d\d)\s+£0\.00331", txt)
-    if not m: raise RuntimeError("CPS £/tCO2 row not found in the environmental taxes bulletin")
-    ccl, d2 = page_text("/guidance/climate-change-levy-rates")
-    end = re.search(r"1 April 2016 to (\d{1,2} [A-Z][a-z]+ \d{4})\s+0\.00331", ccl)
-    return {"rows": [["2016-04-01", float(m[1])]], "ends": end[1] if end else None, "statement": f"Carbon Price Support £{m[1]}/tCO2 (gas 0.00331 £/kWh) from 1 April 2016" + (f" to {end[1]}" if end else ""), "src": "HMRC climate change levy rates; environmental taxes bulletin", "edition": {"title": d2.get("title"), "page": "https://www.gov.uk/guidance/climate-change-levy-rates", "published": d2.get("public_updated_at", "")[:10]}}
-
-@series("epl", name="Energy Profits Levy rate", unit="%", cad="S")
-def s_epl():
-    txt, d = page_text("/government/publications/energy-profits-levy-reforms-2024/energy-profits-levy-reforms-2024")
-    m = re.search(r"increases the rate of Energy Profits Levy by \d+ percentage points to (\d+)%, extends the end date of the Energy Profits Levy to (\d{1,2} [A-Z][a-z]+ \d{4})", txt)
-    if not m: raise RuntimeError("EPL rate sentence not found")
-    return {"rows": [["2022-05-26", 25], ["2023-01-01", 35], ["2024-11-01", int(m[1])]], "ends": m[2], "statement": f"Energy Profits Levy {m[1]}% from 1 November 2024 to {m[2]} (or earlier if the Energy Security Investment Mechanism is triggered); 25% from 26 May 2022, 35% from 1 January 2023", "src": "HM Treasury / HMRC policy paper, Energy Profits Levy reforms 2024", "edition": {"title": d.get("title"), "page": "https://www.gov.uk/government/publications/energy-profits-levy-reforms-2024/energy-profits-levy-reforms-2024", "published": d.get("public_updated_at", "")[:10]}}
-
-@series("egl", name="Electricity Generator Levy rate", unit="%", cad="S")
-def s_egl():
-    txt, d = page_text("/government/publications/increase-in-the-rate-of-the-electricity-generator-levy/amended-rate-of-the-electricity-generator-levy-2026-to-2027")
-    m = re.search(r"increases the rate at which the Electricity Generator Levy \(\s*EGL\s*\) is charged from (\d+)% to (\d+)% from (\d{1,2} [A-Z][a-z]+ \d{4})", txt)
-    if not m: raise RuntimeError("EGL rate sentence not found")
-    bm = re.search(r"benchmark price[^.]*?set at £(\d+(?:\.\d\d)?)", txt)
-    return {"rows": [["2023-01-01", int(m[1])], ["2026-07-01", int(m[2])]], "benchmark": float(bm[1]) if bm else None, "statement": f"Electricity Generator Levy {m[2]}% from {m[3]} ({m[1]}% from 1 January 2023); charged on receipts above a benchmark price" + (f" of £{bm[1]}/MWh" if bm else ""), "src": "HMRC policy paper, amended rate of the Electricity Generator Levy", "edition": {"title": d.get("title"), "page": "https://www.gov.uk/government/publications/increase-in-the-rate-of-the-electricity-generator-levy", "published": d.get("public_updated_at", "")[:10]}}
-
-@series("upstream", name="Headline tax rate on upstream oil and gas profits", unit="%", cad="S")
-def s_upstream():
-    txt, d = page_text("/government/publications/oil-and-gas-taxation-oil-and-gas-revenue-levy/oil-and-gas-revenue-levy-ogrl")
-    m = re.search(r"Ring Fence Corporation Tax \(RFCT\) which is charged at (\d+)% and the Supplementary Charge \(SC\) which is charged at (\d+)%", txt)
-    if not m: raise RuntimeError("RFCT/SC sentence not found")
-    epl = s_epl(); rate = int(m[1]) + int(m[2]) + epl["rows"][-1][1]
-    return {"rows": [["2022-05-26", int(m[1]) + int(m[2]) + 25], ["2023-01-01", int(m[1]) + int(m[2]) + 35], ["2024-11-01", rate]], "statement": f"Ring Fence Corporation Tax {m[1]}% + Supplementary Charge {m[2]}% + Energy Profits Levy {epl['rows'][-1][1]}% = {rate}%", "src": "HM Treasury policy papers (Oil and Gas Revenue Levy; Energy Profits Levy reforms 2024)", "edition": {"title": d.get("title"), "page": "https://www.gov.uk/government/publications/oil-and-gas-taxation-oil-and-gas-revenue-levy/oil-and-gas-revenue-levy-ogrl", "published": d.get("public_updated_at", "")[:10]}}
 
 def imf(indicator, transform):
     start = (dt.date.today() - dt.timedelta(days=760)).strftime("%Y-%m")
@@ -595,37 +543,9 @@ def s_dc():
 
 # --- Capacity in use and peak demand: Elexon half-hourly generation by fuel (monthly maxima) and NESO demand data ---
 ELEXON = "https://data.elexon.co.uk/bmrs/api/v1"
-FUEL_GROUPS = {"NUCLEAR": ["NUCLEAR"], "GAS": ["CCGT", "OCGT"], "BASE": ["NUCLEAR", "BIOMASS"], "DISP": ["CCGT", "OCGT", "OIL", "COAL", "NUCLEAR", "BIOMASS", "NPSHYD", "PS", "OTHER"], "PS": ["PS"], "WIND": ["WIND"], "BIOMASS": ["BIOMASS"],
-               "TOTAL": ["CCGT", "OCGT", "OIL", "COAL", "NUCLEAR", "BIOMASS", "NPSHYD", "PS", "OTHER", "WIND"]}
-def elexon_monthly(months_back=24):
-    """Monthly maximum half-hourly output (MW) and energy (TWh) per fuel group from Elexon's FUELHH dataset, with a
-    cache in data/elexon_fuel_monthly.json so that only the current and previous month are re-read each day."""
-    cache_p = ROOT / "data/elexon_fuel_monthly.json"; cache = json.loads(cache_p.read_text()) if cache_p.exists() else {}
-    today = dt.date.today(); first = (today.replace(day=1) - dt.timedelta(days=31 * months_back)).replace(day=1)
-    months = []; m = first
-    while m <= today.replace(day=1): months.append(m); m = (m.replace(day=28) + dt.timedelta(days=4)).replace(day=1)
-    for m in months:
-        key = m.strftime("%Y-%m"); nxt = (m.replace(day=28) + dt.timedelta(days=4)).replace(day=1); last = nxt - dt.timedelta(days=1)
-        if cache.get(key, {}).get("complete") and key not in (today.strftime("%Y-%m"), (today.replace(day=1) - dt.timedelta(days=1)).strftime("%Y-%m")): continue
-        per = {}  # (date, sp) -> {fuel: MW}
-        d0 = m
-        while d0 <= min(last, today):
-            d1 = min(d0 + dt.timedelta(days=6), last, today)
-            data = json.loads(get(f"{ELEXON}/datasets/FUELHH?settlementDateFrom={d0}&settlementDateTo={d1}&format=json", timeout=120)).get("data", [])
-            for r in data:
-                k = (r["settlementDate"], r["settlementPeriod"]); per.setdefault(k, {})[r["fuelType"]] = r.get("generation") or 0
-            d0 = d1 + dt.timedelta(days=1)
-        if not per: continue
-        mx = {}; twh = {}
-        for g, fuels in FUEL_GROUPS.items():
-            vals = [sum(v.get(f, 0) for f in fuels) for v in per.values()]
-            mx[g] = round(max(vals) / 1000, 2); twh[g] = round(sum(vals) / 2 / 1e6, 3)
-        cache[key] = {"max_gw": mx, "twh": twh, "periods": len(per), "complete": last < today}
-    cache = {k: cache[k] for k in sorted(cache)}
-    cache_p.write_text(json.dumps(cache, indent=0)); return cache
-
 def tec_snapshot():
-    """Built transmission-connected capacity by plant type from NESO's TEC register (a current snapshot, MW)."""
+    """Built transmission-connected capacity by technology from NESO's TEC register (a current snapshot, GW).
+    A project's first-listed plant type classifies it; demand-only, hydrogen-only and reactive-compensation rows are excluded."""
     pk = json.loads(get("https://api.neso.energy/api/3/action/package_show?id=transmission-entry-capacity-tec-register"))["result"]
     r = pk["resources"][0]; rows = list(_csv.DictReader(io.StringIO(get(r["url"], timeout=120).lstrip("﻿"))))
     agg = {}
@@ -633,31 +553,83 @@ def tec_snapshot():
         if x.get("Project Status", "").strip() != "Built": continue
         try: mw = float((x.get("MW Connected") or "0").replace(",", ""))
         except ValueError: continue
-        agg[x.get("Plant Type", "")] = agg.get(x.get("Plant Type", ""), 0) + mw
-    def grp(pred): return round(sum(v for k, v in agg.items() if pred(k)) / 1000, 2)
-    snap = {"nuclear": grp(lambda k: k == "Nuclear"), "gas": grp(lambda k: k.startswith("CCGT") or k.startswith("OCGT")), "storage": grp(lambda k: "Energy Storage System" in k or "Pump Storage" in k), "pumped": grp(lambda k: k == "Pump Storage"), "total": grp(lambda k: "Demand" not in k and "Reactive" not in k and "Hydrogen" not in k)}
-    return snap, {"title": r.get("name"), "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register", "published": (r.get("last_modified") or "")[:10]}
+        types = [t.strip() for t in (x.get("Plant Type") or "").split(";") if t.strip()]
+        gen = [t for t in types if t not in ("Demand", "Reactive Compensation", "Hydrogen")]
+        if not gen or mw <= 0: continue
+        t = gen[0]
+        k = ("nuclear" if t == "Nuclear" else "gas" if t.startswith(("CCGT", "OCGT", "Gas Reciprocating", "CHP")) else "biomass" if t in ("Biomass", "Waste") else "pumped" if t == "Pump Storage"
+             else "storage" if t.startswith("Energy Storage System") else "windoff" if t == "Wind Offshore" else "windon" if t == "Wind Onshore" else "solar" if t.startswith("PV") else "hydro" if t == "Hydro" else "other")
+        agg[k] = agg.get(k, 0) + mw
+    g = {k: round(v / 1000, 2) for k, v in agg.items()}
+    g["total"] = round(sum(agg.values()) / 1000, 2); g["base"] = round(g.get("nuclear", 0) + g.get("biomass", 0), 2)
+    g["disp"] = round(sum(g.get(k, 0) for k in ("gas", "nuclear", "biomass", "hydro", "pumped", "storage", "other")), 2)
+    g["allstorage"] = round(g.get("storage", 0) + g.get("pumped", 0), 2)
+    return g, {"title": r.get("name"), "page": "https://www.neso.energy/data-portal/transmission-entry-capacity-tec-register", "published": (r.get("last_modified") or "")[:10]}
 
-def cap_series(group, name, unit="GW"):
-    c = elexon_monthly(); rows = [[k, v["max_gw"][group]] for k, v in c.items() if v["periods"] > 100][-24:]
-    return {"rows": rows, "twh": [[k, v["twh"][group]] for k, v in c.items()][-24:], "src": "Elexon Insights, half-hourly generation by fuel type (FUELHH): maximum half-hourly output in the month, transmission-metered GB", "edition": {"title": "Elexon FUELHH", "page": "https://bmrs.elexon.co.uk/generation-by-fuel-type", "published": dt.date.today().isoformat()}}
+def tec_history():
+    """Monthly series of the TEC register snapshots: the register is replaced in place, so the daily job records the
+    latest snapshot of each month in data/tec_history.json (the series starts with the first month the job ran)."""
+    hp = ROOT / "data/tec_history.json"; hist = json.loads(hp.read_text()) if hp.exists() else {}
+    snap, meta = tec_snapshot(); key = dt.date.today().strftime("%Y-%m")
+    hist[key] = {"snapshot": snap, "register": meta["published"]}
+    hist = {k: hist[k] for k in sorted(hist)}; hp.write_text(json.dumps(hist, indent=0)); return hist, meta
 
-@series("captotal", name="Generation capacity in use (all transmission-metered fuels)", unit="GW", cad="M")
-def s_captotal():
-    d = cap_series("TOTAL", "total"); snap, meta = tec_snapshot(); d["tec"] = [["Built transmission-connected capacity, TEC register " + meta["published"], snap["total"]]]; return d
-@series("capbase", name="Baseload capacity in use (nuclear and biomass)", unit="GW", cad="M")
-def s_capbase(): return cap_series("BASE", "base")
-@series("capnuc", name="Nuclear capacity in use", unit="GW", cad="M")
-def s_capnuc():
-    d = cap_series("NUCLEAR", "nuclear"); snap, meta = tec_snapshot(); d["tec"] = [["Connected nuclear capacity, TEC register " + meta["published"], snap["nuclear"]]]; return d
-@series("capdisp", name="Dispatchable capacity in use", unit="GW", cad="M")
-def s_capdisp(): return cap_series("DISP", "dispatchable")
-@series("capgas", name="Gas-fired capacity in use", unit="GW", cad="M")
-def s_capgas():
-    d = cap_series("GAS", "gas"); snap, meta = tec_snapshot(); d["tec"] = [["Connected CCGT and OCGT capacity, TEC register " + meta["published"], snap["gas"]]]; return d
-@series("capstor", name="Storage capacity in use (pumped storage output)", unit="GW", cad="M")
+def tec_series(field, src):
+    hist, meta = tec_history()
+    return {"rows": [[k, v["snapshot"].get(field, 0)] for k, v in hist.items()][-24:], "src": "NESO Transmission Entry Capacity register: " + src + " connected to the GB transmission system (built projects), latest register of each month", "edition": meta}
+
+@series("captotal", name="Connected generation capacity (transmission)", unit="GW", cad="M")
+def s_captotal(): return tec_series("total", "all generation and storage")
+@series("capbase", name="Baseload capacity (nuclear and biomass)", unit="GW", cad="M")
+def s_capbase(): return tec_series("base", "nuclear and biomass plant")
+@series("capnuc", name="Nuclear capacity", unit="GW", cad="M")
+def s_capnuc(): return tec_series("nuclear", "nuclear stations")
+@series("capdisp", name="Dispatchable capacity", unit="GW", cad="M")
+def s_capdisp(): return tec_series("disp", "gas, nuclear, biomass, hydro, pumped storage, batteries and other thermal plant")
+@series("capgas", name="Gas-fired capacity", unit="GW", cad="M")
+def s_capgas(): return tec_series("gas", "CCGT, OCGT, gas reciprocating and CHP plant")
+
+@series("capstor", name="Electricity storage capacity", unit="GW", cad="Q")
 def s_capstor():
-    d = cap_series("PS", "pumped"); snap, meta = tec_snapshot(); d["tec"] = [["Connected storage (batteries and pumped), TEC register " + meta["published"], snap["storage"]], ["of which pumped storage", snap["pumped"]]]; return d
+    """Quarterly cumulative operational storage capacity from DESNZ's Renewable Energy Planning Database (all sizes, UK)."""
+    url, meta = govuk_attachment("renewable-energy-planning-database-quarterly-extract", r"REPD_Publication_Q\d_\d{4}\.csv$", kind="publications")
+    raw = get(url, timeout=180, binary=True); txt = None
+    for enc in ("utf-8-sig", "cp1252", "latin-1"):
+        try: txt = raw.decode(enc); break
+        except UnicodeDecodeError: pass
+    rows = list(_csv.DictReader(io.StringIO(txt)))
+    STOR = {"Battery": "bat", "Pumped Storage Hydroelectricity": "pumped", "Liquid Air Energy Storage": "other", "Compressed Air Energy Storage": "other", "Flywheels": "other"}
+    ev = []
+    for x in rows:
+        if (x.get("Development Status (short)") or "").strip() != "Operational" or x.get("Technology Type") not in STOR: continue
+        try: mw = float(x.get("Installed Capacity (MWelec)") or 0); d = dt.datetime.strptime(x["Operational"].strip(), "%d/%m/%Y").date()
+        except (ValueError, KeyError): continue
+        ev.append((d, STOR[x["Technology Type"]], mw))
+    today = dt.date.today(); out = []
+    q = dt.date(today.year, 3 * ((today.month - 1) // 3) + 1, 1)   # the current, unfinished quarter is not shown
+    q = (q - dt.timedelta(days=1)).replace(day=1); q = dt.date(q.year, 3 * ((q.month - 1) // 3) + 1, 1)
+    qs = []
+    for _ in range(10):
+        qs.append(q); q = (q - dt.timedelta(days=1)).replace(day=1); q = dt.date(q.year, 3 * ((q.month - 1) // 3) + 1, 1)
+    for q0 in sorted(qs):
+        qend = (dt.date(q0.year + (q0.month + 2) // 12, (q0.month + 2) % 12 + 1, 1) - dt.timedelta(days=1))
+        tot = {"bat": 0, "pumped": 0, "other": 0}
+        for d, k, mw in ev:
+            if d <= qend: tot[k] += mw
+        out.append([f"{q0.year} Q{(q0.month - 1) // 3 + 1}", round(sum(tot.values()) / 1000, 2), round(tot["bat"] / 1000, 2), round(tot["pumped"] / 1000, 2)])
+    return {"rows": out, "cols": ["Total", "Batteries", "Pumped storage"], "src": "DESNZ Renewable Energy Planning Database (quarterly extract): operational battery, pumped-hydro, liquid-air, compressed-air and flywheel storage by operational date, UK", "edition": meta}
+
+@series("nbpfwd", name="NBP gas forward contracts, weekly", unit="p/therm", cad="W")
+def s_nbpfwd():
+    h, rows, meta = everviz("xQHwOz4nR"); meta["page"] = OFGEM_WMI
+    def pd(x): d, m, y = x.strip().split("/"); return f"{y}-{m}-{d}"
+    return {"rows": [[pd(r[0]), round(float(r[1]), 2)] for r in rows if num(r[1]) is not None][-104:], "src": "Ofgem wholesale market indicators: gas forward delivery contracts, weekly average price, Great Britain (Ofgem analysis of broker data)", "edition": meta}
+
+@series("powerfwd", name="Electricity forward contracts, weekly", unit="£/MWh", cad="W")
+def s_powerfwd():
+    h, rows, meta = everviz("0eDBSsofl"); meta["page"] = OFGEM_WMI
+    def pd(x): d, m, y = x.strip().split("/"); return f"{y}-{m}-{d}"
+    return {"rows": [[pd(r[0]), round(float(r[1]), 2)] for r in rows if num(r[1]) is not None][-104:], "src": "Ofgem wholesale market indicators: electricity forward delivery contracts, weekly average price, Great Britain (Ofgem analysis of broker data)", "edition": meta}
 
 @series("peak", name="Peak transmission demand (GB)", unit="GW", cad="M")
 def s_peak():
@@ -743,7 +715,7 @@ def main():
     a = ap.parse_args(); out = ROOT / a.out
     prev = json.loads(out.read_text())["series"] if out.exists() else {}
     keys = [k for k in a.only.split(",") if k] or list(REG)
-    result = {k: v for k, v in prev.items()}
+    result = {k: v for k, v in prev.items() if k in REG}   # series removed from the registry leave the file
     now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%MZ"); ok = 0
     for k in keys:
         f, meta = REG[k]
