@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T17:41Z",
+ "generated_at": "2026-11-26T17:43Z",
  "series": {
   "crude": {
    "rows": [
@@ -53,7 +53,7 @@
    "name": "Crude oil production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "ngl": {
@@ -108,7 +108,7 @@
    "name": "NGLs production",
    "unit": "Mt",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasprod": {
@@ -163,7 +163,7 @@
    "name": "Natural gas production",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "oilimp": {
@@ -218,7 +218,7 @@
    "name": "Net imports of oil",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasimp": {
@@ -273,7 +273,7 @@
    "name": "Net imports of natural gas",
    "unit": "mtoe",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasdem": {
@@ -426,7 +426,7 @@
    "name": "Natural gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasdom": {
@@ -579,7 +579,7 @@
    "name": "Domestic gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasgen": {
@@ -732,7 +732,7 @@
    "name": "Gas for electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gascom": {
@@ -885,7 +885,7 @@
    "name": "Commercial and services gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasind": {
@@ -1038,7 +1038,7 @@
    "name": "Industrial gas demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gasnet": {
@@ -1191,7 +1191,7 @@
    "name": "Net imports of natural gas (ET 4.2)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "hp": {
@@ -1246,7 +1246,7 @@
    "name": "Heat pump installations",
    "unit": "thousand",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "power": {
@@ -1357,7 +1357,7 @@
    "name": "Wholesale electricity price (GB)",
    "unit": "£/MWh",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "nbp": {
@@ -1468,7 +1468,7 @@
    "name": "NBP gas price (GB)",
    "unit": "p/therm",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "cap": {
@@ -1559,7 +1559,7 @@
    "name": "Ofgem price cap, typical dual-fuel direct debit",
    "unit": "£/year",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capparams": {
@@ -1613,7 +1613,7 @@
    "name": "Price cap EBIT allowance parameters",
    "unit": "",
    "cad": "A",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "debt": {
@@ -1693,7 +1693,7 @@
    "name": "Domestic customer debt and arrears",
    "unit": "£bn",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "suppliers": {
@@ -1748,7 +1748,7 @@
    "name": "Active domestic suppliers (GB)",
    "unit": "suppliers",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "shares_e": {
@@ -1899,7 +1899,7 @@
    "unit": "%",
    "cad": "Q",
    "kind": "shares",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "shares_g": {
@@ -2050,7 +2050,7 @@
    "unit": "%",
    "cad": "Q",
    "kind": "shares",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "switch": {
@@ -2189,7 +2189,7 @@
    "name": "Domestic customers switching supplier",
    "unit": "thousand",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "switchrate": {
@@ -2353,7 +2353,7 @@
    "name": "Switching rate, domestic electricity",
    "unit": "% per month",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "uka": {
@@ -2478,7 +2478,7 @@
    "name": "UK ETS allowance price (UKA)",
    "unit": "£/tCO2",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "brent": {
@@ -2588,7 +2588,7 @@
    "name": "Brent crude",
    "unit": "$/bbl",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "ttf": {
@@ -2698,7 +2698,7 @@
    "name": "TTF gas (EU)",
    "unit": "$/MMBtu",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "captotal": {
@@ -2717,7 +2717,7 @@
    "name": "Connected generation capacity (transmission)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capbase": {
@@ -2736,7 +2736,7 @@
    "name": "Baseload capacity (nuclear and biomass)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capnuc": {
@@ -2755,7 +2755,7 @@
    "name": "Nuclear capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capdisp": {
@@ -2774,7 +2774,7 @@
    "name": "Dispatchable capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capgas": {
@@ -2793,7 +2793,7 @@
    "name": "Gas-fired capacity",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capstor": {
@@ -2873,7 +2873,7 @@
    "name": "Electricity storage capacity",
    "unit": "GW",
    "cad": "Q",
-   "fetched": "2026-11-26T17:41Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "capren": {
@@ -2928,7 +2928,7 @@
    "name": "Renewable capacity",
    "unit": "GW",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gentotal": {
@@ -2983,7 +2983,7 @@
    "name": "Total electricity generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "genbase": {
@@ -3038,7 +3038,7 @@
    "name": "Baseload generation (nuclear and bioenergy)",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gennuc": {
@@ -3093,7 +3093,7 @@
    "name": "Nuclear generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gendisp": {
@@ -3148,7 +3148,7 @@
    "name": "Dispatchable generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "gengas": {
@@ -3203,7 +3203,7 @@
    "name": "Gas-fired generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "genren": {
@@ -3258,7 +3258,7 @@
    "name": "Renewable generation",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "genstor": {
@@ -3313,7 +3313,7 @@
    "name": "Electricity storage output",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "imports": {
@@ -3368,7 +3368,7 @@
    "name": "Electricity imports",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "exports": {
@@ -3423,7 +3423,7 @@
    "name": "Electricity exports",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "demtotal": {
@@ -3478,7 +3478,7 @@
    "name": "Total electricity demand",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "demdom": {
@@ -3533,7 +3533,7 @@
    "name": "Domestic electricity consumption",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "demind": {
@@ -3588,7 +3588,7 @@
    "name": "Industrial electricity consumption",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "demcom": {
@@ -3643,7 +3643,7 @@
    "name": "Commercial and other final users",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "losses": {
@@ -3698,7 +3698,7 @@
    "name": "Transmission and distribution losses",
    "unit": "TWh",
    "cad": "Q",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "dc": {
@@ -3764,7 +3764,7 @@
    "name": "Data-centre electricity consumption (GB)",
    "unit": "TWh",
    "cad": "A",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "peak": {
@@ -3917,7 +3917,7 @@
    "name": "Peak transmission demand (GB)",
    "unit": "GW",
    "cad": "M",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "mid": {
@@ -7636,7 +7636,7 @@
    "name": "Wholesale electricity price, daily (APX market index)",
    "unit": "£/MWh",
    "cad": "D",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "sap": {
@@ -12096,7 +12096,7 @@
    "name": "NBP gas price, daily (System Average Price)",
    "unit": "p/therm",
    "cad": "D",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "dayahead": {
@@ -15083,7 +15083,7 @@
    "name": "Day-ahead baseload electricity price (GB)",
    "unit": "€/MWh",
    "cad": "D",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "brentd": {
@@ -17142,7 +17142,7 @@
    "name": "Brent crude, daily spot (EIA)",
    "unit": "$/bbl",
    "cad": "D",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "nbpfwd": {
@@ -17573,7 +17573,7 @@
    "name": "NBP gas forward contracts, weekly",
    "unit": "p/therm",
    "cad": "W",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   },
   "powerfwd": {
@@ -18004,7 +18004,7 @@
    "name": "Electricity forward contracts, weekly",
    "unit": "£/MWh",
    "cad": "W",
-   "fetched": "2026-11-26T17:38Z",
+   "fetched": "2026-11-26T17:43Z",
    "stale": false
   }
  }
