@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T17:41Z",
+ "generated_at": "2026-11-27T11:24Z",
  "window_days": {
   "press": 14,
   "think_tanks": 60
@@ -308,6 +308,20 @@
    }
   ],
   "dc": [
+   {
+    "source": "Oxford Economics",
+    "title": "Building the AI Economy: What Happens After the Data Centre Peak",
+    "url": "https://www.oxfordeconomics.com/resource/building-the-ai-economy-what-happens-after-the-data-centre-peak/",
+    "date": "2026-11-26",
+    "quote": "The future of data centre construction is set for significant shifts, with a peak forecasted at US$212 billion in 2030, followed by a 40% decline by 2037. This decline will vary across regions, with the Americas experiencing the most substantial drop. […] The Americas will peak last in 2030, maintaining elevated levels until 2032, primarily due to the lengthy construction of large campuses. In contrast, Asia will peak in 2029, driven by a boom in Australia, while Europe is expected to plateau after peaking first in 2028, with Germany and the Netherlands contracting post-2027.",
+    "pieces": [
+     "The future of data centre construction is set for significant shifts, with a peak forecasted at US$212 billion in 2030, followed by a 40% decline by 2037. This decline will vary across regions, with the Americas experiencing the most substantial drop.",
+     "The Americas will peak last in 2030, maintaining elevated levels until 2032, primarily due to the lengthy construction of large campuses. In contrast, Asia will peak in 2029, driven by a boom in Australia, while Europe is expected to plateau after peaking first in 2028, with Germany and the Netherlands contracting post-2027."
+    ],
+    "tag": "Peak forecast",
+    "verified": "page text",
+    "link": "https://www.oxfordeconomics.com/resource/building-the-ai-economy-what-happens-after-the-data-centre-peak/#:~:text=The%20future%20of%20data%20centre%20construction%20is,with%20Germany%20and%20the%20Netherlands%20contracting%20post%2D2027."
+   },
    {
     "source": "CNBC Economy",
     "title": "Data center electricity use could double by 2030, IEA says",
@@ -721,6 +735,32 @@
     "tag": null,
     "link": "https://www.e3g.org/news/the-uk-s-2026-autumn-budget-has-laid-the-ground-for-cleaner-and-cheaper-electricity-the-2027-spending-review-must-build-on-it/#:~:text=UK%20household%20energy%20bills%20could%20increase%20by,vulnerable%20to%20economic%20shocks%20and%20military%20threats.",
     "verified": "page text"
+   },
+   {
+    "source": "Bruegel",
+    "title": "Proposing heating efficiency standards for Europe",
+    "url": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe",
+    "date": "2026-10-26",
+    "quote": "In April 2025, the UK launched a Clean Heat Market Mechanism, which requires manufacturers to sell specified numbers of heat pumps relative to gas boilers, with a £500 fine for each unit below the target. Early evidence suggests that manufacturers that sell both technologies have responded by discounting heat pumps to meet the target, rather than by purchasing credits from other manufacturers (Agora Energiewende, 2025). This suggests that an EU scheme must set ambitious targets and sufficiently high fines. If the target is not ambitious enough, demand does not increase, and the result is to shift sales away from heat-pump-only manufacturers to those that also sell boilers.",
+    "pieces": [
+     "In April 2025, the UK launched a Clean Heat Market Mechanism, which requires manufacturers to sell specified numbers of heat pumps relative to gas boilers, with a £500 fine for each unit below the target8. Early evidence suggests that manufacturers that sell both technologies have responded by discounting heat pumps to meet the target, rather than by purchasing credits from other manufacturers (Agora Energiewende, 2025). This suggests that an EU scheme must set ambitious targets and sufficiently high fines. If the target is not ambitious enough, demand does not increase, and the result is to shift sales away from heat-pump-only manufacturers to those that also sell boilers."
+    ],
+    "tag": null,
+    "verified": "page text",
+    "link": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe#:~:text=In%20April%202025%2C%20the%20UK%20launched%20a,manufacturers%20to%20those%20that%20also%20sell%20boilers."
+   },
+   {
+    "source": "Bruegel",
+    "title": "Proposing heating efficiency standards for Europe",
+    "url": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe",
+    "date": "2026-10-26",
+    "quote": "However, heat pumps cost more to buy and install than gas boilers: up to five times more, depending on the country (Toleikyte et al, 2024). Because a heat pump is about three times as efficient as a boiler, it is cheaper to run only if electricity costs less than about three times as much as gas. In 2025, this cost ratio was 1.9 in France but 3.2 in Germany, meaning the extra cost of a heat pump is recouped in about three years in France but 13 years in Germany (LCP Delta, 2025).",
+    "pieces": [
+     "However, heat pumps cost more to buy and install than gas boilers: up to five times more, depending on the country (Toleikyte et al, 2024). Because a heat pump is about three times as efficient as a boiler, it is cheaper to run only if electricity costs less than about three times as much as gas. In 2025, this cost ratio was 1.9 in France but 3.2 in Germany2, meaning the extra cost of a heat pump is recouped in about three years in France but 13 years in Germany (LCP Delta, 2025)."
+    ],
+    "tag": null,
+    "verified": "page text",
+    "link": "https://www.bruegel.org/analysis/proposing-heating-efficiency-standards-europe#:~:text=However%2C%20heat%20pumps%20cost%20more%20to%20buy,13%20years%20in%20Germany%20%28LCP%20Delta%2C%202025%29."
    }
   ],
   "brent": [
@@ -864,20 +904,6 @@
     ],
     "tag": null,
     "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=The%20cap%20is%20set%20every%20three%20months%2C,cap%2C%20but%20it%20will%20be%20in%20April%27s.",
-    "verified": "page text"
-   },
-   {
-    "source": "Resolution Foundation",
-    "title": "Worried about next week’s price cap? Here’s what it means for January",
-    "url": "https://www.resolutionfoundation.org/comment/worried-about-next-weeks-price-cap-heres-what-it-means-for-january/",
-    "date": "2026-11-24",
-    "quote": "Ofgem’s announcement next week will set the cap for prices between January and March 2027. Those months – you don’t need me to tell you – are the coldest of the year, when we most need the radiators switched on. So it’s a particularly painful time for the cap to rise from £1,723 (as it is currently) to £2,166, as forecasters expect. We’ve modelled monthly energy costs for a typical dual fuel household, and on our numbers, they will be spending a staggering £62 a week on energy in January. At that rate, the £100 Household Energy Payment paid out to those in homes in Council Tax bands A to D this winter would be used up by a typical family in just 11 days.",
-    "pieces": [
-     "Ofgem’s announcement next week will set the cap for prices between January and March 2027. Those months – you don’t need me to tell you – are the coldest of the year, when we most need the radiators switched on. So it’s a particularly painful time for the cap to rise from £1,723 (as it is currently) to £2,166, as forecasters expect.",
-     "We’ve modelled monthly energy costs for a typical dual fuel household, and on our numbers, they will be spending a staggering £62 a week on energy in January.[1] At that rate, the £100 Household Energy Payment paid out to those in homes in Council Tax bands A to D this winter would be used up by a typical family in just 11 days."
-    ],
-    "tag": null,
-    "link": "https://www.resolutionfoundation.org/comment/worried-about-next-weeks-price-cap-heres-what-it-means-for-january/#:~:text=Ofgem%E2%80%99s%20announcement%20next%20week%20will%20set%20the,a%20typical%20family%20in%20just%2011%20days.",
     "verified": "page text"
    },
    {
@@ -1067,14 +1093,13 @@
     "title": "Worried about next week’s price cap? Here’s what it means for January",
     "url": "https://www.resolutionfoundation.org/comment/worried-about-next-weeks-price-cap-heres-what-it-means-for-january/",
     "date": "2026-11-24",
-    "quote": "Ofgem’s announcement next week will set the cap for prices between January and March 2027. Those months – you don’t need me to tell you – are the coldest of the year, when we most need the radiators switched on. So it’s a particularly painful time for the cap to rise from £1,723 (as it is currently) to £2,166, as forecasters expect. We’ve modelled monthly energy costs for a typical dual fuel household, and on our numbers, they will be spending a staggering £62 a week on energy in January. At that rate, the £100 Household Energy Payment paid out to those in homes in Council Tax bands A to D this winter would be used up by a typical family in just 11 days. Unfortunately, once you adjust for inflation, a typical family will be spending around £50 more this January than they did in December 2022 and January 2023, at the height of the 2022-23 energy price crisis. That comparison takes account of the £400 Energy Bills Support Scheme discount households received that winter: it’s the far more generous support back then that tips the balance.",
+    "quote": "We’ve modelled monthly energy costs for a typical dual fuel household, and on our numbers, they will be spending a staggering £62 a week on energy in January.[1] At that rate, the £100 Household Energy Payment paid out to those in homes in Council Tax bands A to D this winter would be used up by a typical family in just 11 days. […] Unfortunately, once you adjust for inflation, a typical family will be spending around £50 more this January than they did in December 2022 and January 2023, at the height of the 2022-23 energy price crisis. That comparison takes account of the £400 Energy Bills Support Scheme discount households received that winter: it’s the far more generous support back then that tips the balance.",
     "pieces": [
-     "Ofgem’s announcement next week will set the cap for prices between January and March 2027. Those months – you don’t need me to tell you – are the coldest of the year, when we most need the radiators switched on. So it’s a particularly painful time for the cap to rise from £1,723 (as it is currently) to £2,166, as forecasters expect.",
      "We’ve modelled monthly energy costs for a typical dual fuel household, and on our numbers, they will be spending a staggering £62 a week on energy in January.[1] At that rate, the £100 Household Energy Payment paid out to those in homes in Council Tax bands A to D this winter would be used up by a typical family in just 11 days.",
      "Unfortunately, once you adjust for inflation, a typical family will be spending around £50 more this January than they did in December 2022 and January 2023, at the height of the 2022-23 energy price crisis. That comparison takes account of the £400 Energy Bills Support Scheme discount households received that winter: it’s the far more generous support back then that tips the balance."
     ],
     "tag": "Above 2022-23 level",
-    "link": "https://www.resolutionfoundation.org/comment/worried-about-next-weeks-price-cap-heres-what-it-means-for-january/#:~:text=Ofgem%E2%80%99s%20announcement%20next%20week%20will%20set%20the,support%20back%20then%20that%20tips%20the%20balance.",
+    "link": "https://www.resolutionfoundation.org/comment/worried-about-next-weeks-price-cap-heres-what-it-means-for-january/#:~:text=We%E2%80%99ve%20modelled%20monthly%20energy%20costs%20for%20a,support%20back%20then%20that%20tips%20the%20balance.",
     "verified": "page text"
    },
    {
@@ -1375,6 +1400,18 @@
   "gulf": [
    {
     "source": "CNBC Economy",
+    "title": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
+    "url": "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html",
+    "date": "2026-11-27",
+    "quote": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’. Iran's foreign minister Abbas Araghchi said \"The incident is suspicious and looks like a precooked recipe for war.\"",
+    "headline": "Two Italians killed in Kuwait drone attack; Trump says Iran war ends ‘whenever I want it’",
+    "standfirst": "Iran's foreign minister Abbas Araghchi said \"The incident is suspicious and looks like a precooked recipe for war.\"",
+    "tag": "Escalation",
+    "verified": "publisher feed",
+    "link": "https://www.cnbc.com/2026/11/27/us-iran-war-trump-hormuz-italian-killed-trump.html#:~:text=Two%20Italians%20killed%20in%20Kuwait%20drone%20attack%3B%20Trump%20says%20Iran%20war%20ends%20%E2%80%98whenever%20I%20want%20it%E2%80%99"
+   },
+   {
+    "source": "CNBC Economy",
     "title": "Houthi attack on Saudi Arabian sovereign wealth fund PIF's tower injures 11",
     "url": "https://www.cnbc.com/2026/11/25/us-iran-war-trump-hormuz-houthi-saudi-pif-tower.html",
     "date": "2026-11-25",
@@ -1443,18 +1480,6 @@
     "standfirst": "Saudi Arabia said it destroyed a drone launched by Iran-backed Houthis, while Bahrain said an industrial facility was hit by Iranian projectiles.",
     "tag": null,
     "link": "https://www.cnbc.com/2026/11/22/saudi-houthi-bahrain-iran-attacks-araghchi-talks.html#:~:text=Saudi%20Arabia%2C%20Bahrain%20report%20new%20attacks%20as%20Iran%20says%20it%20remains%20open%20to%20a%20deal%20with%20U.S.",
-    "verified": "publisher feed"
-   },
-   {
-    "source": "The Economist",
-    "title": "Neither America nor Iran has the means to end the war",
-    "url": "https://www.economist.com/middle-east-and-africa/2026/11/19/neither-america-nor-iran-has-the-means-to-end-the-war",
-    "date": "2026-11-19",
-    "quote": "Neither America nor Iran has the means to end the war. From fridges to tankers, both sides are reduced to pinpricks",
-    "headline": "Neither America nor Iran has the means to end the war",
-    "standfirst": "From fridges to tankers, both sides are reduced to pinpricks",
-    "tag": null,
-    "link": "https://www.economist.com/middle-east-and-africa/2026/11/19/neither-america-nor-iran-has-the-means-to-end-the-war#:~:text=Neither%20America%20nor%20Iran%20has%20the%20means%20to%20end%20the%20war",
     "verified": "publisher feed"
    }
   ],
