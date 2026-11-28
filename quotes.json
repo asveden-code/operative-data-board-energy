@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-27T11:24Z",
+ "generated_at": "2026-11-28T10:21Z",
  "window_days": {
   "press": 14,
   "think_tanks": 60
@@ -347,18 +347,6 @@
     "verified": "publisher feed"
    },
    {
-    "source": "CNBC Economy",
-    "title": "Why the data center slowdown concern is overblown. Two stocks to buy amid the fear",
-    "url": "https://www.cnbc.com/2026/11/13/data-center-slowdown-utility-stocks.html",
-    "date": "2026-11-13",
-    "quote": "Why the data center slowdown concern is overblown. Two stocks to buy amid the fear. Not one utility CEO we spoke with at the EEI conference is anticipating a slowdown in electricity growth expectations.",
-    "headline": "Why the data center slowdown concern is overblown. Two stocks to buy amid the fear",
-    "standfirst": "Not one utility CEO we spoke with at the EEI conference is anticipating a slowdown in electricity growth expectations.",
-    "tag": null,
-    "link": "https://www.cnbc.com/2026/11/13/data-center-slowdown-utility-stocks.html#:~:text=Why%20the%20data%20center%20slowdown%20concern%20is%20overblown.%20Two%20stocks%20to%20buy%20amid%20the%20fear",
-    "verified": "publisher feed"
-   },
-   {
     "source": "Carbon Brief",
     "title": "Analysis: Fossil-fuel CO2 emissions set to dip in 2026 as Iran conflict hits oil use",
     "url": "https://www.carbonbrief.org/analysis-fossil-fuel-co2-emissions-set-to-dip-in-2026-as-iran-conflict-hits-oil-use",
@@ -534,18 +522,6 @@
     "standfirst": "Colder weather and low wind speeds could strain Europe’s gas market, where storage started winter at its lowest level in more than a decade.",
     "tag": "Lowest in a decade",
     "link": "https://www.cnbc.com/2026/11/21/polar-vortex-europe-gas-prices.html#:~:text=An%20early%20breakdown%20in%20the%20polar%20vortex%20is%20threatening%20already%20depleted%20gas%20stocks",
-    "verified": "publisher feed"
-   },
-   {
-    "source": "CNBC Economy",
-    "title": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus",
-    "url": "https://www.cnbc.com/2026/11/13/russia-oil-exports-iea-diesel-deal.html",
-    "date": "2026-11-13",
-    "quote": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus. Russia’s crude output rose to 8.73 million barrels a day in October as recovering Gulf exports pushed global supply above demand, the IEA said.",
-    "headline": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus",
-    "standfirst": "Russia’s crude output rose to 8.73 million barrels a day in October as recovering Gulf exports pushed global supply above demand, the IEA said.",
-    "tag": "Return to surplus",
-    "link": "https://www.cnbc.com/2026/11/13/russia-oil-exports-iea-diesel-deal.html#:~:text=Russian%20crude%20production%20rebounds%20after%20Trump%20diesel%20deal%2C%20IEA%20says%20as%20oil%20markets%20return%20to%20surplus",
     "verified": "publisher feed"
    },
    {
@@ -798,18 +774,6 @@
     "standfirst": "It put the U.K.'s annual inflation rate at a 1-year high.",
     "tag": "Record diesel",
     "link": "https://www.cnbc.com/2026/11/18/uk-inflation-cpi-fuel-prices.html#:~:text=Record%20diesel%20prices%20drive%20UK%20inflation%20to%201%2Dyear%20high%20of%203.6%25",
-    "verified": "publisher feed"
-   },
-   {
-    "source": "CNBC Economy",
-    "title": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus",
-    "url": "https://www.cnbc.com/2026/11/13/russia-oil-exports-iea-diesel-deal.html",
-    "date": "2026-11-13",
-    "quote": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus. Russia’s crude output rose to 8.73 million barrels a day in October as recovering Gulf exports pushed global supply above demand, the IEA said.",
-    "headline": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus",
-    "standfirst": "Russia’s crude output rose to 8.73 million barrels a day in October as recovering Gulf exports pushed global supply above demand, the IEA said.",
-    "tag": "Return to surplus",
-    "link": "https://www.cnbc.com/2026/11/13/russia-oil-exports-iea-diesel-deal.html#:~:text=Russian%20crude%20production%20rebounds%20after%20Trump%20diesel%20deal%2C%20IEA%20says%20as%20oil%20markets%20return%20to%20surplus",
     "verified": "publisher feed"
    },
    {
@@ -1103,6 +1067,19 @@
     "verified": "page text"
    },
    {
+    "source": "Resolution Foundation",
+    "title": "Rebellious kids, gaming teens and distracting colleagues",
+    "url": "https://www.resolutionfoundation.org/comment/rebellious-kids-gaming-teens-and-distracting-colleagues/",
+    "date": "2026-11-27",
+    "quote": "Unfortunately, one big change over the last seven years has been the cost of energy bills, and this week Ofgem confirmed the brow-furrowing news that the price cap would jump by more than a quarter come the new year. All the more worrying, then, that the Government has chosen to implement a poorly-targeted energy support scheme that fails to reach one-in-eight of the poorest half of households in England, despite helping 80 per cent of households overall.",
+    "tag": null,
+    "verified": "page text",
+    "pieces": [
+     "Unfortunately, one big change over the last seven years has been the cost of energy bills, and this week Ofgem confirmed the brow-furrowing news that the price cap would jump by more than a quarter come the new year. All the more worrying, then, that the Government has chosen to implement a poorly-targeted energy support scheme that fails to reach one-in-eight of the poorest half of households in England, despite helping 80 per cent of households overall."
+    ],
+    "link": "https://www.resolutionfoundation.org/comment/rebellious-kids-gaming-teens-and-distracting-colleagues/#:~:text=Unfortunately%2C%20one%20big%20change%20over%20the%20last,helping%2080%20per%20cent%20of%20households%20overall."
+   },
+   {
     "source": "BBC Business",
     "title": "Energy bills to rise by 26% from January after gas prices surge",
     "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o",
@@ -1156,19 +1133,6 @@
     ],
     "tag": null,
     "link": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o#:~:text=The%20cap%20is%20set%20every%20three%20months%2C,cap%2C%20but%20it%20will%20be%20in%20April%27s.",
-    "verified": "page text"
-   },
-   {
-    "source": "BBC Business",
-    "title": "What will the energy cap changes mean for my bills?",
-    "url": "https://www.bbc.co.uk/news/articles/cdd29v8mp9jo",
-    "date": "2026-11-25",
-    "quote": "The government's decision to temporarily remove VAT from domestic electricity bills has cut about £45 a year from a typical bill.",
-    "pieces": [
-     "The government's decision to temporarily remove VAT from domestic electricity bills has cut about £45 a year from a typical bill."
-    ],
-    "tag": null,
-    "link": "https://www.bbc.co.uk/news/articles/cdd29v8mp9jo#:~:text=The%20government%27s%20decision%20to%20temporarily%20remove%20VAT%20from%20domestic%20electricity%20bills%20has%20cut%20about%20%C2%A345%20a%20year%20from%20a%20typical%20bill.",
     "verified": "page text"
    }
   ],
